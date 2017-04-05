@@ -1,0 +1,23 @@
+\section{Extensions of Sheaves}
+
+Reference: \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
+
+Let $S$ be a scheme, $X$ an $S$-scheme, and $\mc{F}$, $\mc{G}$ $\mathcal{O}_X$-modules. An \emph{extension} of $\mc{F}$ by $\mc{G}$ is a short exact sequence of $\mathcal{O}_X$-modules
+\[
+	\ses{\mc{G}}{\mathcal{E}}{\mc{F}}.
+\]
+Two such extensions are \emph{equivalent} if there is an isomorphism of short exact sequences between them which is the identity on $\mc{F}$ and $\mc{G}$. The set $E(\mc{F},\mc{G})$ of equivalence classes of extensions of $\mc{F}$ by $\mc{G}$ can be made into an abelian group with the Baer sum, and into a $\Gamma(S)$-module by the operation of $\mathcal{O}_S |_X$ on $\Mod_{\mathcal{O}_X}$.
+
+This way we obtain a functor
+\[
+	E_X(\mc{F},-) \from \Mod_{\mathcal{O}_X} \to \Mod_{\Gamma(S)}.
+\]
+Moreover, we have the right derived functor
+\[
+	\Ext^1_X(\mc{F},-) \from \Mod_{\mathcal{O}_X} \to \Mod_{\Gamma(S)}
+\]
+of the functor $\Hom_{\mathcal{O}_X}(\mc{F},-)$.
+
+\begin{proposition}
+	Let $X$ be an $S$-scheme and $\mc{F}$ an $\mathcal{O}_X$-module. The functors $E(\mc{F},-)$ and $\Ext^1(\mc{F},-)$ defined above are isomorphic.
+\end{proposition}

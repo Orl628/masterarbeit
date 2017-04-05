@@ -1,0 +1,136 @@
+%%% PACKAGES
+
+% XeLaTeX
+\usepackage{xltxtra}
+
+% Inernational
+\usepackage[ngerman, english]{babel}
+
+% math stuff
+\usepackage{
+  amsmath,
+  amssymb,
+  amsthm,
+  mathtools,
+  latexsym
+}
+
+%so that amsmath plays nice with parskip
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=\parskip \thm@postskip=0pt
+}
+\makeatother
+
+% more arrows
+\usepackage{stmaryrd} % for mapsfrom
+\usepackage{extarrows} % for xlongrightarrow
+
+% more symbols
+\usepackage{upgreek} % upright greek letters
+
+% more flexible enumerations
+\usepackage{enumitem}
+
+% for commutative diagrams
+\usepackage{tikz-cd}
+\usetikzlibrary{babel} % otherwise babel fucks up tikzcd
+
+% aesthetics
+%\usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
+\usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
+\usepackage{microtype} % better everything
+
+% typographic settings
+\usepackage[margin=1.3in]{geometry}
+\usepackage[dmyyyy]{datetime}
+\renewcommand{\dateseparator}{.}
+
+% Latin modern font choice
+\usepackage{lmodern}
+
+%Libertinus font choice, copied from project's Github
+%\usepackage{unicode-math}
+% \setmainfont{Libertinus Serif}
+% \setsansfont{Libertinus Sans}
+% \setmathfont[AutoFakeBold]{Libertinus Math}
+% \setmathfont[range={\mathcal, \mathscr}]{xits-math.otf}
+% \setmathfont[range={}]{Libertinus Math}
+
+% paragraph settings
+%\setlength{\parindent}{0cm} % no paragraph indentation
+%\setlength{\parskip}{0.6em} % wider paragraph spacing
+\usepackage{parskip}
+
+% Hyperlinks in references
+\usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
+\usepackage{cleveref} % \cref, \Cref
+
+\usepackage{mycommands}
+
+% Bibliography
+\usepackage[backend=biber, style=alphabetic, isbn=false, url=false, doi=false]{biblatex}
+\addbibresource{masterarbeit-bib.bib}
+
+%%% TEXT SETTINGS
+
+% link colors
+\hypersetup{linkcolor=blue,citecolor=cyan,filecolor=black,urlcolor=cyan}
+
+% theorems
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% numbering settings
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+\renewcommand{\thetheorem}{\arabic{section}.\arabic{theorem}}
+
+% hypenation
+\hyphenation{mo-no-dro-my}
+
+%%% PAST GOOD IDEAS
+
+% Abbreviations
+\newcommand{\ie}{i.\,e.\ }
+\newcommand{\eg}{e.\,g.\ }
+\newcommand{\cf}{cf.\ }
+
+% Symbols
+%\newcommand{\leer}{\varnothing} % preferred symbol for the empty set
+%\newcommand{\singleton}{\{\mathrm{pt}\}} % may also consider ``{*}''
+
+% Accents
+%\newcommand{\closure}[2][3]{ % closure for bigger symblos
+%  {}\mkern#1mu\overline{\mkern-#1mu#2}}
+
+% The perfect :=
+% \newcommand*{\defeq}{\mathrel{\rlap{
+%  \raisebox{0.3ex}{$\m@th\cdot$}}
+%  \raisebox{-0.3ex}{$\m@th\cdot$}}
+% =}
+
+% Arrows
+% \newcommand{\isom}{\xrightarrow{\sim}}
+
+% Brackets
+% \newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}
+% \newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+% \newcommand{\floor}[1]{\left \lfloor #1 \right\rfloor}
+% \newcommand{\abs}[1]{|#1|}
+
+% Diagrams and Matrices
+%\newcommand{\ses}[6]{ % short exact sequence!
+%  \begin{tikzcd}[ampersand replacement=\&]
+%  #1 \arrow{r} \& {#2} \arrow{r}{#5} \& {#3} \arrow{r}{#6} \& {#4} \arrow{r} \& #1
+%  \end{tikzcd}
+%}
+%\newcommand{\smatrix}[1]{\left(\begin{smallmatrix}#1\end{smallmatrix}\right)} % small matrix

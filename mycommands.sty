@@ -1,0 +1,83 @@
+\newcommand{\introduce}[1]{\emph{#1}}
+
+\newcommand{\pullb}[1]{#1^{*}}
+\newcommand{\pushf}[1]{#1_{*}}
+
+\newcommand{\from}{\colon}
+\newcommand{\into}[2]{(#1\triangleright #2)}
+
+\renewcommand{\phi}{\varphi}
+
+\newcommand{\CC}{\mathbb{C}} % accent on second syllabe
+\newcommand{\PP}{\mathbb{P}}
+
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Grp}{\mathrm{Grp}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\op}{^{\mathrm{op}}}
+\newcommand{\Sch}{\mathrm{Sch}}
+\newcommand{\Mod}{\mathrm{Mod}}
+
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\isomorphismrelation}{\simeq}
+\newcommand{\singleton}{\underbar{1}}
+
+\newcommand{\Gr}{\operatorname{Gr}_{d,n}}
+
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Ext}{\operatorname{Ext}}
+
+\newcommand{\ses}[3]{0 \longrightarrow #1 \longrightarrow #2 \longrightarrow #3 \longrightarrow 0}
+\newcommand{\sesarrows}[5]{0 \longrightarrow #1 \xlongrightarrow{#2} #3 \xlongrightarrow{#4} #5 \longrightarrow 0}
+
+% The perfect :=
+ \newcommand*{\defeq}{\mathrel{\rlap{
+  \raisebox{0.3ex}{$\m@th\cdot$}}
+  \raisebox{-0.3ex}{$\m@th\cdot$}}
+ =}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+
+\newcommand{\dual}{^\vee}
+
+% for the X in a cartesian square
+\tikzset{commutative diagrams/.cd,
+mysymbol/.style={start anchor=center,end anchor=center,draw=none}
+}
+\newcommand\MySymb[2]{%
+  \arrow[mysymbol]{#2}[description]{#1}}
+
+\newcommand{\cartesiansquare}[8]{
+\begin{tikzcd}[ampersand replacement=\&]
+ {#1} \arrow{r}{#2}\MySymb{\times}{dr} \arrow{d}[swap]{#4} \& {#3} \arrow{d}{#5} \\
+ {#6} \arrow{r}[swap]{#7} \& {#8}
+\end{tikzcd}
+}
+
+\newcommand{\commutativesquare}[8]{
+\begin{tikzcd}[ampersand replacement=\&]
+ {#1} \arrow{r}{#2} \arrow{d}[swap]{#4} \& {#3} \arrow{d}{#5} \\
+ {#6} \arrow{r}[swap]{#7} \& {#8}
+\end{tikzcd}
+}
+
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
+
+\newcommand{\subjectscheme}{X}
+\newcommand{\basescheme}{S}
+\newcommand{\totalscheme}{P}
+\newcommand{\extendedtotalmodule}{\mathcal{G}''}
+\newcommand{\extendingtotalmodule}{\mathcal{G}'}
+\newcommand{\EXT}{\mathcal{E}\!\mathit{xt}}
+\newcommand{\HOM}{\mathcal{H}\!\mathit{om}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\VV}{\mathbb{V}}
+\renewcommand{\AA}{\mathbb{A}} % Could maybe break things. \AA is for the angstrom.
+
+\renewcommand{\to}{\longrightarrow}
+\newcommand*{\injectto}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+\newcommand{\pr}{\mathrm{pr}}
+%\newcommand{\isom}{}
+%\renewcommand{\tilde}{^{\~}}
+

@@ -1,0 +1,17 @@
+\section{Verlinde bundles on Lefschetz pencils}
+
+%\begin{definition} A \emph{line} is an embedding $l\colon \mathbb{P}^1 \to X$ into a projective scheme $X$ such that $l^*\mathcal{O}(1) = \mathcal{O}(1)$.
+%\end{definition}
+
+\newcommand{\schemeofquartics}{|\mc{O}(4)|}
+
+Denote by $\schemeofquartics$ the complete linear system $\PP(H^0(\PP^3, \mc{O}(4)))$ of quartics in $\PP^3$. Consider the universal family $\mf{X} \to \schemeofquartics$, given by 
+\[
+	\mf{X} = \{(x, q) \in \PP^3 \times \schemeofquartics : x \in q\}.
+\]
+The family $\mf{X}$ is a closed subscheme of $\PP^3 \times \schemeofquartics$, which can be seen as follows. Let the index $I$ range over the tuples of the form $(i_0,i_1,i_2,i_3)$ with $\sum i_j = 4$, and let $Q_I$ denote the $I$-th projective coordinate of $\schemeofquartics$. For $j=0,\dotsc,3$, let $X_j$ denote the $j$-th coordinate of $\PP^3$. Then the family $\mf{X}$ is cut out by the section $\sum_{I} Q_{I} X^{I}$ of the line bundle $\mc{O}(4) \boxtimes \mc{O}(1)$ on $\PP^3 \times \schemeofquartics$.
+
+We define the line bundle $\mc{L}$ on $\mf{X}$ as the restriction of $\mc{O}(1)\boxtimes\mc{O}$ to $\mf{X}$, in other words as the pullback of $\mc{O}(1)$ under the canonical projection $\mf{X} \to \PP^3$.
+
+Let $l \subseteq \schemeofquartics$ be the closed subscheme defined as the image of a linear embedding $\PP^1\to \schemeofquartics$. We call $l$ a \emph{Lefschetz pencil} of quartics.	Its universal family is the scheme $l \times_{\schemeofquartics} \mf{X}$, which comes equipped with the pullback line bundle $\mc{L}_l$.
+

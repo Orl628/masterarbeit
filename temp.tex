@@ -1,0 +1,157 @@
+\section{Universal Families of Extensions}
+
+The material of this section is taken from the article \cite{lange-universal-extensions}.
+
+Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
+
+Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences of the form
+\[
+	\ses{\mc{G}}{\mc{E}}{\mc{F}},
+\]
+where two such sequences are equivalent if there exists an isomorphism between them that induces the identity on $\mc{F}$ and $\mc{G}$. The set of these equivalence classes can be given the structure of a $\Gamma(S,\mc{O}_S)$-module, see for example \cite[sec.\ 3.4]{weibel-homological-algebra}. This correspondence is functorial in both arguments, and preserves $\Gamma(S, \mc{O}_S)$-module structure.
+
+\begin{definition}
+	\textbf{1.} The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
+	$R^i(\pushf{f}\HOM(\mc{F},\mc{G}))
+	\from \Mod_{\mc{O}_X} \to \Mod_{\mc{O}_S}$.
+
+	\textbf{2.} For $s\in S$, define the homomorphism
+	\[
+		\Phi_s = \Phi_{s,\mc{F},\mc{G}}
+		\from \Ext^1_X(\mc{F},\mc{G})
+		\longrightarrow \Ext^1_{X_s}(\mc{F}_s, \mc{G}_s)
+	\]
+	by restricting extensions of $\mc{F}$ by $\mc{G}$ to the fiber $X_s$. This is possible since $\mc{F}$ is flat over $S$.
+
+	\textbf{3.} A \emph{family of extensions} of $\mc{F}$ by $\mc{G}$ over $S$ is a family
+	\[
+		\xi_s \in \Ext^1_{X_s}(\mc{F}_s,\mc{G}_s) \quad (s\in S)
+	\]
+	such that there exists an open covering $\mathfrak{U}$ of $S$ and for all $U\in \mathfrak{U}$ an extension $\xi_U \in \Ext^1_{f^{-1}(U)}(\mc{F}_U,\mc{G}_U)$
+	with $\Phi_{s,\mc{F}_U,\mc{G}_U}(\xi_U) = \xi_s$ for all $s\in S$.
+	Such a family is \emph{globally defined} if we can take $\mathfrak{U} = \{S\}$.
+\end{definition}
+
+\begin{remark}
+	If $S$ is affine, then we have $\EXT^i_f(\mc{F},\mc{G})=\Ext^i_X(\mc{F},\mc{G}){\ \widetilde{}}$.
+\end{remark}
+
+\begin{proposition}
+	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
+	There exists a number $N\geq 0$ dependent on $\mc{G}$ such that for all quasi-coherent $\mc{O}_Y$-modules $\mc{M}$, all $i\geq 1$ and $n\geq N$ we have
+	\[
+		\EXT^i_{f_Y}(\mc{O}_{X_Y}(-n),\mc{G} \boxtimes \mc{M}) = 0
+	\]
+\end{proposition}
+
+\begin{proposition}
+	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
+	For all $i\geq 0$ there exists a canonical base change homomorphism
+	\[
+		\tau^i_{g} \from \pullb{g}\EXT^i_{f}
+		(\mc{F},\mc{G})
+		\longrightarrow
+		\EXT^i_{f_Y}
+		(\pullb{g_X}\mc{F}, \pullb{g_X}\mc{G}).
+	\]
+	Furthermore, if $g$ is flat, then $\tau^i_g$ is an isomorphism for all $i\geq 0$.
+\end{proposition}
+
+\begin{definition}
+	We say that $\EXT^i_{f}(\mc{F},\mc{G})$ \emph{commutes with base change} if for all morphisms of Noetherian schemes $g \from Y \longrightarrow S$, the base change homomorphism $\tau^i_g$ is an isomorphism.
+\end{definition}
+
+\begin{proposition}
+\label{prop:ext-base-change}
+	Let $s \in S$ be a point such that $\tau^i_s$ is surjective. Then there exists an open neighborhood $U$of $s$ such that $\tau^i_{s'}$ is an isomorphism for all $s'\in U$.
+	Furthermore, the homomorphism $\tau^{i-1}_{s}$ is surjective if and only if $\EXT^i_{f}(\mc{F},\mc{G})$ is locally free on an open neighborhood of $s$.
+\end{proposition}
+
+\begin{remark}
+
+	\textbf{1.} If $\tau^i_{s}$ is an isomorphism for all $s\in S$, then $\EXT_{f}^i(\mc{F},\mc{G})$ commutes with base change.
+
+	\textbf{2.} We have directly from \Cref{prop:ext-base-change} that if $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$, then $\EXT^1_f(\mc{F},\mc{G})$ is locally free.
+
+	\textbf{3.} In case $S$ is reduced, if $\EXT^1_f(\mc{F},\mc{G})$ is locally free then $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$.
+\end{remark}
+
+\begin{definition} 
+	Let $u\from Y'\to Y$ be a morphism of Noetherian $S$-schemes.
+
+	\textbf{1.} We define a functoriality map
+	$H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y))
+	\to
+	H^0(Y',\EXT^1_{f_{Y'}}(\mc{F}_{Y'},\mc{G}_{Y'}))
+	$
+	as the composition
+	\begin{align*}
+		H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)) &
+		\xrightarrow{1\otimes \id} 
+		H^0(Y',\pullb{u}\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)) \\
+		& \xrightarrow{H^0(\tau^1_u)} 
+		H^0(Y',\EXT^1_{f_{Y'}}(\pullb{u_{X_Y}}\mc{F}_{Y'},\pullb{u_{X_Y}}\mc{G}_{Y'})).
+	\end{align*}
+
+	\textbf{2.} Given a family of extensions $\xi = (\xi_y)_{y\in Y}$ of $\mc{F}_Y$ by $\mc{G}_Y$ over $Y$, we set $(\pullb{u}\xi)_{y'} \coloneqq \pullb{u}\xi_{u(y')}$ for every $y' \in Y'$. This defines a family $\pullb{u}\xi$ of extensions of $\mc{F}_{Y'}$ by $\mc{G}_{Y'}$ over $Y'$. Moreover, if the family $\xi$ is globally defined, then so is its pullback $\pullb{u}\xi$.
+
+	\textbf{3.} We define thus functors
+	\begin{align*}
+		& E,E' \from \{\text{Noeth.\ schemes over } S\} \to \{\text{Sets}\}; \\
+		%E'_{\text{glob}}
+		& E(Y) \coloneqq H^0(Y,\Ext^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)), \\
+		& E'(Y) \coloneqq \{\text{families of extensions of $\mc{F}_Y$ by $\mc{G}_Y$ over } Y\}. \\
+%		& E'_{\glob}(Y) \coloneqq \{\text{globally defined families of extensions of $\mc{F}_Y$ by 
+%		$\mc{G}_Y$ over } Y\}.
+	\end{align*}
+
+\end{definition}
+
+\begin{remark}
+	The spectral sequence $H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$ gives an exact sequence
+	\begin{align*}
+		0
+		& \xlongrightarrow{} H^1(S,\pushf{f}\HOM(\mc{F},\mc{G}))
+		 \xlongrightarrow{\varepsilon} \Ext^1_X(\mc{F},\mc{G})
+		 \xlongrightarrow{\mu} H^0(S,\EXT^1_f(\mc{F},\mc{G})) \\
+		& \xlongrightarrow{d_2} H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})).
+	\end{align*}
+\end{remark}
+
+\begin{proposition}
+	Suppose that $S$ is reduced and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change. Restricted to the category of reduced Noetherian $S$-schemes, the functors $E$ and $E'$ are isomorphic.
+\end{proposition}
+
+\begin{proposition}
+	Suppose that $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Then the $\mc{O}_S$-module $\EXT^1_f(\mc{F},\mc{G})\dual$ is locally free and the functor $E$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+\end{proposition}
+
+\begin{corollary}
+	Suppose that $S$ is reduced and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Restricted to the category of reduced Noetherian $S$-schemes, the functor $E'$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+\end{corollary}
+
+\begin{corollary}
+	Suppose that $S$ is affine and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. The functor
+	\[
+		Y \longmapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
+		\from \{\text{Affine $S$-schemes}\} \to \{\text{Sets}\}
+	\]
+	is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+\end{corollary}
+
+\begin{corollary} \label{cor:universal-extension}
+	Finally, let $S = \Spec(k),$ let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. On the scheme $X\times V$ there exists an extension
+	\[
+		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{F}}{\mc{E}}{\pullb{\pr_1}\mc{G}}
+	\]
+	which is universal on the category of affine $k$-schemes. In particular, pulling back $\xi_{\mathrm{univ}}$ defines an isomorphism $\Hom(\Spec(k),V)\xlongrightarrow{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
+\end{corollary}
+
+\begin{remark}
+	The article \cite{lange-universal-extensions} continues on to define a ``projectivized'' version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
+\end{remark}
+
+% \begin{proposition}
+% 	 Let $\basescheme$ be reduced and suppose that $\EXT^1_\totalmap(\extendedtotalmodule,\extendingtotalmodule)$ commutes with base change. Then there exists a bijection, functorial in $Y$ between the set of all families of extension of $\extendedtotalmodule$ by $\extendingtotalmodule$over $Y$ and the set
+% 	 $H^0(\basescheme, \Ext^1_\totalmap(\extendedtotalmodule, \extendingtotalmodule))$.
+% \end{proposition}

@@ -1,0 +1,102 @@
+\section{Universal Families of Extensions}
+
+Reference:
+
+\newcommand{\EXT}{\mathcal{E}\!\mathit{xt}}
+\newcommand{\HOM}{\mathcal{H}\!\mathit{om}}
+\newcommand{\totalmap}{\mathcal{\phi}}
+\newcommand{\basechangescheme}{Y}
+\newcommand{\basechangemodule}{\mathcal{M}}
+\newcommand{\extendedsubjectmodule}{\mathcal{F}''}
+\newcommand{\extendingsubjectmodule}{\mathcal{F}'}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\totaltosubject}{p}
+\newcommand{\totaltobasechange}{q}
+\newcommand{\subjecttobase}{f}
+\newcommand{\basechangetobase}{g}
+\newcommand{\basepoint}{y}
+\newcommand{\extension}{\xi}
+
+Let $\totalmap \from \totalscheme \to \basescheme$ be a morphism of Noetherian schemes, let $\extendedtotalmodule$ be a coherent $\mathcal{O}_\totalscheme$-module. The \emph{$i$-th relative Ext sheaf functor} is defined as
+\[
+	\EXT^{i}_{\totalmap}(\extendedtotalmodule, -) \coloneqq
+	R^{i}(\pushf{\totalmap}\HOM_{\mathcal{O}_\totalscheme}
+	(\extendedtotalmodule, -))
+	\from \Mod(\mathcal{O}_\totalscheme) \to \Mod(\mathcal{O}_\basescheme).
+\]
+
+Thoughout this section, we fix such a morphism $\totalmap\from\totalscheme \to \basescheme$, and we assume it to be flat. Furthermore, we fix coherent, over $\basescheme$ flat $\mathcal{O}_\totalscheme$ modules 
+
+\begin{definition} \ 
+
+\textbf{1.} Let $\extendedtotalmodule$, $\extendingtotalmodule$ be coherent $\mathcal{O}_\totalscheme$-modules, flat over $\basescheme$. For $\basepoint\in\basescheme$, we define the canonical homomorphism
+\[
+	\Phi_y = \Phi_{y,\extendedtotalmodule,\extendingtotalmodule} \from \Ext^1_\totalscheme(\extendedtotalmodule, \extendingtotalmodule)
+	\to \Ext^1_{\totalscheme_\basepoint}(\extendedtotalmodule_\basepoint, \extendingtotalmodule_\basepoint).
+\]
+by restricting extensions of $\extendedtotalmodule$ by $\extendingtotalmodule$ to the fiber $\totalscheme_\basepoint$.
+
+\textbf{2.} A \emph{family of extensions} of $\extendedtotalmodule$ by $\extendingtotalmodule$ over $\basescheme$ is a family
+\[
+	\extension_\basepoint \in \Ext^1_{\totalscheme_\basepoint}(\extendedtotalmodule_\basepoint,\extendingtotalmodule_\basepoint)
+	\quad (\basepoint \in \basescheme)
+\]
+
+\textbf{3.} A 
+such that there exists an open covering $\mathfrak{U}$ of $\basescheme$ and for all $U\in \mathfrak{U}$ an extension $\extension_U \in \Ext^1_{\totalmap^{-1}(U)}(\extendedtotalmodule_U,\extendingtotalmodule_U)$
+with
+%\[
+$
+	\Phi_{y,\extendedtotalmodule_U,\extendingtotalmodule_U}(\extension_U) = \extension_\basepoint
+	%\quad
+	\text{ for all } \basepoint \in \basescheme.
+$
+%\]
+Such a family is \emph{globally defined} if we can take $\mathfrak{U} = \{\basescheme\}$.
+\end{definition}
+
+Now let $\subjecttobase \from \subjectscheme \to \basescheme$ be a projective morphism of Noetherian schemes and let $g \from \basechangescheme \to \basescheme$ be any morphism of Noetherian schemes. Fix coherent $\mathcal{O}_\subjectscheme$-modules $\extendedsubjectmodule$ and $\extendingsubjectmodule$ and consider the Cartesian square
+\[
+ 	\cartesiansquare{\totalscheme}{\totaltosubject}{\subjectscheme}{\totaltobasechange}{\subjecttobase}{\basechangescheme}{\basechangetobase}{\basescheme}
+\]
+
+\begin{proposition}
+	There exists a number $N\geq 0$ dependent on $\extendingsubjectmodule$ such that for all quasi-coherent $\mathcal{O}_\basechangescheme$-modules $\basechangemodule$, all $i\geq 1$ and $n\geq N$ we have
+	\[
+		\EXT^i_{\totaltobasechange}(\mathcal{O}_\totalscheme(-n),\extendingsubjectmodule\boxtimes \basechangemodule) = 0
+	\]
+\end{proposition}
+
+\begin{proposition}
+	For all $i\geq 0$ there exists a canonical base change homomorphism
+	\[
+		\tau^i_{\basechangetobase} \from \pullb{\basechangetobase}\EXT^i_{\subjecttobase}
+		(\extendedsubjectmodule, \extendingsubjectmodule)
+		\to
+		\EXT^i_{\totaltobasechange}
+		(\pullb{\totaltosubject}\extendedsubjectmodule, \pullb{\totaltosubject}\extendingsubjectmodule).
+	\]
+	Furthermore, if $\basechangetobase$ is flat, then $\tau^i_\basechangetobase$ is an isomorphism for all $i\geq 0$.
+\end{proposition}
+
+\begin{definition}
+	We say that $\EXT^i_\subjecttobase(\extendedsubjectmodule, \extendingsubjectmodule)$ \emph{commutes with base change} if for all morphisms of Noetherian schemes $\basechangetobase \from \basechangescheme \to \basescheme$, the base change homomorphism $\tau^i_\basechangetobase$ is an isomorphism.
+\end{definition}
+
+\begin{proposition}
+	Let $\basepoint \in \basescheme$ be a point such that $\tau^i_\basepoint$ is surjective. Then there exists an open neighborhood $U$ of $\basepoint$ such that $\tau^i_{\basepoint'}$ is an isomorphism for all $\basepoint'\in U$.
+	Furthermore, the homomorphism $\tau^{i-1}_{\basepoint}$ is surjective if and only if $\EXT^i_{\subjecttobase}(\extendedsubjectmodule,\extendingsubjectmodule)$ is locally free on an open neighborhood of $y$.
+\end{proposition}
+
+\begin{remark}
+	If $\tau^i_{\basepoint}$ is an isomorphism for all $\basepoint\in\basescheme$, then $\EXT_{\subjecttobase}^i(\extendedsubjectmodule,\extendingsubjectmodule)$ commutes with base change.
+\end{remark}
+
+\begin{remark}
+	Let $\EXT^1_\totalmap(\extendedtotalmodule,\extendingtotalmodule)$ commute with base change. 
+\end{remark}
+
+\begin{proposition}
+	 Let $\basescheme$ be reduced and suppose that $\EXT^1_\totalmap(\extendedtotalmodule,\extendingtotalmodule)$ commutes with base change. Then there exists a bijection, functorial in $Y$ between the set of all families of extension of $\extendedtotalmodule$ by $\extendingtotalmodule$ over $Y$ and the set
+	 $H^0(\basescheme, \Ext^1_\totalmap(\extendedtotalmodule, \extendingtotalmodule))$.
+\end{proposition}
