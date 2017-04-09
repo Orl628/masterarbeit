@@ -5,18 +5,19 @@ In this section we collect some facts about specialization phenomena. We say tha
 \begin{remark} \label{rem:scalars-on-ext} Let
 	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{g}{\mc{G}} \]
 	be a short exact sequence of coherent sheaves over a $k$-scheme $X$ and let $\xi \in \Ext^1(\mc{G},\mc{F})$ be the corresponding element. If $a \in H^0(X,\mc{O}^{\times}_X)$, then the element $a\xi$ corresponds to the sequence
-	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{ag}{\mc{G}}. \] To see this, consider the two exact sequences
+	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{a^{-1}g}{\mc{G}}. \] To see this, consider the map of exact sequences
 	\[\begin{tikzcd}
 		0 \arrow{r} &
-		\mc{F} \arrow{r}{f} \arrow[swap]{d}{a} &
-		\mc{E} \arrow{r}{g} \arrow[equal]{d} &
-		\mc{G} \arrow{r} \arrow[equal]{d} &
+		\mc{F} \arrow{r}{f} \arrow[equal]{d} &
+		\mc{E} \arrow{r}{a^{-1}g} \arrow[equal]{d} &
+		\mc{G} \arrow{r} \arrow{d}{a} &
 		0 \\
-		0 \arrow{r} & \mc{F} \arrow[swap]{r}{a^{-1}f} & \mc{E} \arrow{r}{g} & \mc{G} \arrow{r} & 0.
+		0 \arrow{r} & \mc{F} \arrow{r}{f} & \mc{E} \arrow{r}{g} & \mc{G} \arrow{r} & 0
 	\end{tikzcd} \]
-	Let $\delta, \delta' \from \Hom(\mc{G},\mc{G}) \to \Ext^1(\mc{G},\mc{F})$ be the boundary homomorphisms associated to the upper and lower sequence respectively. We have on the one hand $\delta'(\id) = a \delta(\id)$ by naturality, and on the other hand $\delta(\id) = \xi$ since this is the way extensions are identified with elements of $\Ext^1$.
+	% Let $\delta, \delta' \from \Hom(\mc{G},\mc{G}) \to \Ext^1(\mc{G},\mc{F})$ be the boundary homomorphisms associated to the upper and lower sequence respectively. We have on the one hand $\delta'(\id) = a \delta(\id)$ by naturality, and on the other hand $\delta(\id) = \xi$ since this is the way extensions are identified with elements of $\Ext^1$.
+	and use the naturality of the boundary homomorphism.
 	% maybe too wordy, maybe mention the correspondence explicitely somewhere else.
-	But the lower sequence is equivalent to the sequence \[0\to \mc{F} \xlongrightarrow{f} \mc{E} \xlongrightarrow{ag} \mc{G} \to 0,\] hence our claim holds.
+	% mention general scalar multiplication explicitely with pullbacks.
 \end{remark}
 
 \begin{example}
@@ -58,13 +59,14 @@ In this section we collect some facts about specialization phenomena. We say tha
 	\]
 	is exact.
 \end{remark}
+%maybe prove this?
 
 \begin{proposition}
 	Let $b_1,\dotsc,b_m$ be non-negative numbers and $\pi$ a partition of the set $\{1,\dotsc,m\}$. For a set of indices $I\in \pi$, let $b'_I \coloneqq \sum_{i \in I} b_i$. Then the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i)$ on $\PP^1$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I) \oplus \mc{O}^{\oplus m-\abs{\pi}}$.	
 \end{proposition}
 
 \begin{proof}
-	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(n)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1}$ of an exact sequence of the form
+	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(n)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ of an exact sequence of the form
 	\[
 		\sesarrows{\mc{O}^{m-1}}{}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{}{\mc{O}(a)}.
 	\]

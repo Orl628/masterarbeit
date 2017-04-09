@@ -1,4 +1,11 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[paper=A4, pagesize, DIV=calc, %
+%BCOR=1cm % Mehr Platz am Rand fürs Binden!
+%draft
+]{scrartcl}
+
+\addtokomafont{sectioning}{\rmfamily}
+\setkomafont{title}{\normalfont\scshape}
+% So that headings are also in serif
 
 \input{mystyle.tex}
 
@@ -7,11 +14,10 @@
 \begin{document}
 \maketitle
 \tableofcontents
-%\input{extensions-of-sheaves.tex}
-%\input{lange-extensions.tex}
-\input{temp.tex}
+
+%\input{universal-families-of-extensions.tex}
 \input{lefschetz-pencils.tex}
-\input{specialization.tex}
+%\input{specialization.tex}
 
 %\bibliographystyle{alpha}
 %\bibliography{masterarbeit-bib}{}
