@@ -1,11 +1,18 @@
-\documentclass[paper=A4, pagesize, DIV=calc, %
+\documentclass[paper=A4,%
 %BCOR=1cm % Mehr Platz am Rand fürs Binden!
-%draft
+draft=false,
+%firstfoot=false
 ]{scrartcl}
+
 
 \addtokomafont{sectioning}{\rmfamily}
 \setkomafont{title}{\normalfont\scshape}
 % So that headings are also in serif
+
+
+% Settings for optimal screen viewing (my laptop screen)
+% \documentclass[twocolumn]{article}
+% \usepackage[top=0.1in, bottom=0.1in, left=0.3in, right=0.3in, paperwidth=9in, paperheight=4in]{geometry}
 
 \input{mystyle.tex}
 
@@ -15,9 +22,9 @@
 \maketitle
 \tableofcontents
 
-%\input{universal-families-of-extensions.tex}
+\input{universal-families-of-extensions.tex}
 \input{lefschetz-pencils.tex}
-%\input{specialization.tex}
+\input{specialization.tex}
 
 %\bibliographystyle{alpha}
 %\bibliography{masterarbeit-bib}{}

@@ -27,8 +27,10 @@
 \newcommand{\Spec}{\operatorname{Spec}}
 \newcommand{\Ext}{\operatorname{Ext}}
 
-\newcommand{\ses}[3]{0 \longrightarrow #1 \longrightarrow #2 \longrightarrow #3 \longrightarrow 0}
-\newcommand{\sesarrows}[5]{0 \longrightarrow #1 \xlongrightarrow{#2} #3 \xlongrightarrow{#4} #5 \longrightarrow 0}
+\newcommand{\xto}[1]{\xrightarrow{#1}}
+
+\newcommand{\ses}[3]{0 \to #1 \to #2 \to #3 \to 0}
+\newcommand{\sesarrows}[5]{0 \to #1 \xto{#2} #3 \xto{#4} #5 \to 0}
 
 % The perfect :=
  \newcommand*{\defeq}{\mathrel{\rlap{
@@ -75,8 +77,9 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 \newcommand{\VV}{\mathbb{V}}
 \renewcommand{\AA}{\mathbb{A}} % Could maybe break things. \AA is for the angstrom.
 
-\renewcommand{\to}{\longrightarrow}
-\newcommand*{\injectto}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+%\renewcommand{\to}{\longrightarrow}
+%\newcommand*{\injectto}{\ensuremath{\lhook\joinrel\relbar\joinrel\rightarrow}}
+\newcommand{\injectto}{\lhook\joinrel\rightarrow}
 \newcommand{\pr}{\mathrm{pr}}
 %\newcommand{\isom}{}
 %\renewcommand{\tilde}{^{\~}}
@@ -87,3 +90,4 @@ mysymbol/.style={start anchor=center,end anchor=center,draw=none}
 \newcommand{\Supp}{\operatorname{Supp}}
 
 \newcommand{\coker}{\operatorname{coker}}
+\newcommand{\Sym}{\operatorname{Sym}}

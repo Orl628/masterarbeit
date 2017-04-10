@@ -5,9 +5,6 @@ To do.
 	- start from general multiplication by elements of the global sections, with pullbacks
 	- specialize to invertible scalars
 
-* Cut unnecessary Lange section. Just take the construction for the universal extension and prove it.
-	- put it in an easily reusable file.
-
 * Add metadata for Hemminghaus citation.
 
 * Replace Hemminghaus citation with own proof

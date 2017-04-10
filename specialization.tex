@@ -5,19 +5,20 @@ In this section we collect some facts about specialization phenomena. We say tha
 \begin{remark} \label{rem:scalars-on-ext} Let
 	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{g}{\mc{G}} \]
 	be a short exact sequence of coherent sheaves over a $k$-scheme $X$ and let $\xi \in \Ext^1(\mc{G},\mc{F})$ be the corresponding element. If $a \in H^0(X,\mc{O}^{\times}_X)$, then the element $a\xi$ corresponds to the sequence
-	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{a^{-1}g}{\mc{G}}. \] To see this, consider the map of exact sequences
-	\[\begin{tikzcd}
-		0 \arrow{r} &
-		\mc{F} \arrow{r}{f} \arrow[equal]{d} &
-		\mc{E} \arrow{r}{a^{-1}g} \arrow[equal]{d} &
-		\mc{G} \arrow{r} \arrow{d}{a} &
-		0 \\
-		0 \arrow{r} & \mc{F} \arrow{r}{f} & \mc{E} \arrow{r}{g} & \mc{G} \arrow{r} & 0
-	\end{tikzcd} \]
-	% Let $\delta, \delta' \from \Hom(\mc{G},\mc{G}) \to \Ext^1(\mc{G},\mc{F})$ be the boundary homomorphisms associated to the upper and lower sequence respectively. We have on the one hand $\delta'(\id) = a \delta(\id)$ by naturality, and on the other hand $\delta(\id) = \xi$ since this is the way extensions are identified with elements of $\Ext^1$.
-	and use the naturality of the boundary homomorphism.
-	% maybe too wordy, maybe mention the correspondence explicitely somewhere else.
-	% mention general scalar multiplication explicitely with pullbacks.
+	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{a^{-1}g}{\mc{G}}.\]
+	% To see this, consider the map of exact sequences
+	% \[\begin{tikzcd}
+	% 	0 \arrow{r} &
+	% 	\mc{F} \arrow{r}{f} \arrow[equal]{d} &
+	% 	\mc{E} \arrow{r}{a^{-1}g} \arrow[equal]{d} &
+	% 	\mc{G} \arrow{r} \arrow{d}{a} &
+	% 	0 \\
+	% 	0 \arrow{r} & \mc{F} \arrow{r}{f} & \mc{E} \arrow{r}{g} & \mc{G} \arrow{r} & 0
+	% and use the naturality of the boundary homomorphism.
+	% % maybe too wordy, maybe mention the correspondence explicitely somewhere else.
+	% \end{tikzcd} \]
+	% % Let $\delta, \delta' \from \Hom(\mc{G},\mc{G}) \to \Ext^1(\mc{G},\mc{F})$ be the boundary homomorphisms associated to the upper and lower sequence respectively. We have on the one hand $\delta'(\id) = a \delta(\id)$ by naturality, and on the other hand $\delta(\id) = \xi$ since this is the way extensions are identified with elements of $\Ext^1$.
+	% % mention general scalar multiplication explicitely with pullbacks.
 \end{remark}
 
 \begin{example}
@@ -31,7 +32,7 @@ In this section we collect some facts about specialization phenomena. We say tha
 	Furthermore, we have $\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k$.
 	By \Cref{cor:universal-extension}, there exists an extension of the form
 	\[\ses{\mc{O}\boxtimes \mc{O}_{\AA^1}}{\mc{E}_{\text{univ}}}{\mc{O}(2)\boxtimes \mc{O}_{\AA^1}}\]
-	such that for all nonzero rational points $\xi\in\AA^1 = \VV(\Ext^1(\mc{O}(2),\mc{O})\dual)$ we have $\mc{E}_{\text{univ}}|_{\xi \times \AA^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$ and $\mc{E}_{\text{univ}}|_{0\times \AA^1} \simeq \mc{O} \oplus \mc{O}(2)$. Note that $\mc{E}_{\text{univ}}$ has to be locally free as the end terms of the sequence are.
+	such that for all nonzero rational points $\xi\in\AA^1 = \VV(\Ext^1(\mc{O}(2),\mc{O})\dual)$ we have the isomorphisms $\mc{E}_{\text{univ}}|_{\xi \times \AA^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$ and $\mc{E}_{\text{univ}}|_{0\times \AA^1} \simeq \mc{O} \oplus \mc{O}(2)$. Note that $\mc{E}_{\text{univ}}$ has to be locally free as the end terms of the sequence are.
 \end{example}
 
 \begin{remark} \label{rem:specialization-sum}
@@ -46,8 +47,7 @@ In this section we collect some facts about specialization phenomena. We say tha
 	s^{b_1}&        &	   &           \\
 	t^{b_2}& s^{b_2}&      &           \\
 	       & t^{b_3}&\ddots&           \\
-	       &        &\ddots&           \\
-	       &        &      &s^{b_{m-1}}\\
+	       &        &\ddots&s^{b_{m-1}}\\
 	       &        &      &t^{b_m}
 	\end{pmatrix} 
 	\]
@@ -61,7 +61,7 @@ In this section we collect some facts about specialization phenomena. We say tha
 \end{remark}
 %maybe prove this?
 
-\begin{proposition}
+\begin{proposition} \label{specialization-partitions}
 	Let $b_1,\dotsc,b_m$ be non-negative numbers and $\pi$ a partition of the set $\{1,\dotsc,m\}$. For a set of indices $I\in \pi$, let $b'_I \coloneqq \sum_{i \in I} b_i$. Then the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i)$ on $\PP^1$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I) \oplus \mc{O}^{\oplus m-\abs{\pi}}$.	
 \end{proposition}
 
@@ -72,3 +72,7 @@ In this section we collect some facts about specialization phenomena. We say tha
 	\]
 	By \Cref{rem:scalars-on-ext}, scalar multiplication by $\lambda \neq 0$ does not change the isomorphism class of the middle term of the sequence, hence there exists a one-dimensional subspace $k \injectto \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ such that each nonzero element corresponds to an exact sequence of the same form. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then, the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
 \end{proof}
+
+\begin{remark}
+	By twisting the exact sequence in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
+\end{remark}

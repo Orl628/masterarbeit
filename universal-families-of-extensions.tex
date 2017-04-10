@@ -1,14 +1,58 @@
 \section{Universal Families of Extensions}
 
-The material of this section is taken from the article \cite{lange-universal-extensions}.
-
 Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
 
 Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences of the form
 \[
 	\ses{\mc{G}}{\mc{E}}{\mc{F}},
 \]
-where two such sequences are equivalent if there exists an isomorphism between them that induces the identity on $\mc{F}$ and $\mc{G}$. The set of these equivalence classes can be given the structure of a $\Gamma(S,\mc{O}_S)$-module, see for example \cite[sec.\ 3.4]{weibel-homological-algebra}. This correspondence is functorial in both arguments, and preserves $\Gamma(S, \mc{O}_S)$-module structure.
+where two such sequences are equivalent if there exists an isomorphism between them that induces the identity on $\mc{F}$ and $\mc{G}$. The set of these equivalence classes can be given the structure of a $H^0(S,\mc{O}_S)$-module, see for example \cite[{}3.4]{weibel-homological-algebra}. This correspondence is functorial in both arguments, and preserves the $H^0(S, \mc{O}_S)$-module structure.
+
+Explicitely, the sum of two elements of $\Ext^1$ corresponds to the Baer sum of the associated extensions, while the scalar multiplication of an extension
+as above by $a\in H^0(S,\mc{O}_S)$ is given by the pullback sequence along the map $\mc{F}\xto{a}\mc{F}$.
+
+The next proposition shows there exists a $k$-scheme $V$ that parametrizes the points of $\Ext^{1}_X(\mc{F},\mc{G})$.
+
+\begin{proposition} \label{cor:universal-extension}
+Let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. On the scheme $X\times V$ there exists an extension
+	\[
+		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{F}}{\mc{E}}{\pullb{\pr_1}\mc{G}}
+	\]
+Such that for all affine $k$-schemes $Y$, the map
+$\Hom(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ defined by
+$\alpha \mapsto \pullb{(\id_X\times \alpha)} \xi_{\mathrm{univ}}$
+is an isomorphism, functorial in $Y$.
+In particular, we have an isomorphism $\Hom(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
+\end{proposition}
+
+\begin{proof}
+Write $Y=\Spec(A)$. We aim to construct a functorial isomorphim
+\[
+\Hom(Y,V)\simeq \Ext^1_{X\times Y}(\mc{F}_Y, \mc{G}_Y).
+\]
+Given such an isomorphism for all $Y$, the required universal extension is the image of $\id\in\Hom(V,V)$.
+
+Note that there exist functorial isomorphisms
+\begin{align*}
+\Hom(Y,V)
+\simeq & \Hom_{\text{k-alg}}(\Sym\Ext^1_X(\mc{F},\mc{G})\dual,A) 
+\simeq \Hom_{\text{k-mod}}(\Ext^1_X(\mc{F},\mc{G})\dual,A) \\
+\simeq & A \otimes_k \Ext^1_{X}(\mc{F},\mc{G}).
+\end{align*}
+For the final isomorphism
+$A \otimes_k \Ext^1_{X}(\mc{F},\mc{G})\simeq
+\Ext^1_{X\times Y}(\mc{F}_Y,\mc{G}_Y),$
+it suffices to prove that the $\delta$-functors\footnotemark{} $A\otimes_k \Hom_X(\mc{F},-)$ and
+$\Hom_{X\times Y}(\mc{F}_Y, {-}_Y)$ are canonically isomorphic.
+
+\footnotetext{Recall that $A\otimes_k -$ is exact.}
+
+In fact, there exists a canonical homomorphism $A\otimes_k \Hom_X(\mc{F},\mc{G}) \to\Hom_{X\times Y}(\mc{F}_Y, {\mc{G}}_Y)$, functorial in $\mc{G}$, that sends an elementar tensor $a \otimes u$ to the homomorphism $a\otimes u$. This is an isomorphism on stalks by
+\cite[Ch.\ \textsc{I}, \S 2.10]{bourbaki-commutative-algebra}.
+There, we need the assumptions that $\mc{F}$ is coherent and $X$ Noetherian. 
+\end{proof}
+
+The scheme $V$ of \Cref{cor:universal-extension} is a special case of the solution to a more general moduli problem of classifying relative extensions of sheaves. The rest of this section sketches the more general situation. The material is taken from the article \cite{lange-universal-extensions}.
 
 \begin{definition}
 	\textbf{1.} The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
@@ -19,7 +63,7 @@ where two such sequences are equivalent if there exists an isomorphism between t
 	\[
 		\Phi_s = \Phi_{s,\mc{F},\mc{G}}
 		\from \Ext^1_X(\mc{F},\mc{G})
-		\longrightarrow \Ext^1_{X_s}(\mc{F}_s, \mc{G}_s)
+		\to \Ext^1_{X_s}(\mc{F}_s, \mc{G}_s)
 	\]
 	by restricting extensions of $\mc{F}$ by $\mc{G}$ to the fiber $X_s$. This is possible since $\mc{F}$ is flat over $S$.
 
@@ -50,7 +94,7 @@ where two such sequences are equivalent if there exists an isomorphism between t
 	\[
 		\tau^i_{g} \from \pullb{g}\EXT^i_{f}
 		(\mc{F},\mc{G})
-		\longrightarrow
+		\to
 		\EXT^i_{f_Y}
 		(\pullb{g_X}\mc{F}, \pullb{g_X}\mc{G}).
 	\]
@@ -58,7 +102,7 @@ where two such sequences are equivalent if there exists an isomorphism between t
 \end{proposition}
 
 \begin{definition}
-	We say that $\EXT^i_{f}(\mc{F},\mc{G})$ \emph{commutes with base change} if for all morphisms of Noetherian schemes $g \from Y \longrightarrow S$, the base change homomorphism $\tau^i_g$ is an isomorphism.
+	We say that $\EXT^i_{f}(\mc{F},\mc{G})$ \emph{commutes with base change} if for all morphisms of Noetherian schemes $g \from Y \to S$, the base change homomorphism $\tau^i_g$ is an isomorphism.
 \end{definition}
 
 \begin{proposition}
@@ -86,10 +130,10 @@ where two such sequences are equivalent if there exists an isomorphism between t
 	$
 	as the composition
 	\begin{align*}
-		H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)) &
-		\xrightarrow{1\otimes \id} 
+		H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y))
+		\xto{1\otimes \id} & 
 		H^0(Y',\pullb{u}\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)) \\
-		& \xrightarrow{H^0(\tau^1_u)} 
+		\xto{H^0(\tau^1_u)} &
 		H^0(Y',\EXT^1_{f_{Y'}}(\pullb{u_{X_Y}}\mc{F}_{Y'},\pullb{u_{X_Y}}\mc{G}_{Y'})).
 	\end{align*}
 
@@ -111,10 +155,10 @@ where two such sequences are equivalent if there exists an isomorphism between t
 	The spectral sequence $H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$ gives an exact sequence
 	\begin{align*}
 		0
-		& \xlongrightarrow{} H^1(S,\pushf{f}\HOM(\mc{F},\mc{G}))
-		 \xlongrightarrow{\varepsilon} \Ext^1_X(\mc{F},\mc{G})
-		 \xlongrightarrow{\mu} H^0(S,\EXT^1_f(\mc{F},\mc{G})) \\
-		& \xlongrightarrow{d_2} H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})).
+		 \to & H^1(S,\pushf{f}\HOM(\mc{F},\mc{G}))
+		 \xto{\varepsilon} \Ext^1_X(\mc{F},\mc{G})
+		 \xto{\mu} H^0(S,\EXT^1_f(\mc{F},\mc{G})) \\
+		 \xto{d_2} & H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})).
 	\end{align*}
 \end{remark}
 
@@ -133,19 +177,16 @@ where two such sequences are equivalent if there exists an isomorphism between t
 \begin{corollary}
 	Suppose that $S$ is affine and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. The functor
 	\[
-		Y \longmapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
-		\from \{\text{Affine $S$-schemes}\} \to \{\text{Sets}\}
+		\{\text{Affine $S$-schemes}\} \to \{\text{Sets}\}
+		\colon
+		Y \mapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
 	\]
 	is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
 \end{corollary}
 
-\begin{corollary} \label{cor:universal-extension}
-	Finally, let $S = \Spec(k),$ let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. On the scheme $X\times V$ there exists an extension
-	\[
-		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{F}}{\mc{E}}{\pullb{\pr_1}\mc{G}}
-	\]
-	which is universal on the category of affine $k$-schemes. In particular, pulling back $\xi_{\mathrm{univ}}$ defines an isomorphism $\Hom(\Spec(k),V)\xlongrightarrow{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
-\end{corollary}
+\begin{remark}
+As a special case of the above, we recover \Cref{cor:universal-extension}.
+\end{remark}
 
 \begin{remark}
 	The article \cite{lange-universal-extensions} continues on to define a ``projectivized'' version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
