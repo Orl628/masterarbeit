@@ -19,7 +19,7 @@ given by
 	\mf{X} = \{(x, q) \in \PP^3 \times \schemeofquartics : x \in q\}.
 \]
 The family $\mf{X}$ is a closed subscheme of
-$\PP^3 \times \schemeofquartics$. 
+$\PP^3 \times \schemeofquartics$. The morphism $\pi$ is projective and flat. 
 
 % which can be seen as follows. Let the index $I$ range over the tuples of the 
 % form $(i_0,i_1,i_2,i_3)$ with $i_j \geq 0$ and $\sum i_j = 4$, and let $x_I$ 
@@ -41,7 +41,7 @@ Let $k\geq 1$. The following statements hold:
 
 \myitem{1} If $q\in \schemeofquartics$ then
 $h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+3}{3} - \binom{k-1}{3}$.
-In particular this dimension is independent of the rank $q$.
+In particular this number is independent of the point $q$.
 
 \myitem{2} The sheaf
 $\pushf{\pi}\mc{L}^{\otimes k}$
@@ -73,7 +73,7 @@ $\pullb{\rho}\pushf{\pi}\mc{L}^{\otimes k}
 Let $t \subseteq \schemeofquartics$ be the closed subscheme defined as the image of a linear embedding
 $\PP^1\to \schemeofquartics$.
 We call $t$ a \emph{Lefschetz pencil} of quartics. Its universal family is the scheme
-$\mf{X}_{\PP^1}$, which comes equipped with the pullback line bundle
+$\mf{X}_{\PP^1}$, which comes with the polarization
 $\mc{L}_{\PP^1}$. The situation is summarized in the picture below:
 \[
 \cartesiansquare{\mf{X}_{\PP^1}}{}{\mf{X}}
@@ -128,24 +128,27 @@ over $\PP^1$.
 \begin{definition}
 Let $k\geq 1$.
 
-\myitem{1} A \emph{type candidate} for $V_k$ is a non-decreasing tuple
+\myitem{1} A \emph{type candidate} for $V_k$ is a collection\footnotemark{}
 $(d_1,\dotsc,d_r)$
 of non-negative integers
 with $r=\rank V_k$ and
 $\sum d_i = \binom{k-1}{3}$.
 
+\footnotetext{i.e.\ an equivalence class of tuples up to reordering of the entries}
+
 \myitem{2} The \emph{general type candidate} for $V_k$ is the unique\footnotemark{} type candidate for $V_k$ of the form
 $(d,\dotsc,d,d+1,\dotsc d+1)$.
 %maybe mention relationship with specialization on ext^1.
-\footnotetext{The equations $ad+bd+b = \binom{k-1}{3}$ and $a+b=\rank V_{k}$ have an unique solution $(a,b)$.}
+\footnotetext{The equations $ad+bd+b = \binom{k-1}{3}$ and $a+b=\rank V_{k}$ have a unique solution $(a,b)$.}
 
 \myitem{3} Let $t$ be a Lefschetz pencil of quartics. The \emph{type} of $V_{k,t}$ is the unique type candidate $(d_i)$ such that
-$V_{k_t} \simeq \bigoplus \mc{O}(d_i)$.
+$V_{k,t} \simeq \bigoplus_i \mc{O}(d_i)$.
 
-\myitem{4} We say that $V_{k,t}$ has \emph{general type} if its type $(d_i)$ is a general type candidate.
+\myitem{4} We say that $V_{k,t}$ has \emph{general type} if its type is a general type candidate.
 \end{definition}
 
-The rational points of $\Gr(2,35)$ correspond to the Lefschetz pencils of quartics $t \subseteq \schemeofquartics$ in the following way. Let $P$ the universal $\PP^1$-bundle over $\Gr(2,35)$. It comes equipped with a projection map $P \to \PP^3$ such that for all Lefschetz pencils of quartics $t'$ there exists a unique rational point $t\in \Gr(2,35)$ and a commutative diagram
+The rational points of $\Gr(2,35)$ correspond to the Lefschetz pencils of quartics $t \subseteq \schemeofquartics$ in the following way. Let $P$ the universal $\PP^1$-bundle over $\Gr(2,35)$. It comes equipped with a projection map $P \to \schemeofquartics$ such that for all Lefschetz pencils of quartics $t'$ there exists a unique rational point $t\in \Gr(2,35)$
+such that the image of the fiber $P_t$ in $\schemeofquartics$ is $t'$.
 \[
 \begin{tikzcd} [ampersand replacement = \&]
 P_t \arrow{r} \arrow{d} \MySymb{\times}{dr} \& P \arrow{r}{p} \arrow{d}{\phi}\&
@@ -153,8 +156,6 @@ P_t \arrow{r} \arrow{d} \MySymb{\times}{dr} \& P \arrow{r}{p} \arrow{d}{\phi}\&
 \Spec(\kappa(t))\arrow{r} \& \Gr(2,35) \& \ 
 \end{tikzcd}
 \]
-such that the image of the fiber $P_t$ in $\schemeofquartics$ is $t'$.
-
 \begin{definition}
 Let $k \geq 1$ and $(d_i)$ be a type candidate for $V_k$. We define the set
 $Z_{(d_i)}$ of all rational points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type $(d_i)$. For the set of points $t$ where $V_{k,t}$ has generic type, we also write $Z_{\text{gen}}$.
@@ -180,27 +181,29 @@ $Z_{(d_i)}$ of all rational points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type 
 \begin{proposition}
 	The set $Z_{\text{gen}}$ is Zariski open. Its complement is the union
 	\[
-		\Gr(2,35) \setminus \generallocus =
 		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-d-1)) \cup
 		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-d)\dual),
 	\]
 	where $d$ is the smaller of the two numbers appearing in the general type candidate $(d,\dotsc,d,d+1,\dotsc,d+1)$ for $V_k$.
 \end{proposition}
 \begin{proof}
-	We begin by finding a characterization of the set $\generallocus$ via cohomology.
-
-	Let $t\in \Gr(2,35)$ be a rational point, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(d_i)$. The conditions that for all $i$ we have $d\leq d_i$ and $d_i \leq d+1$ are equivalent to the conditions
-	\[H^1(P_t, V_{k,t}(-d-1))=0
+	We begin by characterizing the set $\generallocus$ via cohomology. Let $t\in \Gr(2,35)$ be a rational point, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(d_i)$. We have $t\in \generallocus$ if and only if $d\leq d_i$ and $d_i \leq d+1$ for all $i$, which holds if and only if the equalities
+	$
+	H^1(P_t, V_{k,t}(-d-1))=0
 	\text{ and }
-	H^1(P_t, V_{k,t}(-d)\dual)=0,\] respectively. Both conditions together are in turn equivaleng to $t\in \generallocus$.
+	H^1(P_t, V_{k,t}(-d)\dual)=0
+	$
+	both hold.
 
 	Next, we want to use the Cohomology and Base Change Theorem \cite[{}28.1.6]{vakil-algebraic-geometry} on the map 
-	$\phi \from P \to \Gr(2,25)$, which is a $\PP^1$-bundle, in particular proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\Gr(2,35)$.
+	$\phi \from P \to \Gr(2,25)$, which is a $\PP^1$-bundle, proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\Gr(2,35)$.
 
 	For all rational $t\in \Gr(2,35)$ we have
-	\[h^2(P_t, \pullb{p}V_{k,t}(-d-1)) = 0
+	$
+	h^2(P_t, \pullb{p}V_{k,t}(-d-1)) = 0
 	\text{ and }
-	h^2(P_t,\pullb{p}V_{k,t}(-d)\dual)=0.\]
+	h^2(P_t,\pullb{p}V_{k,t}(-d)\dual)=0.
+	$
 	Since the sheaves $\pullb{p}V_{k,t}(-d-1)$ and $\pullb{p}V_{k,t}(-d)\dual$ are locally free and coherent, the Cohomology and Base Change Theorem applies and we have 
 	\[(R^1 \pushf{\phi}\pullb{p} V_{k}(-d-1))_t = H^1(P_t,V_{k,t}(-d-1))\]
 	\text{ and }
@@ -229,15 +232,15 @@ $\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-d)\dual)$
 are determinantal varieties.
 \end{proposition}
 \begin{proof}
-To simplify notation, we set
-\[r_1 \coloneqq \dim H^0(\PP^3, \mc{O}(k))
+To simplify notation, set
+$r_1 \coloneqq \dim H^0(\PP^3, \mc{O}(k))
 \text{ and }
-r_2 \coloneqq \dim H^0(\PP^3, \mc{O}(k-4)).\]
-Rewrite the exact sequence from \Cref{verlinde-exact-sequence} as
-\begin{align}
-\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. \label{verlinde-simplified-exact-sequence}
+r_2 \coloneqq \dim H^0(\PP^3, \mc{O}(k-4)),$
+and rewrite the exact sequence from \Cref{verlinde-exact-sequence} as
+\begin{align} \label{verlinde-simplified-exact-sequence}
+\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. \tag{$\star$}
 \end{align}
-\myitem{1} Twisting the sequence (\ref{verlinde-simplified-exact-sequence}) with $\mc{O}(-d-1)$ and pulling back to $P$ gives an exact sequence
+\myitem{1} Twisting the sequence \ref{verlinde-simplified-exact-sequence} with $\mc{O}(-d-1)$ and pulling back to $P$ gives an exact sequence
 \[
 0
 \to  {\pullb{p}\mc{O}(-d-2)^{r_2}}
@@ -259,11 +262,11 @@ R^1\pushf{\phi}\pullb{p} V_k(-d-1)
 \to 0.
 \]
 Note that since the numbers
-\[
+$
 h^{1}_{2}\coloneqq h^1(P_t, \mc{O}(-d-2)^{r_2})
 \text{ and }
 h_{1}^{1}\coloneqq h^1(P_t, \mc{O}(-d-1)^{r_1})
-\]
+$
 do not depend on the point $t$, Grauert's Theorem applies, and the first two terms of the above sequence are locally free and coherent of rank $h_1^2$ and $h_1^1$, respectively. Since taking the fiber is right-exact, we see that for all $t$ we have
 $(R^1\pushf{\phi}\pullb{p} V_k(-d-1))_t \neq 0$ if and only if $\coker(\alpha_t) \neq 0$. Concluding, we have
 \[
@@ -272,19 +275,35 @@ $(R^1\pushf{\phi}\pullb{p} V_k(-d-1))_t \neq 0$ if and only if $\coker(\alpha_t)
 \]
 As a final remark, note that $h^1_1 = d r_1 = d \binom{k+3}{3}.$
 
-\myitem{2} The proof for this point is analogous to the first point. We start with the sequence (\ref{verlinde-simplified-exact-sequence}), twist with $\mc{O}(-d)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for each rational $t\in \Gr(2,35)$ we have $h^1(P_t, \mc{O}(d)^{r_1})=0$, we obtain an exact sequence
+\myitem{2} The proof for this point is analogous to the one for the first point. We start with the sequence \ref{verlinde-simplified-exact-sequence}, twist with $\mc{O}(-d)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for each rational $t\in \Gr(2,35)$ we have $h^1(P_t, \mc{O}(d)^{r_1})=0$, we obtain an exact sequence
 \[
 	{\pushf{\phi}\pullb{p}\mc{O}(d)^{r_1} }
 \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(d+1)^{r_2}}
 \to	{R^1 \pushf{\phi}\pullb{p} V_{k}(-d)\dual}
 \to 0.
 \]
-Since the numbers \[h^0_1 \coloneqq h^0(P_t,\mc{O}(d)^{r_1}) \text{ and }
-h^0_2 \coloneqq h^0(P_t, \mc{O}(d+1)^{r_2})\] do not depend on the point $t$, again by Grauert's Theorem the first two terms of the sequence are locally free of rank $h^0_1$ and $h^0_2$, respectively. As before, we obtain the characterization
+Since the numbers
+$
+h^0_1 \coloneqq h^0(P_t,\mc{O}(d)^{r_1}) \text{ and }
+h^0_2 \coloneqq h^0(P_t, \mc{O}(d+1)^{r_2})
+$
+do not depend on the point $t$, again by Grauert's Theorem the first two terms of the sequence are locally free of rank $h^0_1$ and $h^0_2$, respectively. As before, we obtain the characterization
 \[
 	\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-d)\dual)
 	= \{t : \rank (\beta_t)\leq h^{0}_2 - 1\}.
 \]
 Here, we have $h_2^0 = (d+2)r_2 = (d+2)\binom{k-1}{3}.$
 % Gilt Serre-dualität auch für Familien?
+\end{proof}
+
+\begin{proposition}
+Of the four type candidates
+\[
+(0,\dotsc,0,1,1,1,1),\ (0,\dotsc,0,1,1,2),\ (0,\dotsc,0,2,2),\ (0,\dotsc,0,1,3),\ (0,\dotsc,0,4)
+\]
+for $V_5$, only the first two occur as types of some $V_{k,t}$.
+\end{proposition}
+
+\begin{proof}
+{}[Lange Rechnung, wird noch hinzugefügt.]
 \end{proof}

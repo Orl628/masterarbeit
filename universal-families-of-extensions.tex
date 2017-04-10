@@ -2,33 +2,34 @@
 
 Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
 
-Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences of the form
+Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences, or \emph{extensions}, of the form
 \[
 	\ses{\mc{G}}{\mc{E}}{\mc{F}},
 \]
-where two such sequences are equivalent if there exists an isomorphism between them that induces the identity on $\mc{F}$ and $\mc{G}$. The set of these equivalence classes can be given the structure of a $H^0(S,\mc{O}_S)$-module, see for example \cite[{}3.4]{weibel-homological-algebra}. This correspondence is functorial in both arguments, and preserves the $H^0(S, \mc{O}_S)$-module structure.
+where two such sequences are equivalent if there exists an isomorphism between them that induces the identity on $\mc{F}$ and $\mc{G}$. The set of these equivalence classes can be given the structure of an $H^0(S,\mc{O}_S)$-module, see for example \cite[{}3.4]{weibel-homological-algebra}. This correspondence is functorial in both arguments, and preserves the $H^0(S, \mc{O}_S)$-module structure.
 
-Explicitely, the sum of two elements of $\Ext^1$ corresponds to the Baer sum of the associated extensions, while the scalar multiplication of an extension
-as above by $a\in H^0(S,\mc{O}_S)$ is given by the pullback sequence along the map $\mc{F}\xto{a}\mc{F}$.
+Explicitely, the sum of two elements of $\Ext^1$ corresponds to the Baer sum of the associated extensions, while the multiplication of an extension
+as above by a scalar $a\in H^0(S,\mc{O}_S)$ is given by the pullback sequence along the map $\mc{F}\xto{a}\mc{F}$.
 
 The next proposition shows there exists a $k$-scheme $V$ that parametrizes the points of $\Ext^{1}_X(\mc{F},\mc{G})$.
 
 \begin{proposition} \label{cor:universal-extension}
-Let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. On the scheme $X\times V$ there exists an extension
+Let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. There exists an extension
 	\[
-		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{F}}{\mc{E}}{\pullb{\pr_1}\mc{G}}
+		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{G}}{\mc{E}}{\pullb{\pr_1}\mc{F}}
 	\]
-Such that for all affine $k$-schemes $Y$, the map
+over $X\times V$
+such that for all Noetherian affine $k$-schemes $Y$, the map
 $\Hom(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ defined by
 $\alpha \mapsto \pullb{(\id_X\times \alpha)} \xi_{\mathrm{univ}}$
-is an isomorphism, functorial in $Y$.
-In particular, we have an isomorphism $\Hom(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
+is a bijection, functorial in $Y$.
+In particular, pulling back $\xi_{\text{univ}}$ gives a bijection $\Hom(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
 \end{proposition}
 
 \begin{proof}
 Write $Y=\Spec(A)$. We aim to construct a functorial isomorphim
 \[
-\Hom(Y,V)\simeq \Ext^1_{X\times Y}(\mc{F}_Y, \mc{G}_Y).
+\Hom(Y,V)\simeq \Ext^1_{X_Y}(\mc{F}_Y, \mc{G}_Y).
 \]
 Given such an isomorphism for all $Y$, the required universal extension is the image of $\id\in\Hom(V,V)$.
 
@@ -41,9 +42,9 @@ Note that there exist functorial isomorphisms
 \end{align*}
 For the final isomorphism
 $A \otimes_k \Ext^1_{X}(\mc{F},\mc{G})\simeq
-\Ext^1_{X\times Y}(\mc{F}_Y,\mc{G}_Y),$
+\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y),$
 it suffices to prove that the $\delta$-functors\footnotemark{} $A\otimes_k \Hom_X(\mc{F},-)$ and
-$\Hom_{X\times Y}(\mc{F}_Y, {-}_Y)$ are canonically isomorphic.
+$\Hom_{X_Y}(\mc{F}_Y, {-}_Y)$ are canonically isomorphic.
 
 \footnotetext{Recall that $A\otimes_k -$ is exact.}
 
@@ -52,7 +53,7 @@ In fact, there exists a canonical homomorphism $A\otimes_k \Hom_X(\mc{F},\mc{G})
 There, we need the assumptions that $\mc{F}$ is coherent and $X$ Noetherian. 
 \end{proof}
 
-The scheme $V$ of \Cref{cor:universal-extension} is a special case of the solution to a more general moduli problem of classifying relative extensions of sheaves. The rest of this section sketches the more general situation. The material is taken from the article \cite{lange-universal-extensions}.
+The scheme $V$ of \Cref{cor:universal-extension} is a special case of the solution to the more general moduli problem of classifying relative families of sheaves. The rest of this section sketches the more general situation. The material is taken from the article \cite{lange-universal-extensions}.
 
 \begin{definition}
 	\textbf{1.} The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
@@ -137,13 +138,13 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 		H^0(Y',\EXT^1_{f_{Y'}}(\pullb{u_{X_Y}}\mc{F}_{Y'},\pullb{u_{X_Y}}\mc{G}_{Y'})).
 	\end{align*}
 
-	\textbf{2.} Given a family of extensions $\xi = (\xi_y)_{y\in Y}$ of $\mc{F}_Y$ by $\mc{G}_Y$ over $Y$, we set $(\pullb{u}\xi)_{y'} \coloneqq \pullb{u}\xi_{u(y')}$ for every $y' \in Y'$. This defines a family $\pullb{u}\xi$ of extensions of $\mc{F}_{Y'}$ by $\mc{G}_{Y'}$ over $Y'$. Moreover, if the family $\xi$ is globally defined, then so is its pullback $\pullb{u}\xi$.
+	\textbf{2.} Given a family of extensions $\xi = (\xi_y)_{y\in Y}$ of $\mc{F}_Y$ by $\mc{G}_Y$ over $Y$, we set $(\pullb{u}\xi)_{y'} \coloneqq \pullb{u}\xi_{u(y')}$ for every $y' \in Y'$. This defines a family $\pullb{u}\xi$ of extensions of $\mc{F}_{Y'}$ by $\mc{G}_{Y'}$ over $Y'$.
 
-	\textbf{3.} We define thus functors
+	\textbf{3.} We define thus the functors
 	\begin{align*}
 		& E,E' \from \{\text{Noeth.\ schemes over } S\} \to \{\text{Sets}\}; \\
 		%E'_{\text{glob}}
-		& E(Y) \coloneqq H^0(Y,\Ext^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)), \\
+		& E(Y) \coloneqq H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)), \\
 		& E'(Y) \coloneqq \{\text{families of extensions of $\mc{F}_Y$ by $\mc{G}_Y$ over } Y\}. \\
 %		& E'_{\glob}(Y) \coloneqq \{\text{globally defined families of extensions of $\mc{F}_Y$ by 
 %		$\mc{G}_Y$ over } Y\}.

@@ -1,6 +1,6 @@
 \section{Specialization}
 
-In this section we collect some facts about specialization phenomena. We say that a vector bundle $\mc{V}$ on a $k$-scheme $X$ \emph{specializes} to another vector bundle $\mc{V}'$ over the same scheme if there exists a vector bundle $\mc{W}$ on $\AA^1 \times X$ such that $\mc{W}|_{0 \times X} \simeq \mc{V'}$ and $\mc{W}|_{t \times X} \simeq \mc{V}$ for all rational $t \in \AA^1$.
+In this section we collect some facts about specialization phenomena. We say that a vector bundle $\mc{V}$ on a $k$-scheme $X$ \emph{specializes} to another vector bundle $\mc{V}'$ over the same scheme if there exists a vector bundle $\mc{W}$ on $\AA^1 \times X$ such that $\mc{W}|_{0 \times X} \simeq \mc{V'}$ and $\mc{W}|_{t \times X} \simeq \mc{V}$ for all rational $t \in \AA^1\setminus {0}$.
 
 \begin{remark} \label{rem:scalars-on-ext} Let
 	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{g}{\mc{G}} \]
@@ -24,15 +24,15 @@ In this section we collect some facts about specialization phenomena. We say tha
 \begin{example}
 	The vector bundle $\mc{O}(1)\oplus \mc{O}(1)$ on $\PP^1$ specializes to $\mc{O}\oplus \mc{O}(2)$.
 	This can be seen as follows.
-	Consider $\Ext^1(\mc{O}(2),\mc{O})$, whose elements correspond to extensions of the form
+	The elements of $\Ext^1(\mc{O}(2),\mc{O})$ correspond to extensions of the form
 	\[ \ses{\mc{O}}{\mc{E}}{\mc{O}(2)}\]
-	up to equivalence, the zero element corresponding to the split extension $\mc{E} = \mc{O} \oplus \mc{O}(2)$.
+	up to equivalence. The zero element corresponds to the split extension $\mc{E} = \mc{O} \oplus \mc{O}(2)$.
 	Note that all such extensions must have $\mc{E}$ locally free.
 	Considering the formulae for ranks and determinants of the components of the sequence, we see that the nonsplit extensions must have $\mc{E}=\mc{O}(1)\oplus\mc{O}(1)$.
 	Furthermore, we have $\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k$.
 	By \Cref{cor:universal-extension}, there exists an extension of the form
 	\[\ses{\mc{O}\boxtimes \mc{O}_{\AA^1}}{\mc{E}_{\text{univ}}}{\mc{O}(2)\boxtimes \mc{O}_{\AA^1}}\]
-	such that for all nonzero rational points $\xi\in\AA^1 = \VV(\Ext^1(\mc{O}(2),\mc{O})\dual)$ we have the isomorphisms $\mc{E}_{\text{univ}}|_{\xi \times \AA^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$ and $\mc{E}_{\text{univ}}|_{0\times \AA^1} \simeq \mc{O} \oplus \mc{O}(2)$. Note that $\mc{E}_{\text{univ}}$ has to be locally free as the end terms of the sequence are.
+	such that for all nonzero rational points $\xi\in\AA^1 = \VV(\Ext^1(\mc{O}(2),\mc{O})\dual)$ we have the isomorphisms $\mc{E}_{\text{univ}}|_{\xi \times \AA^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$ and $\mc{E}_{\text{univ}}|_{0\times \AA^1} \simeq \mc{O} \oplus \mc{O}(2)$. Note that $\mc{E}_{\text{univ}}$ is locally free as the end terms of the sequence are.
 \end{example}
 
 \begin{remark} \label{rem:specialization-sum}
@@ -67,12 +67,13 @@ In this section we collect some facts about specialization phenomena. We say tha
 
 \begin{proof}
 	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(n)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ of an exact sequence of the form
-	\[
-		\sesarrows{\mc{O}^{m-1}}{}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{}{\mc{O}(a)}.
-	\]
-	By \Cref{rem:scalars-on-ext}, scalar multiplication by $\lambda \neq 0$ does not change the isomorphism class of the middle term of the sequence, hence there exists a one-dimensional subspace $k \injectto \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ such that each nonzero element corresponds to an exact sequence of the same form. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then, the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
+	\begin{align} \label{chosen-exact-sequence}
+		\sesarrows{\mc{O}^{m-1}}{}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{}{\mc{O}(a)}. \tag{$\star$}
+	\end{align}
+	By \Cref{rem:scalars-on-ext}, scalar multiplication by $\lambda \neq 0$ does not change the isomorphism class of the middle term of the sequence, hence there exists a one-dimensional subspace $k \injectto \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ such that each nonzero element corresponds to an exact sequence of the form
+	\ref{chosen-exact-sequence}. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then, the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
 \end{proof}
 
 \begin{remark}
-	By twisting the exact sequence in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
+	By twisting the exact sequence \ref{chosen-exact-sequence} in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
 \end{remark}
