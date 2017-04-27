@@ -1,6 +1,18 @@
 \section{Specialization}
 
-In this section we collect some facts about specialization phenomena. We say that a vector bundle $\mc{V}$ on a $k$-scheme $X$ \emph{specializes} to another vector bundle $\mc{V}'$ over the same scheme if there exists a vector bundle $\mc{W}$ on $\AA^1 \times X$ such that $\mc{W}|_{0 \times X} \simeq \mc{V'}$ and $\mc{W}|_{t \times X} \simeq \mc{V}$ for all rational $t \in \AA^1\setminus {0}$.
+\begin{definition}
+	Let $\mc{V}$ and $\mc{V'}$ be vector bundles on a projective $k$-scheme $X$. We say that $\mc{V}$ \emph{specializes} to $\mc{V'}$ if there exists an affine $k$-scheme $Y$, spectrum of a discrete valuation ring, with generic point $\eta$ and closed point $\eta_0$, and a vector bundle $\mc{W}$ on
+	$Y\times X$
+	such that
+	$\mc{W}|_{\eta \times X} \simeq \eta\times\mc{V}$
+	and
+	$\mc{W}|_{\eta_0 \times X} \simeq \eta_0\times\mc{V'}$. 
+\end{definition}
+% Stack etc works out: see 2.24 in https://arxiv.org/pdf/math/9911199.pdf
+
+\begin{remark}
+	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $\mc{V}$ and $\eta \times \mc{V}$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
+\end{remark}
 
 \begin{remark} \label{rem:scalars-on-ext} Let
 	\[ \sesarrows{\mc{F}}{f}{\mc{E}}{g}{\mc{G}} \]

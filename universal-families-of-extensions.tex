@@ -1,6 +1,6 @@
 \section{Universal Families of Extensions}
 
-Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
+Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, and let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
 
 Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences, or \emph{extensions}, of the form
 \[
@@ -20,22 +20,22 @@ Let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. There exists an extension
 	\]
 over $X\times V$
 such that for all Noetherian affine $k$-schemes $Y$, the map
-$\Hom(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ defined by
+$\Mor_{k}(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ defined by
 $\alpha \mapsto \pullb{(\id_X\times \alpha)} \xi_{\mathrm{univ}}$
 is a bijection, functorial in $Y$.
-In particular, pulling back $\xi_{\text{univ}}$ gives a bijection $\Hom(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
+In particular, pulling back $\xi_{\text{univ}}$ gives a bijection $\Mor_{k}(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
 \end{proposition}
 
 \begin{proof}
 Write $Y=\Spec(A)$. We aim to construct a functorial isomorphim
 \[
-\Hom(Y,V)\simeq \Ext^1_{X_Y}(\mc{F}_Y, \mc{G}_Y).
+\Mor_{k}(Y,V)\simeq \Ext^1_{X_Y}(\mc{F}_Y, \mc{G}_Y).
 \]
-Given such an isomorphism for all $Y$, the required universal extension is the image of $\id\in\Hom(V,V)$.
+Given such an isomorphism for all $Y$, the required universal extension is the image of $\id\in\Mor_{k}(V,V)$.
 
 Note that there exist functorial isomorphisms
 \begin{align*}
-\Hom(Y,V)
+\Mor_{k}(Y,V)
 \simeq & \Hom_{\text{k-alg}}(\Sym\Ext^1_X(\mc{F},\mc{G})\dual,A) 
 \simeq \Hom_{\text{k-mod}}(\Ext^1_X(\mc{F},\mc{G})\dual,A) \\
 \simeq & A \otimes_k \Ext^1_{X}(\mc{F},\mc{G}).
@@ -48,33 +48,34 @@ $\Hom_{X_Y}(\mc{F}_Y, {-}_Y)$ are canonically isomorphic.
 
 \footnotetext{Recall that $A\otimes_k -$ is exact.}
 
-In fact, there exists a canonical homomorphism $A\otimes_k \Hom_X(\mc{F},\mc{G}) \to\Hom_{X\times Y}(\mc{F}_Y, {\mc{G}}_Y)$, functorial in $\mc{G}$, that sends an elementar tensor $a \otimes u$ to the homomorphism $a\otimes u$. This is an isomorphism on stalks by
+In fact, there exists a canonical homomorphism $A\otimes_k \Hom_X(\mc{F},\mc{G}) \to\Hom_{X\times Y}(\mc{F}_Y, {\mc{G}}_Y)$, functorial in $\mc{G}$, that sends an elementary tensor $a \otimes u$ to the homomorphism $a\otimes u$. This is an isomorphism on stalks by
 \cite[Ch.\ \textsc{I}, \S 2.10]{bourbaki-commutative-algebra}.
 There, we need the assumptions that $\mc{F}$ is coherent and $X$ Noetherian. 
 \end{proof}
 
 The scheme $V$ of \Cref{cor:universal-extension} is a special case of the solution to the more general moduli problem of classifying relative families of sheaves. The rest of this section sketches the more general situation. The material is taken from the article \cite{lange-universal-extensions}.
 
-\begin{definition}
-	\textbf{1.} The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
+\begin{definition}\begin{enumerate}
+	\item The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
 	$R^i(\pushf{f}\HOM(\mc{F},\mc{G}))
 	\from \Mod_{\mc{O}_X} \to \Mod_{\mc{O}_S}$.
 
-	\textbf{2.} For $s\in S$, define the homomorphism
+	\item For $s\in S$, define the homomorphism
 	\[
 		\Phi_s = \Phi_{s,\mc{F},\mc{G}}
 		\from \Ext^1_X(\mc{F},\mc{G})
 		\to \Ext^1_{X_s}(\mc{F}_s, \mc{G}_s)
 	\]
-	by restricting extensions of $\mc{F}$ by $\mc{G}$ to the fiber $X_s$. This is possible since $\mc{F}$ is flat over $S$.
+	by restricting extensions of $\mc{F}$ by $\mc{G}$ to the fiber $X_s$. This is well-defined, since $\mc{F}$ is flat over $S$.
 
-	\textbf{3.} A \emph{family of extensions} of $\mc{F}$ by $\mc{G}$ over $S$ is a family
+	\item A \emph{family of extensions} of $\mc{F}$ by $\mc{G}$ over $S$ is a family
 	\[
-		\xi_s \in \Ext^1_{X_s}(\mc{F}_s,\mc{G}_s) \quad (s\in S)
+		\xi_s \in \Ext^1_{X_s}(\mc{F}_s,\mc{G}_s),\quad s\in S
 	\]
 	such that there exists an open covering $\mathfrak{U}$ of $S$ and for all $U\in \mathfrak{U}$ an extension $\xi_U \in \Ext^1_{f^{-1}(U)}(\mc{F}_U,\mc{G}_U)$
 	with $\Phi_{s,\mc{F}_U,\mc{G}_U}(\xi_U) = \xi_s$ for all $s\in S$.
 	Such a family is \emph{globally defined} if we can take $\mathfrak{U} = \{S\}$.
+\end{enumerate}
 \end{definition}
 
 \begin{remark}
@@ -83,7 +84,7 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 
 \begin{proposition}
 	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
-	There exists a number $N\geq 0$ dependent on $\mc{G}$ such that for all quasi-coherent $\mc{O}_Y$-modules $\mc{M}$, all $i\geq 1$ and $n\geq N$ we have
+	There exists a number $N\geq 0$ depending on $\mc{G}$ such that for all quasi-coherent $\mc{O}_Y$-modules $\mc{M}$, all $i\geq 1$ and $n\geq N$ we have
 	\[
 		\EXT^i_{f_Y}(\mc{O}_{X_Y}(-n),\mc{G} \boxtimes \mc{M}) = 0
 	\]
@@ -113,18 +114,19 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 \end{proposition}
 
 \begin{remark}
+\begin{enumerate}
+	\item If $\tau^i_{s}$ is an isomorphism for all $s\in S$, then $\EXT_{f}^i(\mc{F},\mc{G})$ commutes with base change.
 
-	\textbf{1.} If $\tau^i_{s}$ is an isomorphism for all $s\in S$, then $\EXT_{f}^i(\mc{F},\mc{G})$ commutes with base change.
+	\item From \Cref{prop:ext-base-change} we conclude that if $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$, then $\EXT^1_f(\mc{F},\mc{G})$ is locally free.
 
-	\textbf{2.} We have directly from \Cref{prop:ext-base-change} that if $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$, then $\EXT^1_f(\mc{F},\mc{G})$ is locally free.
-
-	\textbf{3.} In case $S$ is reduced, if $\EXT^1_f(\mc{F},\mc{G})$ is locally free then $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$.
+	\item In case $S$ is reduced, if $\EXT^1_f(\mc{F},\mc{G})$ is locally free then $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$.
+\end{enumerate}
 \end{remark}
 
 \begin{definition} 
 	Let $u\from Y'\to Y$ be a morphism of Noetherian $S$-schemes.
 
-	\textbf{1.} We define a functoriality map
+	\begin{enumerate}\item We define a functoriality map
 	$H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y))
 	\to
 	H^0(Y',\EXT^1_{f_{Y'}}(\mc{F}_{Y'},\mc{G}_{Y'}))
@@ -138,22 +140,23 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 		H^0(Y',\EXT^1_{f_{Y'}}(\pullb{u_{X_Y}}\mc{F}_{Y'},\pullb{u_{X_Y}}\mc{G}_{Y'})).
 	\end{align*}
 
-	\textbf{2.} Given a family of extensions $\xi = (\xi_y)_{y\in Y}$ of $\mc{F}_Y$ by $\mc{G}_Y$ over $Y$, we set $(\pullb{u}\xi)_{y'} \coloneqq \pullb{u}\xi_{u(y')}$ for every $y' \in Y'$. This defines a family $\pullb{u}\xi$ of extensions of $\mc{F}_{Y'}$ by $\mc{G}_{Y'}$ over $Y'$.
+	\item Given a family of extensions $\xi = (\xi_y)_{y\in Y}$ of $\mc{F}_Y$ by $\mc{G}_Y$ over $Y$, we set $(\pullb{u}\xi)_{y'} \coloneqq \pullb{u}\xi_{u(y')}$ for every $y' \in Y'$. This defines a family $\pullb{u}\xi$ of extensions of $\mc{F}_{Y'}$ by $\mc{G}_{Y'}$ over $Y'$.
 
-	\textbf{3.} We define thus the functors
+	\item We define the functors
 	\begin{align*}
-		& E,E' \from \{\text{Noeth.\ schemes over } S\} \to \{\text{Sets}\}; \\
+		& E,E' \from (\textup{NoethSch}/S) \to (\textup{Sets}); \\
 		%E'_{\text{glob}}
 		& E(Y) \coloneqq H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)), \\
 		& E'(Y) \coloneqq \{\text{families of extensions of $\mc{F}_Y$ by $\mc{G}_Y$ over } Y\}. \\
 %		& E'_{\glob}(Y) \coloneqq \{\text{globally defined families of extensions of $\mc{F}_Y$ by 
 %		$\mc{G}_Y$ over } Y\}.
 	\end{align*}
+\end{enumerate}
 
 \end{definition}
 
 \begin{remark}
-	The spectral sequence $H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$ gives an exact sequence
+	The spectral sequence $E_2^{p,q}=H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$ gives an exact sequence
 	\begin{align*}
 		0
 		 \to & H^1(S,\pushf{f}\HOM(\mc{F},\mc{G}))
@@ -178,7 +181,7 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 \begin{corollary}
 	Suppose that $S$ is affine and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. The functor
 	\[
-		\{\text{Affine $S$-schemes}\} \to \{\text{Sets}\}
+		(\textup{Aff}/{S}) \to (\textup{Sets})
 		\colon
 		Y \mapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
 	\]
@@ -190,7 +193,7 @@ As a special case of the above, we recover \Cref{cor:universal-extension}.
 \end{remark}
 
 \begin{remark}
-	The article \cite{lange-universal-extensions} continues on to define a ``projectivized'' version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
+	The article \cite{lange-universal-extensions} continues on to define a (projectivized) version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
 \end{remark}
 
 % \begin{proposition}

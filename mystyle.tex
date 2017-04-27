@@ -31,6 +31,7 @@
 
 % more flexible enumerations
 \usepackage{enumitem}
+\setlist[enumerate]{labelwidth=!,wide,labelindent=0pt,itemsep=0pt,label=(\roman*)}
 
 % for commutative diagrams
 \usepackage{tikz-cd}
@@ -57,7 +58,7 @@
 % Latin modern font choice
 \usepackage{lmodern}
 
-%Libertinus font choice, copied from project's Github
+% Libertinus font choice, copied from project's Github
 % \usepackage{unicode-math}
 % \setmainfont{Libertinus Serif}
 % \setsansfont{Libertinus Sans}
@@ -79,6 +80,7 @@
 % Bibliography
 \usepackage[backend=biber, style=alphabetic, isbn=false, url=false, doi=false]{biblatex}
 \addbibresource{masterarbeit-bib.bib}
+\setlength\bibitemsep{\parskip}
 
 %%% TEXT SETTINGS
 \definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}

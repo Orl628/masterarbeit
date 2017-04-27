@@ -14,3 +14,17 @@ To do.
 * Make sure the locus where V_k is of general type is not empty.
 
 * Abbreviate "Lefschetz pencil"
+
+* Substitute the d_i with b_i
+
+* Introduce coordinates s,t for P^1.
+
+-----SECOND DRAFT-----
+
+* On page 3, use maybe that Ext(F,G) = H^1(X,F\dual \otimes G) for F locally free, and then that we have the usual base change theorems. (\ref{prop:ext-base-change})
+
+* Explain notation \boxtimes
+
+* Props. 1.4. und 1.5.: add reference, or cut. E.g. cut prop. 1.4.
+
+* Clarify scheme language, remove the rational points.
