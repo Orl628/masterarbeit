@@ -17,8 +17,6 @@ To do.
 
 * Substitute the d_i with b_i
 
-* Introduce coordinates s,t for P^1.
-
 -----SECOND DRAFT-----
 
 * On page 3, use maybe that Ext(F,G) = H^1(X,F\dual \otimes G) for F locally free, and then that we have the usual base change theorems. (\ref{prop:ext-base-change})

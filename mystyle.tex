@@ -79,8 +79,18 @@
 
 % Bibliography
 \usepackage[backend=biber, style=alphabetic, isbn=false, url=false, doi=false]{biblatex}
+\renewbibmacro{in:}{}
+\DefineBibliographyStrings{english}{% no p. or pp. before pages
+  page             = {},
+  pages            = {},
+}
+% to remove quotes
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{citetitle}{#1}
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1}
+
 \addbibresource{masterarbeit-bib.bib}
 \setlength\bibitemsep{\parskip}
+% maybe collect bib settings into separate file... another file to track...
 
 %%% TEXT SETTINGS
 \definecolor{darkgreen}{rgb}{0.0, 0.2, 0.13}

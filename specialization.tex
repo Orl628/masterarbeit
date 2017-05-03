@@ -4,14 +4,14 @@
 	Let $\mc{V}$ and $\mc{V'}$ be vector bundles on a projective $k$-scheme $X$. We say that $\mc{V}$ \emph{specializes} to $\mc{V'}$ if there exists an affine $k$-scheme $Y$, spectrum of a discrete valuation ring, with generic point $\eta$ and closed point $\eta_0$, and a vector bundle $\mc{W}$ on
 	$Y\times X$
 	such that
-	$\mc{W}|_{\eta \times X} \simeq \eta\times\mc{V}$
+	$\mc{W}|_{\eta \times X} \simeq \kappa(\eta)\boxtimes\mc{V}$
 	and
-	$\mc{W}|_{\eta_0 \times X} \simeq \eta_0\times\mc{V'}$. 
+	$\mc{W}|_{\eta_0 \times X} \simeq \kappa(\eta_0)\boxtimes\mc{V'}$. 
 \end{definition}
 % Stack etc works out: see 2.24 in https://arxiv.org/pdf/math/9911199.pdf
 
 \begin{remark}
-	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $\mc{V}$ and $\eta \times \mc{V}$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
+	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $\mc{V}$ and $\kappa(\eta) \boxtimes \mc{V}$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
 \end{remark}
 
 \begin{remark} \label{rem:scalars-on-ext} Let
@@ -52,7 +52,7 @@
 \end{remark}
 
 \begin{remark} \label{rem:exact-sequence-exists}
-	Let $b_1,\dotsc,b_m$ be non-negative numbers, let $a\coloneqq \sum b_i$. The sequence
+	Let $b_1,\dotsc,b_m$ be non-negative integers, let $a\coloneqq \sum b_i$, and let $s,t$ denote the homogeneous coordinates on $\PP^1$. The sequence
 	\[ \sesarrows{\mc{O}^{m-1}}{f}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{g}{\mc{O}(a)} \]
 	with \[
 	f = \begin{pmatrix}
@@ -74,7 +74,7 @@
 %maybe prove this?
 
 \begin{proposition} \label{specialization-partitions}
-	Let $b_1,\dotsc,b_m$ be non-negative numbers and $\pi$ a partition of the set $\{1,\dotsc,m\}$. For a set of indices $I\in \pi$, let $b'_I \coloneqq \sum_{i \in I} b_i$. Then the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i)$ on $\PP^1$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I) \oplus \mc{O}^{\oplus m-\abs{\pi}}$.	
+	Let $b_1,\dotsc,b_m$ be non-negative integers and $\pi$ a partition of the set $\{1,\dotsc,m\}$. For a set of indices $I\in \pi$, let $b'_I \coloneqq \sum_{i \in I} b_i$. Then the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i)$ on $\PP^1$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I) \oplus \mc{O}^{\oplus m-\abs{\pi}}$.	
 \end{proposition}
 
 \begin{proof}
@@ -87,5 +87,5 @@
 \end{proof}
 
 \begin{remark}
-	By twisting the exact sequence \ref{chosen-exact-sequence} in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
+	By twisting the exact sequence (\ref{chosen-exact-sequence}) in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
 \end{remark}
