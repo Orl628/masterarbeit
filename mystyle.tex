@@ -75,7 +75,9 @@
 \usepackage[bookmarks, colorlinks, breaklinks]{hyperref}
 \usepackage{cleveref} % \cref, \Cref
 
-\usepackage{mycommands}
+\usepackage{multirow}  % for `\multirow` macro
+
+\usepackage{mycommands} 
 
 % Bibliography
 \usepackage[backend=biber, style=alphabetic, isbn=false, url=false, doi=false]{biblatex}
@@ -107,6 +109,8 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{computation}[theorem]{Computation}
+
 
 % numbering settings
 \renewcommand{\thesection}{\arabic{section}.}
