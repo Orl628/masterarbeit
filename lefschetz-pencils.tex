@@ -1,4 +1,4 @@
-\section{Verlinde Bundles on Lefschetz Pencils}
+\section{Verlinde Bundles on Pencils of Quartics}
 
 %\begin{definition} A \emph{line} is an embedding $l\colon \mathbb{P}^1 \to X$ into a projective scheme $X$ such that $l^*\mathcal{O}(1) = \mathcal{O}(1)$.
 %\end{definition}
@@ -36,27 +36,27 @@ $\mc{O}(1)$ under the canonical projection $\mf{X} \to \PP^3$.
 \footnotetext{For a fiber product $X \xleftarrow{p} X\times Y\xrightarrow{q} Y$ and sheaves $\mc{F}$ and $\mc{G}$ on $X$ resp.\ $Y$, write $\mc{F}\boxtimes \mc{G}\coloneqq \pullb{p} \mc{F} \otimes \pullb{q} \mc{G}$.}
 
 \begin{proposition} \label{quartics-base-change}
-Let $k\geq 1$. The following statements hold:
+	Let $k\geq 1$. The following statements hold:
 
-\begin{enumerate}
-\item If $q\in \schemeofquartics$ then
-$h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+3}{3} - \binom{k-1}{3}$.
-In particular this number is independent of the point $q$.
+	\begin{enumerate}
+	\item If $q\in \schemeofquartics$ then
+	$h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+3}{3} - \binom{k-1}{3}$.
+	In particular this number is independent of the point $q$.
 
-\item The sheaf
-$\pushf{\pi}\mc{L}^{\otimes k}$
-is locally free of rank
-$\binom{k+3}{3} - \binom{k-1}{3}$.
+	\item The sheaf
+	$\pushf{\pi}\mc{L}^{\otimes k}$
+	is locally free of rank
+	$\binom{k+3}{3} - \binom{k-1}{3}$.
 
-\item For all cartesian diagrams of the form 
-\[
-\cartesiansquare{\mf{X}_{Z}}{}{\mf{X}}{\pi_Z}{\pi}{Z}{\rho}{\schemeofquartics}
-\]
-we have
-$\pullb{\rho}\pushf{\pi}\mc{L}^{\otimes k}
-\simeq
-\pushf{(\pi_Z)}\mc{L}^{\otimes k}_Z$.
-\end{enumerate}
+	\item For all cartesian diagrams of the form 
+	\[
+	\cartesiansquare{\mf{X}_{Z}}{}{\mf{X}}{\pi_Z}{\pi}{Z}{\rho}{\schemeofquartics}
+	\]
+	we have
+	$\pullb{\rho}\pushf{\pi}\mc{L}^{\otimes k}
+	\simeq
+	\pushf{(\pi_Z)}\mc{L}^{\otimes k}_Z$.
+	\end{enumerate}
 \end{proposition}
 
 \begin{proof}
@@ -89,42 +89,42 @@ $V_{k}|_T = V_{k,T}$
 using \Cref{quartics-base-change}.
 
 \begin{proposition} \label{verlinde-exact-sequence}
-There exists a short exact sequence of coherent
-$\mc{O}_{\schemeofquartics}$-modules 
-\[
-\ses{\mc{O}(-1) \otimes H^0(\PP^3, \mc{O}(k-4))}
-    {\mc{O} \otimes H^0(\PP^3, \mc{O}(k))}
-    {V_k}.
-\]
-Let $I_d$ range over the tuples of the form
-$(i_0,\dotsc,i_3)$
-with
-$\sum i_j = d$.
-The first map is then given by 
-$\xi \otimes x^{I_{k-4}}
-\mapsto
-\sum_{I_4} \xi x^{I_4} \otimes x^{I_{k-4}+I_4}$.   
-\end{proposition}
+	There exists a short exact sequence of coherent
+	$\mc{O}_{\schemeofquartics}$-modules 
+	\[
+	\ses{\mc{O}(-1) \otimes H^0(\PP^3, \mc{O}(k-4))}
+	    {\mc{O} \otimes H^0(\PP^3, \mc{O}(k))}
+	    {V_k}.
+	\]
+	Let $I_d$ range over the tuples of the form
+	$(i_0,\dotsc,i_3)$
+	with
+	$\sum i_j = d$.
+	The first map is then given by 
+	$\xi \otimes x^{I_{k-4}}
+	\mapsto
+	\sum_{I_4} \xi x^{I_4} \otimes x^{I_{k-4}+I_4}$.   
+	\end{proposition}
 
 \begin{proof}
-See \cite[Proposition 4.2]{hemminghaus-verlinde-bundles}.
-% Ergänz' mit own proof.
+	See \cite[Proposition 4.2]{hemminghaus-verlinde-bundles}.
+	% Ergänz' mit own proof.
 \end{proof}
 
 \begin{remark}
-Let $T$ be a pencil of quartics.
+	Let $T$ be a pencil of quartics.
 
-\begin{enumerate}
-\item The sequence from \Cref{verlinde-exact-sequence} restricts to a sequence
-\[
-\ses{\mc{O}(-1) \otimes H^0(\PP^3, \mc{O}(k-4))}
-    {\mc{O} \otimes H^0(\PP^3, \mc{O}(k))}
-    {V_{k,T}}
-\]
-over $\PP^1$.
+	\begin{enumerate}
+	\item The sequence from \Cref{verlinde-exact-sequence} restricts to a sequence
+	\[
+	\ses{\mc{O}(-1) \otimes H^0(\PP^3, \mc{O}(k-4))}
+	    {\mc{O} \otimes H^0(\PP^3, \mc{O}(k))}
+	    {V_{k,T}}
+	\]
+	over $\PP^1$.
 
-\item The vector bundle $V_{k,T}$ has determinant $\mc{O}(\binom{k-1}{3})$ and rank $\binom{k+3}{3} - \binom{k-1}{3}$.
-\end{enumerate}
+	\item The vector bundle $V_{k,T}$ has determinant $\mc{O}(\binom{k-1}{3})$ and rank $\binom{k+3}{3} - \binom{k-1}{3}$.
+	\end{enumerate}
 \end{remark}
 
 \begin{definition}
