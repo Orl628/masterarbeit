@@ -1,0 +1,154 @@
+\section{Verlinde Bundles on Pencils of Hypersurfaces}
+
+\newcommand{\schemeofsurfaces}[1][d]{\abs{\mc{O}(#1)}}
+\newcommand{\divides}{\mid}
+
+Let $V_k$ be the $k$-th Verlinde bundle of the universal family of hypersurfaces of degree $d$ in $\PP^n$. The vector bundle $V_k$ is the cokernel of the map
+\[
+M \from \mc{O}_{\schemeofsurfaces}(-1) \otimes H^0(\mc{O}(k-d),\PP^n)
+	\to \mc{O}_{\schemeofsurfaces} \otimes H^0(\mc{O}(k),\PP^n)
+\]
+given by multiplication by
+$\sum_I \alpha_I \otimes x^I
+\in H^0(\mc{O}(1),\schemeofsurfaces) \otimes H^0(\mc{O}(d),\PP^n),$ where the $\alpha_I$ are the homogeneous coordinates on $\schemeofsurfaces$.
+We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
+
+% \begin{proposition} \label{construct-splitting}
+% 	Let $f_1, f_2 \in \schemeofsurfaces$ span the line
+% 	$T \subseteq \schemeofsurfaces$. 
+% 	The map $M|_{T}$ splits as a direct sum
+% 	\[
+% 		\bigoplus_{i=1}^s M_i
+% 		\from \bigoplus_{i=1}^s \mc{F}_i
+% 		\to \bigoplus_{i=0}^s \mc{G}_i
+% 	\]
+% 	with $\mc{F}_i \isom \mc{O}(-1)^{\lambda_i}$,
+% 	$\mc{G}_i \isom \mc{O}^{\lambda_i + 1}$ for $i\geq 1$, and $\mc{G}_0 \isom \mc{O}^{\lambda_0}$. This splitting gives rise to a splitting of the cokernel
+% 	$\coker(M|_{T}) = \mc{O}^{\lambda_0}
+% 	\oplus \bigoplus_{i=1}^s \mc{O}(\lambda_i)$.
+% \end{proposition}
+
+% \begin{proof}[Proof (Construction)]
+
+% 	Start with 
+
+%  	We construct $M_1 \from \mc{F}_1 \to \mc{G}_1$, the others can be defined similarly. The bundle $\mc{G}_0$ will then just be a direct complement of $\bigoplus_{i\geq 1}\mc{G}_i$. Note that for all $\theta \in H^0(\mc{O}(k-d), \PP^n),$ the morphism $M|_T$ maps $\mc{O}(-1) \otimes \gen{\theta}$ into $\mc{O} \otimes \gen{f_1 \theta , f_2\theta }$.
+
+%  	The bundle $\mc{F}_1$ shall have the form $\mc{O}(-1) \otimes U_1$, with $U_1$ a subspace of $H^0(\mc{O}(k-d),\PP^n)$, while $\mc{G}_1 = \mc{O} \otimes W_1$, with $W_1 \coloneqq f_1 U_1 + f_2 U_1$. We construct $U_1$ iteratively, beginning with $U_1^{0} \coloneqq \gen{\theta}$, where $\theta$ is any nonzero section. After $U_1^{\nu}$ is constructed, we define $W_1^{\nu} \coloneqq f_1 U_1^{\nu} + f_2 U_1^{\nu}$ and either stop or construct $U_1^{\nu + 1}$ as follows.
+
+%  	If the space $f_1 U_1^{\nu,\perp} + f_2 U_1^{\nu,\perp}$ does not intersect $W_1^\nu$, we stop and set $U_1 \coloneqq U_1^\nu$. In the other case, there exist $\theta'_1, \theta'_2 \in U_1^{\nu, \perp}$ with $f_1 \theta'_1 + f_2 \theta'_2 \in W_1^{\nu}.$ If $\theta'_2 \in U_1^{\nu,\perp}$, we set $U_1^{\nu+1} \coloneqq U_1 + \gen{\theta'_1}$. Otherwise, We set $U_1^{\nu+1} \coloneqq U_1^{\nu} + \gen{\theta'_1,\theta'_2}$.
+
+%  	At the end of the construction, we may split $M_1 \from \mc{F}_1 \to \mc{G}_1$ as a direct summand of $M|_T$, and perform the same construction for the remaining $M_i$.
+
+
+ 	% If no other subbundle $\mc{O}(-1)\otimes \gen{\theta_j}$ maps into $\mc{O} \otimes \gen{f_1\theta_1,f_2\theta_1}$ we stop, so that $U_1 = \gen{\theta_1}$. Else we pick such a basis element $\theta_j$, and add it to $U_1$. We iterate this process until $f_1 U_1^\perp + f_2 U_1^\perp$ does not intersect $W_1$. At that point, we may split $M_1 \from \mc{F}_1 \to \mc{G}_1$ as a direct summand of $M|_T$.
+
+%  	Note that after each iterative step in the construction, apart from the first, the dimension of $W_1$ could increase either by zero or by one. To show that only the second case occurs, we exhibit a linearly independent set of size $j+1$ in ${\gen{f_1 \theta_1, f_2 \theta_1, \dotsc, f_1\theta_{j}, f_2\theta_{j}}}$. Here, the indices of the $\theta_{j'}$ are simplified for convenience. Having shown this, it follows that $\rank{\mc{G}_1} = \lambda_1 + 1$.
+
+%   Consider an ordering of the monomial basis of $H^0(\mc{O}(1),\PP^n)$ and accordingly order the monomial bases of all $H^0(\mc{O}(m),\PP^n)$ lexicographically. Let $\theta_{\max}$ denote the greatest basis element among the $(\theta_{j'})_{j'=1}^j$. Assume without loss of generality that the greatest monomial appearing in $f_2$ is strictly greater than all monomials appearing in $f_1$. Then $(f_1\theta_1,\dotsc,f_1\theta_j,f_2\theta_{\max})$ is a linearly independent set.
+
+%   Finally, the direct summands $\coker(M_i)$ of the locally free sheaf $\coker(M)$ are themselves locally free, and their form can be found by comparing ranks and determinants.
+% \end{proof}
+
+\begin{lemma} \label{mini-splitting-lemma}
+	Let $\mc{E}$ be a finite free $\mc{O}_{\PP^1}$-module, and let 
+	\[
+		0 \to \mc{E}' \xrightarrow{\phi} \mc{E} \to \mc{E}'' \to 0
+ 	\]
+ 	be a short exact sequence of $\mc{O}_{\PP^1}$-modules. Given a splitting $\mc{E}'' = \mc{E}''_1 \oplus \mc{O}$, we may construct a splitting $\mc{E} = \mc{E}_1 \oplus \mc{O}$ such that the image of $\phi$ is contained in $\mc{E}_1$.
+\end{lemma}
+
+\begin{proof}
+	Define $\mc{E}_1 \coloneqq \ker(\pr_2\circ\psi)$, which is a locally free sheaf on $\PP^1$ By comparing determinants in the short exact sequence $0 \to \mc{E}_1 \to \mc{E} \to \mc{O}$ we see that $\mc{E}_1$ is free, hence by an $\Ext^1$ computation, the sequence splits. The property $\im(\phi) \subseteq \mc{E}_1$ follows from the definition.
+\end{proof}
+
+\begin{proposition} \label{number-zeroes}
+	Let $f_1, f_2 \in \schemeofsurfaces$ span the line
+	$T \subseteq \schemeofsurfaces$, let $\coker(M|_{T}) \isom \mc{O}^{\lambda_0}
+	\oplus \bigoplus_{i=1}^s \mc{O}(\lambda_i)$. Define $U\coloneqq H^0(\mc{O}(k-d),\PP^n)$. We have $$\lambda_0 = \dim H^0(\mc{O}(k),\PP^n) - \dim ({f_1 U + f_2 U}),$$
+	or, equivalently,
+	\[
+		s = \dim({f_1 U + f_2 U}) - d^{(k)}.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Note that the map $M|_T$ sends a local section $\xi \otimes \theta$ to $s\xi \otimes f_1 \theta + t\xi \otimes f_2 \theta$. In particular, the image of $\mc{O}(-1)\otimes U$ is contained in $\mc{O} \otimes (f_1 U + f_2 U)$. It follows that $\lambda_0 \geq \dim ({f_1 U + f_2 U})$.
+
+  To prove the other inequality, consider the induced sequence
+  \[
+  	0 \to \mc{O}(-1)\otimes U \xrightarrow{M|_T} \mc{O}\otimes (f_1 U + f_2 U) \to \mc{E}'' \to 0
+  \]
+  and assume that $\mc{E}'' \isom \mc{E}_1''\oplus \mc{O}.$ By \Cref{mini-splitting-lemma}, we have a splitting $\mc{O}\otimes (f_1 U + f_2 U) \isom \mc{E}_1 \oplus \mc{O}$ such that $\im(M|_T) \subseteq \mc{E}_1$. 
+
+  Consider the map
+  $\wtilde M|_T \from (\mc{O} \otimes U) \oplus (\mc{O} \otimes U) \to \mc{O} \otimes (f_1 U + f_2 U)$
+  defined by $$\wtilde M|_T(a\otimes \theta_1,b \otimes \theta_2)=a\otimes f_1 \theta_1 + b \otimes f_2 \theta_2.$$
+  We obtain the matrix description of $\wtilde M|_T$ from the matrix description of $M|_T$ as follows. If $M|_T$ is represented by the matrix $A$ with coefficients $A_{i,j} = \lambda_{i,j} s + \mu_{i,j} t$, $i\leq \dim (f_1 U + f_2 U)$, $j\leq \dim U$, then $\wtilde M|_T$ is represented by a block matrix
+  \[
+  	B = \left(
+  		\begin{array}{c|c}
+  			A' & A'' \\
+  		\end{array}
+  	\right)
+  \]
+  with $A'_{i,j} = \lambda_{i,j}$ and $A''_{i,j} = \mu_{i,j}$.
+
+  The property $\im(M|_T)\subseteq \mc{E}_1$ implies that after some row operations, the matrix $A$ has a zero row. By the construction of $\wtilde M|_T$, the same row operations lead to the matrix $B$ having a zero row, but this is a contradiction, since the map $\wtilde M|_T$ is surjective.
+\end{proof}
+
+\begin{remark}
+	The general type candidate for $V_k$ takes the form
+	$(b^{(k)}+1,\dotsc,b^{(k)}+1,b^{(k)},\dotsc,b^{(k)})$,
+	where the number of entries is
+	$r^{(k)} \coloneqq \binom{n+k}{n} - \binom{n+k-d}{n}$
+	and their sum $d^{(k)} \coloneqq \binom{n+k-d}{n}$, while
+	$b^{(k)} = \lfloor d^{(k)}/r^{(k)}\rfloor$.
+	Note that the degrees of $d^{(k)}$ and $r^{(k)}$ as polynomials in $k$ are $n$ and $n-1$, respectively. Hence, $b^{(k)} \to \infty$ for $k \to \infty$.
+\end{remark}
+
+\begin{corollary} \label{no-more-than-ones}
+	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$. Let $(\theta_j)$ be a monomial basis of $H^0(\PP^n, \mc{O}(k-d))$. Let $k$ be such that $b^{(k)}=0$, \ie such that in the general type, only ones and zeroes appear. The bundle $V_{k,t}$ has general type if and only if
+	$(f_1\theta_j,f_2\theta_j)_j$ is a linearly independent set in $H^0(\mc{O}(k), \PP^n)$.
+\end{corollary}
+
+\begin{proof}
+  Since $b^{(k)}=0$, the type of $V_{k,t}$ is the general type if and only if it has $d^{(k)}$ many nonzero entries.
+	By \Cref{number-zeroes}, this is the case if and only if $\dim\gen{f_1 \theta_j, f_2 \theta_j}_j = 2 d^{(k)}$.
+\end{proof}
+
+\begin{proposition} \label{nongeneral-type-shared-sections}
+	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$, and let $k$ be such that $b^{(k)}=0$. The bundle $V_{k,t}$ has nongeneral type if and only if $\deg(\gcd(f_1,f_2)) \geq 2d-k$. In particular, if $b^{(k)}=0$ but $k>2d$ then the general type never occurs.
+\end{proposition}
+
+\begin{proof}
+	By \Cref{no-more-than-ones}, the bundle $V_{k,t}$ has non-general type if and only if there exist linearly independent $g_1,g_2\in H^0(\mc{O}(k-d),\PP^n)$ such that $g_1f_1+g_2f_2 = 0$. Let $h \coloneqq \gcd(f_1,f_2)$ and $d'\coloneqq \deg h$.
+
+	If $d' \geq 2d-k$ then $\deg (f_i/h) \leq k-d$ and we may take $g_1,g_2$ to be multiples of $f_1/h$ and $f_2/h$, respectively.
+
+	On the other hand, given such $g_1$ and $g_2$, we have $f_1\divides g_2 f_2$, which implies $f_1/h \divides g_2$, hence $d-d'\leq k-d$.
+\end{proof}
+
+\begin{example} \label{no-big-types}
+	For $n=2, d=2,$ and $k=3$, we have $d^{(k)}=3$ and $r^{(k)}=10$. We show that the only types of $V_k$ that occur are $(1_3, 0_7)$ and $(2_1,1_1,0_8)$. The first type occurs \eg for $f_1 = x_0^2, f_2=x_1^2$, and the second for $f_1=x_0^2, f_2=x_0x_1$. Assume that the type $(3_1,0_9)$ occurs for some $f_1,f_2 \in H^0(\mc{O}(2),\PP^2)$. By \Cref{number-zeroes} we then have $\dim\gen{f_1 x_j,f_2 x_j}_{j=0}^2 = 4$. Hence, we find $g_1,g_2,g'_1,g'_2\in H^0(\mc{O}(1),\PP^2)$ and two linearly independent equations
+	\begin{align*}
+	g_1f_1 + g_2f_2 &= 0 \\
+	g'_1f_1 + g'_2f_2 &= 0,
+	\end{align*}
+	with both sets $(g_1,g_2), (g'_1,g'_2)$ linearly independent.
+	From the first equation it follows that $f_1 = g_2 h$ and $f_2 = -g_1 h$, for some common linear factor $h$. Applying this to the second equation, we find $g'_1 g_2 = g'_2 g_1$, hence $g'_1 = \alpha g_1$ and $g'_2 = \alpha g_2$ for some scalar $\alpha$, a contradiction.
+\end{example}
+
+\begin{proposition} \label{no-big-types-general}
+	Let $k=d+1$. No types of $V_k$ other than
+	$(1,\dotsc,1,0,\dotsc,0)$ and $(2,1,\dotsc,1,0,\dotsc,0)$ occur. 
+\end{proposition}
+
+\begin{proof}
+	The proof follows the lines of \Cref{no-big-types}. Assume that the type of $V_k$ at some line $(f_1,f_2)$ is other than the two above. Then the type has two more zero entries than the general type, corresponding to two equations of the form
+	\begin{align*}
+		g_1f_1 + g_2f_2 =& 0 \\
+		g'_1 f_1 + g'_2 f_2 =& 0,
+	\end{align*}
+	with $g_i,g'_i\in H^0(\mc{O}(1),\PP^n)$. We use the irreducibility of the $g_i$ to produce a contradiction just like in the cited example, the only difference being that the common factor $h$ of $f_1$ and $f_2$ need not be linear.
+\end{proof}
