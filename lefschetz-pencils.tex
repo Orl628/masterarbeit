@@ -41,16 +41,16 @@ $\mc{O}(1)$ under the canonical projection $\mf{X} \to \PP^3$.
 	Let $k\geq 1$. The following statements hold:
 
 	\begin{enumerate}
-	\item If $q\in \schemeofquartics$ then
+	\huyitem If $q\in \schemeofquartics$ then
 	$h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+3}{3} - \binom{k-1}{3}$.
 	In particular this number is independent of the point $q$.
 
-	\item The sheaf
+	\huyitem The sheaf
 	$\pushf{\pi}\mc{L}^{\otimes k}$
 	is locally free of rank
 	$\binom{k+3}{3} - \binom{k-1}{3}$.
 
-	\item For all cartesian diagrams of the form 
+	\huyitem For all cartesian diagrams of the form 
 	\[
 	\cartesiansquare{\mf{X}_{Z}}{}{\mf{X}}{\pi_Z}{\pi}{Z}{\rho}{\schemeofquartics}
 	\]
@@ -70,7 +70,7 @@ $\mc{O}(1)$ under the canonical projection $\mf{X} \to \PP^3$.
 	% \[\ses{\mc{O}(-d)}{\mc{O}}{\mc{O}_{X_q}}.\]
 	% Twisting with $\mc{O}(k)$ yields
 	% \[\ses{\mc{O}(k-d)}{}{}\]
-\end{proof}
+\end{proof}	
 
 Let $T \subseteq \schemeofquartics$ be the closed subscheme defined as the image of a linear embedding
 $\PP^1_K\to \schemeofquartics$, with $K$ an extension field of $k$.
@@ -118,14 +118,16 @@ using \Cref{quartics-base-change}.
 
 	\begin{enumerate}
 	\item The sequence from \Cref{verlinde-exact-sequence} restricts to a sequence
-	\[
+	\begin{equation} \label{verlinde-exact-sequence-p1}
 	\ses{\mc{O}(-1) \otimes H^0(\PP^3, \mc{O}(k-4))}
 	    {\mc{O} \otimes H^0(\PP^3, \mc{O}(k))}
 	    {V_{k,T}}
-	\]
+	\end{equation}
 	over $\PP^1$.
 
 	\item The vector bundle $V_{k,T}$ has determinant $\mc{O}(\binom{k-1}{3})$ and rank $\binom{k+3}{3} - \binom{k-1}{3}$.
+
+	\item Let $V_{k,T} \simeq \bigoplus_i \mc{O}(d_i)$ be a splitting of $V_{k,T}$ over $\PP^1$. By the sequence \cref{verlinde-exact-sequence-p1}, we have $d_i \geq 0$.
 	\end{enumerate}
 \end{remark}
 
@@ -138,14 +140,24 @@ $r^{(k)}=\binom{k+3}{3}-\binom{k-1}{3}$ and $\sum d_i = \binom{k-1}{3}$.
 
 \item The \emph{general type candidate} for $V_k$ is the unique type candidate for $V_k$ of the form
 $(b^{(k)} + 1,\dotsc,b^{(k)} + 1,b^{(k)},\dotsc,b^{(k)})$. The integer $b^{(k)}$ is determined by the equation
-$\binom{k-1}{3} = b^{(k)} r^{(k)} + a$, with $a < r^{(k)}$ becoming the number of occurences of $b^{(k)} +1$. 
+$\binom{k-1}{3} = b^{(k)} r^{(k)} + a$, with $a < r^{(k)}$ becoming the number of occurences of $b^{(k)} +1$.
 
-\item Let $T$ be a pencil of quartics. The \emph{type} of $V_{k,T}$ is the unique type candidate $(d_i)$ such that
-$V_{k,T} \simeq \bigoplus_i \mc{O}(d_i)$.
+\item Let $E$ be a locally free sheaf on $\PP^1$. The \emph{type} of $E$ is the unique non-increasing tuple $(d_1,\dotsc,d_{r^{(k)}})$ such that $E \simeq \bigoplus_i \mc{O}(d_i)$.
 
 \item We say that $V_{k,T}$ has \emph{general type} if its type is a general type candidate.
-
 \end{enumerate}
+
+\begin{definition}
+Let $P$ denote the universal $\PP^1$-bundle of the Grassmannian of lines $\Gr(2,H^0(\mc{O}(4))) = \GGr(1,\schemeofquartics)$, let $\phi\from P\to \GGr(1,\schemeofquartics)$ be the universal map and $p\from P\to \schemeofquartics$ the canonical projection.
+\[
+\begin{tikzcd} [ampersand replacement = \&]
+P \arrow{r}{p} \arrow{d}{\phi}\& \schemeofquartics \\
+\GGr(1,\schemeofquartics) \& 
+\end{tikzcd}
+\]
+The mapping $t\mapsto P_t$ gives a canonical bijection between the points of $\GGr(1,\schemeofquartics)$ and the pencils of quartics in $\schemeofquartics$. For such $t$, we write $V_{k,t} \coloneqq V_{k,p(P_t)}$.
+\end{definition}
+
 \end{definition}
 
 % \item A \emph{type candidate} for $V_k$ is a tuple \footnotemark{}
@@ -164,20 +176,20 @@ $V_{k,T} \simeq \bigoplus_i \mc{O}(d_i)$.
 % \footnotetext{For fixed $r,s>0$, the equation $dr + b = s$ has only one non-negative solution $(d,b)$ with $b<r$.}
 
 
-The points of $\Gr(2,35)$ correspond to the pencils of quartics $T \subseteq \schemeofquartics$ in the following way. Let $P$ the universal $\PP^1$-bundle over $\Gr(2,35)$. It comes equipped with a projection map $P \to \schemeofquartics$ such that for all pencils of quartics $T$ there exists a unique point $t\in \Gr(2,35)$
-such that the image of the fiber $P_t$ in $\schemeofquartics$ is $T$.
-\[
-\begin{tikzcd} [ampersand replacement = \&]
-P_t \arrow{r} \arrow{d} \MySymb{\times}{dr} \& P \arrow{r}{p} \arrow{d}{\phi}\&
-\schemeofquartics \\
-\Spec(\kappa(t))\arrow{r} \& \Gr(2,35) \& \ 
-\end{tikzcd}
-\]
-For $t\in\Gr(2,35)$ corresponding to the pencil $T$, we write $V_{k,t}\coloneqq V_{k,T}$.
+% The points of $\Gr(2,35)$ correspond to the pencils of quartics $T \subseteq \schemeofquartics$ in the following way. Let $P$ the universal $\PP^1$-bundle over $\Gr(2,35)$. It comes equipped with a projection map $P \to \schemeofquartics$ such that for all pencils of quartics $T$ there exists a unique point $t\in \Gr(2,35)$
+% such that the image of the fiber $P_t$ in $\schemeofquartics$ is $T$.
+% \[
+% \begin{tikzcd} [ampersand replacement = \&]
+% P_t \arrow{r} \arrow{d} \MySymb{\times}{dr} \& P \arrow{r}{p} \arrow{d}{\phi}\&
+% \schemeofquartics \\
+% \Spec(\kappa(t))\arrow{r} \& \Gr(2,35) \& \ 
+% \end{tikzcd}
+% \]
+% For $t\in\Gr(2,35)$ corresponding to the pencil $T$, we write $V_{k,t}\coloneqq V_{k,T}$.
 
 \begin{definition}
 Let $k \geq 1$ and $(d_i)$ be a type candidate for $V_k$. We define the set
-$Z_{(d_i)}$ of all points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type $(d_i)$. For the set of points $t$ where $V_{k,t}$ has general type, we also write $Z_{\text{gen}}$.
+$Z_{(d_i)}$ of all points $t\in\GGr(1,\schemeofquartics)$ such that $V_{k,t}$ has type $(d_i)$. For the set of points $t$ where $V_{k,t}$ has general type, we also write $Z_{\text{gen}}$.
 \end{definition}
 
 % \begin{proposition}	
@@ -205,7 +217,7 @@ $Z_{(d_i)}$ of all points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type $(d_i)$. 
 	\]
 \end{proposition}
 \begin{proof}
-	We begin by characterizing the set $\generallocus$ via cohomology. Let $t\in \Gr(2,35)$, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(d_i)$ and $b\coloneqq b^{(k)}$. We have $t\in \generallocus$ if and only if $b\leq d_i \leq b+1$ for all $i$, which holds if and only if
+	We begin by characterizing the set $\generallocus$ via cohomology. Let $t\in \GGr(1,\schemeofquartics)$, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(d_i)$ and $b\coloneqq b^{(k)}$. We have $t\in \generallocus$ if and only if $b\leq d_i \leq b+1$ for all $i$, which holds if and only if
 	$
 	H^1(P_t, V_{k,t}(-b-1))
 	=
@@ -214,9 +226,9 @@ $Z_{(d_i)}$ of all points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type $(d_i)$. 
 	$
 
 	Next, we want to apply the Cohomology and Base Change Theorem \cite[{}28.1.6]{vakil-algebraic-geometry} to the map 
-	$\phi \from P \to \Gr(2,25)$, which is a $\PP^1$-bundle, proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\Gr(2,35)$.
+	$\phi \from P \to \GGr(1,\schemeofquartics)$, which is a $\PP^1$-bundle, proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\GGr(1,\schemeofquartics)$.
 
-	For all $t\in \Gr(2,35)$ we have
+	For all $t\in \GGr(1,\schemeofquartics)$ we have
 	$
 	h^2(P_t, \pullb{p}V_{k,t}(-b-1)) = 0
 	\text{ and }
@@ -231,18 +243,17 @@ $Z_{(d_i)}$ of all points $t\in\Gr(2,35)$ such that $V_{k,t}$ has type $(d_i)$. 
 
 	By the previous characterization, we have
 	\[
-		\Gr(2,35) \setminus \generallocus =
+		\GGr(1,\schemeofquartics) \setminus \generallocus =
 		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b-1)) \cup
 		\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)),
 	\]
 	which is a Zariski closed set.
 \end{proof}
-
 \begin{proposition} \label{supp-are-det-varieties}
 The sets
 $\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b^{(k)}-1))$ and
 $\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b^{(k)})\dual))$ 
-are determinantal varieties.
+are determinantal varieties in the sense of \cite[Ch.~II, §4]{arbarello-geometry-algebraic-curves}
 \end{proposition}
 \begin{proof}
 To simplify notation, set
@@ -250,9 +261,9 @@ $r_1 \coloneqq \dim H^0(\PP^3, \mc{O}(k)),
 r_2 \coloneqq \dim H^0(\PP^3, \mc{O}(k-4))$ and $b\coloneqq b^{(k)}$,
 and rewrite the exact sequence from \Cref{verlinde-exact-sequence} as
 \begin{align} \label{verlinde-simplified-exact-sequence}
-\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. \tag{$\star$}
+\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. %\tag{$\star$}
 \end{align}
-Twisting the sequence (\ref{verlinde-simplified-exact-sequence}) with $\mc{O}(-b-1)$ and pulling back to $P$ gives an exact sequence
+Twisting the sequence \cref{verlinde-simplified-exact-sequence} with $\mc{O}(-b-1)$ and pulling back to $P$ gives an exact sequence
 \[
 0
 \to  {\pullb{p}\mc{O}(-b-2)^{r_2}}
@@ -260,7 +271,7 @@ Twisting the sequence (\ref{verlinde-simplified-exact-sequence}) with $\mc{O}(-b
 \to  {\pullb{p}V_k(-b-1)}
 \to  0.
 \]
-For all $t\in \Gr(2,35)$ we have
+For all $t\in \GGr(1,\schemeofquartics)$ we have
 $h^2(P_t, \mc{O}(-b-2)^{r_2}) = 0$,
 hence
 $R^2\pushf{\phi}\pullb{p}\mc{O}(-b-2)^{r_2} = 0$
@@ -287,7 +298,7 @@ $(R^1\pushf{\phi}\pullb{p} V_k(-b-1))_t \neq 0$ if and only if $\coker(\alpha_t)
 \]
 As a final remark, note that $h^1_1 = b r_1 = b \binom{k+3}{3}.$
 
-The proof for the second assertion is similar. We start with the sequence (\ref{verlinde-simplified-exact-sequence}), twist with $\mc{O}(-b)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for all $t\in \Gr(2,35)$ we have $h^1(P_t, \mc{O}(b)^{r_1})=0$, we obtain an exact sequence
+The proof for the second assertion is similar. We start with the sequence \cref{verlinde-simplified-exact-sequence}, twist with $\mc{O}(-b)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for all $t\in \GGr(1,\schemeofquartics)$ we have $h^1(P_t, \mc{O}(b)^{r_1})=0$, we obtain an exact sequence
 \[
 	{\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
 \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
@@ -317,19 +328,30 @@ Here, we have $h_2^0 = (b+2)r_2 = (b+2)\binom{k-1}{3}.$
 \end{definition}
 
 \begin{proposition}
-	Let $(d_i)$ be a type candidate for $V_k$. The set $\widehat Z_{(d_i)} \coloneqq \bigcup_{(d'_i)\geq(d_i)} Z_{(d'_i)}$ is the intersection of (at most) $r^{(k)}$ determinantal varieties.
+	Let $(d_i)$ be a type candidate for $V_k$. The set $\widehat Z_{(d_i)} \coloneqq \bigcup_{(d'_i)\geq(d_i)} Z_{(d'_i)}$ is the intersection of (at most) $r^{(k)}$ determinantal varieties. In particular, the set $Z_{(d_i)}$ is locally closed.
 \end{proposition}
 
 \begin{proof}
-	For every type candidate $(d'_i)$, the sum $\sum_{i=1}^s d'_i$ is the largest sum of $s$ entries of $(d'_i)$.  Hence we have 
-	\[
-		\widehat Z_{(d_i)} = \bigcap_{s=1}^{r^{(k)}} \{t : h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s d_i)) > 0\}.
-	\]
-	With Serre duality and the Cohomology and Base Change theorem we write the sets in the intersection as 
-	\[
-		\Supp(R^1 \pushf \phi (\pullb p (\textstyle{\bigwedge}^{s} V_k\dual )(\textstyle{\sum}^s d_i - 2))),
-	\]
-	which is a determinantal variety by an argument similar to the second part of the proof of \Cref{supp-are-det-varieties}. One just has to note that $h^1(\PP^1,\mc{O}(\sum^s d_i - 2)) = 0$ for all $s$.
+Let $t\in \GGr(1,\schemeofquartics)$ and $V_{k,t} = \bigoplus_{i=1}^{r^{(k)}} \mc{O}(d'_i)$. We have
+\[
+\bigwedge^s V_{k,t} = \bigoplus_{I} \mc{O}(d_I'),
+\]
+where $I$ runs over the subsets of $\{1,\dotsc, r^{(k)}\}$ of size $s$ and $d'_I\coloneqq \sum_{i\in I} d'_i$.
+For every type candidate $(d'_i)$, the sum $\sum_{i=1}^s d'_i$ is the largest sum of $s$ entries of $(d'_i)$. Since $d'_i \geq 0$, the condition $\sum_{i=1}^s d'_i \geq \sum_{i=1}^s d_i$ is equivalent to the condition $h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s d_i)) > 0$.
+\[
+	\widehat Z_{(d_i)} = \bigcap_{s=1}^{r^{(k)}} \{t : h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s d_i)) > 0\}.
+\]
+With Serre duality and the Cohomology and Base Change theorem we write the sets of the intersection as 
+\[
+	\Supp(R^1 \pushf \phi (\pullb p (\textstyle{\bigwedge}^{s} V_k\dual )(\textstyle{\sum}^s d_i - 2))),
+\]
+which is a determinantal variety by an argument similar to the second part of the proof of \Cref{supp-are-det-varieties}: start with the sequence \cref{verlinde-simplified-exact-sequence},  One just has to note that $h^1(\PP^1,\mc{O}(\sum^s d_i - 2)) = 0$ for all $s$, since at least one $d_i$ is nonzero. This gives the exact sequence
+% \[
+% {\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+% \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+% \to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+% \to 0.
+% \]
 \end{proof}
 
 \begin{proposition}
@@ -423,39 +445,76 @@ This is a special case of \Cref{no-big-types-general}.
 
 \subsection{Calculations in the Chow Ring}
 
-To perform calculations in the Chow ring $A$ of $\Gr(2,35)$, we follow the conventions found in \cite{eisenbud-harris-intersection-theory}. We assume $\characteristic(k) = 0$ for simplicity. The ring $A$ is generated by the Schubert classes $\sigma_{a,b}$ of the Schubert cycles
+To perform calculations in the Chow ring $A$ of $\GGr(1,\schemeofquartics)$, we follow the conventions found in \cite{eisenbud-harris-intersection-theory}. We assume $\characteristic(k) = 0$ for simplicity. The ring $A$ is generated by the Schubert classes $\sigma_{a,b}$ of the Schubert cycles
 \[
 	\Sigma_{a,b}(\mc{H})\coloneqq \{T \in \GGr(1,\schemeofquartics) : T \cap H \neq \leer, T \subseteq H'\},
 \]
-where $\mc{H} = (H\subset H')$ is a flag of linear subspaces of dimension $33-a$ resp.\ $34-b$ in the $34$-dimensional space $\schemeofquartics$. The class $\Sigma_{a,b}$ has codimension $a+b$, and we use the convention $\sigma_{a}\coloneqq \sigma_{a,0}$. By Kleiman's theorem, finding the product of $\sigma_{a,b}$ and some class $[Z]$ of complementary codimension amounts to calculating the cardinality $\alpha$ of the set $Z\cap \Sigma_{a,b}(\mc{H})$, where $\mc{H}$ is a general flag. Then $\sigma_{a,b} \cdot [Z] = \alpha \sigma_{33,33}$.
+where $\mc{H} = (H\subset H')$ is a flag of linear subspaces of dimension $33-a$ resp.\ $34-b$ in the $34$-dimensional projective space $\schemeofquartics$. The class $\Sigma_{a,b}$ has codimension $a+b$, and we use the convention $\sigma_{a}\coloneqq \sigma_{a,0}$. By Kleiman's theorem, finding the product of $\sigma_{a,b}$ and some class $[Z]$ of complementary codimension amounts to calculating the cardinality $\alpha$ of the set $Z\cap \Sigma_{a,b}(\mc{H})$, where $\mc{H}$ is a general flag. Then $\sigma_{a,b} \cdot [Z] = \alpha \sigma_{33,33}$.
 
 \begin{proposition}
-	Let $k=5$ and let $Z \coloneqq Z_{(2,1,1,0,\dotsc)}$, \ie the locus op points $t\in \GGr(1,\schemeofquartics)$ such that $V_{5,t}$ is not generic. The class of $Z$ in the Chow ring $A$ is $142 \sigma_{31,12}$.
+	Let $k=5$ and let $Z \coloneqq Z_{(2,1,1,0,\dotsc)}$, \ie the locus of points $t\in \GGr(1,\schemeofquartics)$ such that $V_{5,t}$ is not generic. In the Chow ring $A$, we have
+	\begin{equation}
+		[Z] = \sum_{a=0}^{11} \left({\binom{24-a}{3}}{\binom{a+1}{3}}-{\binom{25-a}{3}}{\binom{a}{3}}\right) \sigma_{33-a,10+a}. \label{class-of-locus}
+	\end{equation}
 \end{proposition}
 
 \begin{proof}
-	Define the subvariety $Q \subset \schemeofquartics$ as the image of the map $$q\from \schemeofsections{1} \times \schemeofsections{3} \to \schemeofquartics$$ defined by $q(g,h) = gh$. The map $q$ is birational on its image, since a general point of $Q$has the form $gh$ with $h$ irreducible, so that the point has the unique preimage $(g,h)$. By \Cref{nongeneral-type-shared-sections}, the variety $Z$ is the image of the finite map
-	$$f\from \GGr(1,\schemeofsections{1}) \times \schemeofsections{3} \to \GGr(1,\schemeofquartics)$$
-	defined by $f((sg_1 + tg_2)_{(s:t)},h) = (sg_1h+tg_2h)_{(s:t)}$. In particular, a line $T\subset \schemeofquartics$ belonging to $Z$ lies in $Q$.
+	Define the subvariety $Q \subset \schemeofquartics$ as the image of the map $$f\from \schemeofsections{1} \times \schemeofsections{3} \to \schemeofquartics$$ defined by $f(g,h) = gh$. The map $f$ is birational on its image, since a general point of $Q$ has the form $gh$ with $h$ irreducible, so that the point has the unique preimage $(g,h)$. By \Cref{nongeneral-type-shared-sections}, the variety $Z$ is the image of the finite map
+	$$\phi \from \GGr(1,\schemeofsections{1}) \times \schemeofsections{3} \to \GGr(1,\schemeofquartics)$$
+	defined by $\phi((sg_1 + tg_2)_{(s:t)},h) = (sg_1h+tg_2h)_{(s:t)}$. In particular, a line $T\subset \schemeofquartics$ belonging to $Z$ lies in $Q$.
 
-	Since $q$ and $f$ are finite, we have $\dim(Q) = 22$ and $\dim(Z)=23$, while $\codim(Z)=43$. The Chow group $A^{43}$ is generated by the classes $\sigma_{33,10},\sigma_{32,11},\dotsc,\sigma_{22,21}$, while the complementary group $A^{23}$ is generated by
+	Since $f$ and $\phi$ are finite, we have $\dim(Q) = 22$ and $\dim(Z)=23$, while $\codim(Z)=43$. The Chow group $A^{43}$ is generated by the classes $\sigma_{33,10},\sigma_{32,11},\dotsc,\sigma_{22,21}$, while the complementary group $A^{23}$ is generated by
 	$\sigma_{23,0},\sigma_{22,1},\dotsc,\sigma_{12,11}$. Write
 	\[
 		[Z] = \sum_{a=0}^{11} \alpha_{33-a,10+a} \sigma_{33-a,10+a}. 
 	\]
-	A calculation in the Chow ring gives $\sigma_{33-a,10+a} \sigma_{23-a',a'} = 1$ if $a=a'$ and $0$ else. Hence, multiplying the above equation with $\sigma_{33-a',10+a'}$ gives $\alpha_{33-a,10+a} = \deg([Z]\cdot \sigma_{23-a,a})$.
+	A calculation in the Chow ring gives $\sigma_{33-a,10+a} \sigma_{23-a',a'} = 1$ if $a=a'$ and $0$ else. Hence, multiplying the above equation with $\sigma_{33-a',10+a'}$ gives
+	$
+	\alpha_{33-a,10+a} = \deg([Z]\cdot \sigma_{23-a,a}).
+	$
 
 	Using Giambelli's formula 
 	$\sigma_{23-a,a}=\sigma_{23-a}\sigma_{a} - \sigma_{24-a}\sigma_{a-1}$ \cite[Prop.\ 4.16]{eisenbud-harris-intersection-theory}, we reduce to computing $\deg([Z] \cdot \sigma_{23-a}\sigma_{a})$ for $0\leq a\leq 11$.
 	Note that in the corner case $a=0$, the second summand in Giambelli's formula vanishes.
-	By Kleiman transversality, we have $\deg([Z] \cdot \sigma_{23-a}\sigma_{a}) = \abs{\{T\in \GGr(1,\schemeofquartics) : T \cap H \neq \leer, T \cap H' \neq \leer\}}$, where $H$ and $H'$ are general linear subspaces of $\schemeofquartics$ of dimension $10+a$ and $33-a$, respectively.
+	By Kleiman transversality, we have 
+	\[
+	\deg([Z] \cdot \sigma_{23-a}\sigma_{a}) = \abs{\{T\in \GGr(1,\schemeofquartics) : T \cap H \neq \leer, T \cap H' \neq \leer\}},
+	\] where $H$ and $H'$ are general linear subspaces of $\schemeofquartics$ of dimension $10+a$ and $33-a$, respectively.
 
-	To a point $p = g_p h_p \in Q$ with $g_p \in \schemeofsections{1}, h_p \in \schemeofsections{3}$, associate a closed reduced subscheme $\Lambda_p$ containing $p$ as follows. If $h_p$ is irreducible, let $\Lambda_p$ be the image of the linear embedding $\schemeofsections{1}\times \{h_p\} \to \schemeofquartics$ given by $g \mapsto g h_p$. If $h_p = g'_p h'_p$ with $h'_p \in \schemeofsections{2}$ irreducible, let $\Lambda_p$ be the union of the images of the linear embeddings $\schemeofsections{1} \times \{h_p\} \to \schemeofquartics$ and $\schemeofsections{1} \times \{g_p h'_p\} \to \schemeofquartics$. These two linear subspaces meet exactly at $p$. Similarly, if $p$ is the product of four linear forms, the space $\Lambda_p$ is defined as the union $\bigcup_h \im(\schemeofsections{1} \times \{h\}\to \schemeofquartics)$, where $h$ runs over the cubics arising as products of the factors of $p$.
+	To a point $p = g_p h_p \in Q$ with $g_p \in \schemeofsections{1}$ and $h_p \in \schemeofsections{3}$, associate a closed reduced subscheme $\Lambda_p$ containing $p$ as follows. If $h_p$ is irreducible, let $\Lambda_p$ be the image of the linear embedding $\schemeofsections{1}\times \{h_p\} \to \schemeofquartics$ given by $g \mapsto g h_p$. If $h_p = g'_p h'_p$ with $h'_p \in \schemeofsections{2}$ irreducible, let $\Lambda_p$ be the union of the images of the linear embeddings $\schemeofsections{1} \times \{h_p\} \to \schemeofquartics$ and $\schemeofsections{1} \times \{g_p h'_p\} \to \schemeofquartics$. These two linear subspaces meet exactly at $p$. Similarly, if $p$ is the product of four linear forms, define the space $\Lambda_p$ as the union $\bigcup_h \im(\schemeofsections{1} \times \{h\}\to \schemeofquartics)$, where $h$ runs over the four cubics arising as products of the linear factors of $p$.
 
-	By the construction of the $\Lambda_p$, if a line $T\in Z$ meets the point $p$, then $T\subseteq \Lambda_p$. A general linear subspace $H$ of dimension $10+a$ intersects the variety $Q$ at a smooth subvariety $Q'$ of dimension $a+2$. Next, we show that we may assume that for each point $p\in Q'$, the linear subspace $H$ intersects $\Lambda_p$ exacly at $p$. Let $\mc{H}$ denote the parameter space for $H$, \ie the Grassmannian $\GGr(10+a, 34)$. Define the closed subset $X\subseteq Q\times \mc{H}$ by
-	$X\coloneqq \{(p,H):\dim(H\cap \Lambda_p)\geq 1\}$. The fibers of the induced map $X\to \mc{H}$ have dimension at least one. Hence, to prove that the desired condition on $H$ is an open condition, it suffices to prove $\dim(X) \leq \dim(\mc{H})$. The fiber of the map $X\to Q$ consists of the union of finitely many closed subsets of the form $X'_p = \{H\in \mc{H} : \dim(H\cap \Lambda'_p)\geq 1\}$, where $\Lambda'_p$ is one of the components of $\Lambda_p$, isomorphic to $\PP^3$. The space $X'_p$ is a Schubert cycle
+	By the construction of the $\Lambda_p$, if a line $T\in Z$ meets the point $p$, then $T\subseteq \Lambda_p$. A general linear subspace $H$ of dimension $10+a$ intersects the variety $Q$ at a smooth subvariety $Q'$ of dimension $a-2$. Furthermore, it may be assumed that a general point $p=gh$ of $Q'$ with $h\in \schemeofsections{3}$ has $h$ irreducible. Indeed, the subvariety of $Q$ where $h$ is reducible has dimension $\dim(\schemeofsections{1} \times \schemeofsections{1} \times \schemeofsections{2}) = 15$, so the dimension of its intersection with a general $H$ is $a-9$. For $a=0,1$, the general linear subspace $H$ does not intersect $Q$ at all, from which follows $\deg([Z]\cdot \sigma_{23}\sigma_{0}) =
+	\deg([Z]\cdot \sigma_{22}\sigma_{1}) = 0$.
+
+	Next, we show that we may assume that for each point $p\in Q'$, the linear subspace $H$ intersects $\Lambda_p$ exacly at $p$. Let $\mc{H}$ denote the parameter space for $H$, \ie the Grassmannian $\GGr(10+a, 34)$. Define the closed subset $X\subseteq Q\times \mc{H}$ by
+	$X\coloneqq \{(p,H):\dim(H\cap \Lambda_p)\geq 1\}$. The fibers of the induced map $X\to \mc{H}$ have dimension at least one. Hence, to prove that the desired condition on $H$ is an open condition, it suffices to prove $\dim(X) \leq \dim(\mc{H})$. The fiber of the map  $X\to Q$ over a point $p$ consists of the union of finitely many closed subsets of the form $X'_p = \{H\in \mc{H} : \dim(H\cap \Lambda'_p)\geq 1\}$, where $\Lambda'_p$ is one of the components of $\Lambda_p$, isomorphic to $\PP^3$. The space $X'_p$ is a Schubert cycle
 	\[
 		\Sigma_{22-a,22-a} = \{H\in \Gr(11,35) : \dim(H \cap H_4) \geq 2\},
 	\]
 	with $H_4$ a four-dimensional subspace part of some flag. The codimension of the cycle is $2(22-a)$, hence also $\codim(X_p) = 2(22-a)$. Finally, we have $\dim(\mc{H})-\dim(X) = \codim(X_p) - \dim(Q) = 22-2a \geq 0$ for $0\leq a \leq 11$.
+
+	Next, let $\Lambda \coloneqq \bigcup_{p\in Q'} \Lambda_p = f(\schemeofsections{1}\otimes \pr_2 f^{-1}(Q'))$ and $\Lambda''\coloneqq \schemeofsections{1}\otimes \pr_2 f^{-1}(Q')$. By the choice of $H$, the map $f^{-1}(Q')\to Q'$ is birational and the map $f^{-1}(Q)\to \pr_2f^{-1}(Q)$ is even bijective. It follows that $\Lambda''$ and hence $\Lambda$ have dimension $a+1$. The intersection of $\Lambda$ with a general linear subspace $H'$ of dimension $33-a$ is a finite set of points. Since for each point $p\in Q'$ the subspace $\Lambda'_p$ is the inclusion of a linear subspace, the linear subspace $H'$ will intersect each $\Lambda'_p$ in at most one point. If $p'$ is such an intersection point, then the only line $T\in Z$ meeting both $p$ and $H'$ is the one through $p$ and $p'$. If on the other hand the intersection $H'\cap \Lambda_p$ is empty, then there will be no such line. This shows that $\deg([Z]\cdot \sigma_{22-a}\sigma_{a})$ is the number of intersection points of $\Lambda$ with a general $H'$.
+
+	Finally, the pre-image $f^{-1}(Q') = f^{-1}(H)$ is smooth for a general $H$ by Bertini's Theorem. If $\zeta$ is the class of a hyperplane section of $\schemeofquartics$ we have $f^*(\zeta) = \alpha + \beta$, , where $\alpha$ and $\beta$ are classes of hyperplane sections of $\schemeofsections{1}$ and $\schemeofsections{3}$, respectively. Using the fact that $\pr_2$ is bijective, $f^{-1}(H)$ smooth, and $f$ of degree one we compute:
+	\begin{align*}
+	[\Lambda''] & = [\pr_2^{-1}\pr_2 f^{-1}(H)] \\
+	& = \pr_2^*[\pr_2 f^{-1}(H)] \\
+	& = \pr_2^* \pr_{2,*}[f^{-1}(H)] \\
+	& = \pr_2^*\pr_{2,*}f^*[H] \\
+	& = \pr_2^* \pr_{2,*}(\alpha + \beta)^{24-a} \\
+	& = \textstyle{\binom{24-a}{3}}\pr_2^* \beta^{21-a} \\
+	& = \textstyle{\binom{24-a}{3}}\beta^{21-a}
+	\end{align*}
+
+	Hence, by the push-pull formula:
+	\[
+		\deg([\Lambda]\cdot H') = \deg([\Lambda'']\cdot(\alpha+\beta)^{a+1}) = \binom{24-a}{3}\binom{a+1}{3}
+	\]
+	We then use Giambelli's formula to obtain at Equation \cref{class-of-locus}.
+
+	% To compute this number, we compute the coefficient $\lambda$ of the term of highest degree of the class
+	% $[\Lambda][H']= f_* ([\Lambda''] \cdot (\alpha+\beta)^{a+1})$, where $\alpha$ and $\beta$ are classes of hyperplane sections of $\schemeofsections{1}$ and $\schemeofsections{3}$, respectively. Here, we used that for the class $\zeta$ of a hyperplane section of $\schemeofquartics$ we have $f^*(\zeta) = \alpha + \beta$. From the definition of $\Lambda''$ it follows that the term of highest degree of $[\Lambda'']$ is $\deg(Q')\beta^{21-a} = \deg(Q)\beta^{21-a}$
+
+
+
 \end{proof}

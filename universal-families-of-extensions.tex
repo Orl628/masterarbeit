@@ -11,53 +11,64 @@ where two such sequences are equivalent if there exists an isomorphism between t
 Explicitely, the sum of two elements of $\Ext^1$ corresponds to the Baer sum of the associated extensions, while the multiplication of an extension
 as above by a scalar $a\in H^0(S,\mc{O}_S)$ is given by the pullback sequence along the map $\mc{F}\xto{a}\mc{F}$.
 
-The next proposition shows there exists a $k$-scheme $V$ that parametrizes the points of $\Ext^{1}_X(\mc{F},\mc{G})$.
+In this section, we ask when it is possible to construct an $S$-scheme $V$ and a universal extension on $X\times_S V$. This is quickly found to be true for $\mc{F},\mc{G}$ locally free and $S=\Spec(k)$. For the more general situation, the article \cite{lange-universal-extensions} turns to the moduli problem of classifying relative extensions of sheaves and applies it to the global situation.
+%The next proposition shows there exists a $k$-scheme $V$ that parametrizes the points of $\Ext^{1}_X(\mc{F},\mc{G})$.
+\begin{remark}
+Let $\phi \from X_1 \to X_2$ be a morphism of schemes, let $\mc{F}_1$ and $\mc{F}_2$ be $\mc{O}_{X_1}$-modules. The Grothendieck spectral sequence \cite[Theorem~23.3.5]{vakil-algebraic-geometry} specializes to the Leray spectral sequence
+$E_2^{p,q}=H^q(X_2,R^p \phi_*\mc{F}_1) \Rightarrow H^{p+q}(X_1,\mc{F}_1)$
+%\cite[Theorem~23.4.5]{vakil-algebraic-geometry}
+and the local-to-global $\Ext$ spectral sequence
+$E_2^{p,q}=H^p(X_1,\EXT^q(\mc{F}_1,\mc{F}_2)) \Rightarrow \Ext^{p+q}(\mc{F}_1,\mc{F}_2)$.
+The first few terms of the associated exact sequences in lower degrees are 
+\begin{equation}
+	0
+	\to H^1(X_2,\pushf \phi \mc{F}_1)
+	\to H^1(X_1,\mc{F}_1)
+	\to H^0(X_2, R^1 \pushf \phi \mc{F}_1) \label{leray-es}
+\end{equation}
+and
+\begin{equation}
+	0
+	\to H^1(X_2,\HOM(\mc{F}_1,\mc{F}_2))
+	\to \Ext^1(\mc{F}_1,\mc{F}_2)
+	\to H^0(X_2,\EXT^1(\mc{F}_1,\mc{F}_2)). \label{ext-es}
+\end{equation}
+\end{remark}
 
 \begin{proposition} \label{cor:universal-extension}
-Let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. There exists an extension
+Let $\mc{F}$ and $\mc{G}$ be locally free, and let $V \coloneqq \VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. There exists an extension
 	\[
 		\xi_{\mathrm{univ}} \colon \quad \ses{\pullb{\pr_1}\mc{G}}{\mc{E}}{\pullb{\pr_1}\mc{F}}
 	\]
-over $X\times V$
-such that for all Noetherian affine $k$-schemes $Y$, the map
-$\Mor_{k}(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ defined by
+over $X\times_k V$
+such that for all Noetherian $k$-schemes $Y$, the map
+$$\Mor_{k}(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$$ defined by
 $\alpha \mapsto \pullb{(\id_X\times \alpha)} \xi_{\mathrm{univ}}$
 is a bijection, functorial in $Y$.
 In particular, pulling back $\xi_{\text{univ}}$ gives a bijection $\Mor_{k}(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
 \end{proposition}
 
 \begin{proof}
-Write $Y=\Spec(A)$. We aim to construct a functorial isomorphim
-\[
-\Mor_{k}(Y,V)\simeq \Ext^1_{X_Y}(\mc{F}_Y, \mc{G}_Y).
-\]
-Given such an isomorphism for all $Y$, the required universal extension is the image of $\id\in\Mor_{k}(V,V)$.
-
-Note that there exist functorial isomorphisms
-\begin{align*}
+We find functorial isomorphisms
+\begin{align}
 \Mor_{k}(Y,V)
-\simeq & \Hom_{\text{k-alg}}(\Sym\Ext^1_X(\mc{F},\mc{G})\dual,A) 
-\simeq \Hom_{\text{k-mod}}(\Ext^1_X(\mc{F},\mc{G})\dual,A) \\
-\simeq & A \otimes_k \Ext^1_{X}(\mc{F},\mc{G}).
-\end{align*}
-For the final isomorphism
-$A \otimes_k \Ext^1_{X}(\mc{F},\mc{G})\simeq
-\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y),$
-it suffices to prove that the $\delta$-functors\footnotemark{} $A\otimes_k \Hom_X(\mc{F},-)$ and
-$\Hom_{X_Y}(\mc{F}_Y, {-}_Y)$ are canonically isomorphic.
+% & \simeq \Hom_{\text{k-mod}}(\Ext^1_X(\mc{F},\mc{G})\dual,A) \label{ext-isom-univprop}\\
+%\simeq & A \otimes_k \Ext^1_{X}(\mc{F},\mc{G}).
+& \simeq H^0(\mc{O}_Y \otimes \Ext^1(\mc{F},\mc{G})) \label{isom-univprop} \\
+& \simeq H^0(s_{2}^* H^1(\HOM(\mc{F},\mc{G}))) \label{isom-ext-ss} \\
+& \simeq H^0(R^1 \pr_{2,*}(\pr_1^* \HOM(\mc{G},\mc{F}))) \label{isom-cbc} \\
+& \simeq H^0(R^1 \pr_{2,*}(\HOM(\mc{F}_Y,\mc{G}_Y))) \label{isom-locfree}\\
+& \simeq H^1(\HOM(\mc{G}_Y,\mc{F}_Y)) \label{isom-leray-ss-via-cbc}\\
+& \simeq \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y) \label{isom-ext-ss-two}.
+\end{align}
+The required universal extension is then the image of $\id\in\Mor_{k}(V,V)$ in $\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$.
 
-\footnotetext{Recall that $A\otimes_k -$ is exact.}
-
-In fact, there exists a canonical homomorphism $A\otimes_k \Hom_X(\mc{F},\mc{G}) \to\Hom_{X\times Y}(\mc{F}_Y, {\mc{G}}_Y)$, functorial in $\mc{G}$, that sends an elementary tensor $a \otimes u$ to the homomorphism $a\otimes u$. This is an isomorphism on stalks by
-\cite[Ch.\ \textsc{I}, \S 2.10]{bourbaki-commutative-algebra}.
-There, we need the assumptions that $\mc{F}$ is coherent and $X$ Noetherian. 
+The isomorphism \cref{isom-univprop} comes from the universal property of $\VV(\Ext^1_X(\mc{F},\mc{G})\dual)$. The isomorphisms \cref{isom-ext-ss} and \cref{isom-ext-ss-two} come from the sequence \cref{ext-es}, whose third term is zero since $\mc{F}$ and $\mc{G}$ are locally free. We have \cref{isom-cbc} by the Cohomology and Base Change Theorem \cite[{}28.1.6]{vakil-algebraic-geometry}, and \cref{isom-locfree} since $\mc{F}$ and $\mc{G}$ are locally free. For the isomorphism \cref{isom-leray-ss-via-cbc}, we use the sequence \cref{leray-es}, whose third term is found to be zero after applying the Cohomology and Base Change Theorem.
 \end{proof}
 
-The scheme $V$ of \Cref{cor:universal-extension} is a special case of the solution to the more general moduli problem of classifying relative families of sheaves. The rest of this section sketches the more general situation. The material is taken from the article \cite{lange-universal-extensions}.
-
 \begin{definition}\begin{enumerate}
-	\item The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the right-derived functor
-	$R^i(\pushf{f}\HOM(\mc{F},\mc{G}))
+	\item The \emph{$i$-th relative Ext module} $\EXT^i_f(\mc{F},\mc{G})$ is the image of $\mc{G}$ under the $i$-th right-derived functor of
+	$\pushf{f}\HOM(\mc{F},-)
 	\from \Mod_{\mc{O}_X} \to \Mod_{\mc{O}_S}$.
 
 	\item For $s\in S$, define the homomorphism
@@ -82,13 +93,14 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 	If $S$ is affine, then we have $\EXT^i_f(\mc{F},\mc{G})=\Ext^i_X(\mc{F},\mc{G}){\ \widetilde{}}$.
 \end{remark}
 
-\begin{proposition}
-	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
-	There exists a number $N\geq 0$ depending on $\mc{G}$ such that for all quasi-coherent $\mc{O}_Y$-modules $\mc{M}$, all $i\geq 1$ and $n\geq N$ we have
-	\[
-		\EXT^i_{f_Y}(\mc{O}_{X_Y}(-n),\mc{G} \boxtimes \mc{M}) = 0
-	\]
-\end{proposition}
+
+% \begin{proposition}
+% 	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
+% 	There exists a number $N\geq 0$ depending on $\mc{G}$ such that for all quasi-coherent $\mc{O}_Y$-modules $\mc{M}$, all $i\geq 1$ and $n\geq N$ we have
+% 	\[
+% 		\EXT^i_{f_Y}(\mc{O}_{X_Y}(-n),\mc{G} \boxtimes \mc{M}) = 0
+% 	\]
+% \end{proposition}
 
 \begin{proposition}
 	Let $g \from Y \to S$ be a morphism of Noetherian schemes.
@@ -103,6 +115,10 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 	Furthermore, if $g$ is flat, then $\tau^i_g$ is an isomorphism for all $i\geq 0$.
 \end{proposition}
 
+\begin{proof}
+	See \cite[Prop. 1.3]{lange-universal-extensions}
+\end{proof}
+
 \begin{definition}
 	We say that $\EXT^i_{f}(\mc{F},\mc{G})$ \emph{commutes with base change} if for all morphisms of Noetherian schemes $g \from Y \to S$, the base change homomorphism $\tau^i_g$ is an isomorphism.
 \end{definition}
@@ -112,6 +128,10 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 	Let $s \in S$ be a point such that $\tau^i_s$ is surjective. Then there exists an open neighborhood $U$of $s$ such that $\tau^i_{s'}$ is an isomorphism for all $s'\in U$.
 	Furthermore, the homomorphism $\tau^{i-1}_{s}$ is surjective if and only if $\EXT^i_{f}(\mc{F},\mc{G})$ is locally free on an open neighborhood of $s$.
 \end{proposition}
+
+\begin{proof}
+	See \cite[Thm. 1.4]{lange-universal-extensions}
+\end{proof}
 
 \begin{remark}
 \begin{enumerate}
@@ -147,46 +167,61 @@ The scheme $V$ of \Cref{cor:universal-extension} is a special case of the soluti
 		& E,E' \from (\textup{NoethSch}/S) \to (\textup{Sets}); \\
 		%E'_{\text{glob}}
 		& E(Y) \coloneqq H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)), \\
-		& E'(Y) \coloneqq \{\text{families of extensions of $\mc{F}_Y$ by $\mc{G}_Y$ over } Y\}. \\
+		& E'(Y) \coloneqq \{\text{families of extensions of $\mc{F}_Y$ by $\mc{G}_Y$ over } Y\}.
 %		& E'_{\glob}(Y) \coloneqq \{\text{globally defined families of extensions of $\mc{F}_Y$ by 
 %		$\mc{G}_Y$ over } Y\}.
 	\end{align*}
 \end{enumerate}
-
 \end{definition}
-
 \begin{remark}
-	The spectral sequence $E_2^{p,q}=H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$ gives an exact sequence
+	The Grothendieck spectral sequence for the sequence of functors
+	\[\Mod_{\mc{O}_X}\xto{\HOM(\mc{F},-)} \Mod_{\mc{O}_X}\xto{\pushf f} \Mod_{\mc{O}_S}\]
+	is the spectral sequence with $E_2^{p,q}=H^p(S,\EXT^q_f(\mc{F},\mc{G})) \Rightarrow \Ext^{p+q}_X(\mc{F},\mc{G})$. This gives the exact sequence
 	\begin{align*}
 		0
 		 \to & H^1(S,\pushf{f}\HOM(\mc{F},\mc{G}))
 		 \xto{\varepsilon} \Ext^1_X(\mc{F},\mc{G})
 		 \xto{\mu} H^0(S,\EXT^1_f(\mc{F},\mc{G})) \\
-		 \xto{d_2} & H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})).
+		 \xto{d_2} & H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})). \label{es-rel-ext} \addtocounter{equation}{1}\tag{\theequation}
 	\end{align*}
 \end{remark}
 
 \begin{proposition}
 	Suppose that $S$ is reduced and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change. Restricted to the category of reduced Noetherian $S$-schemes, the functors $E$ and $E'$ are isomorphic.
+	% Under this isomorphism, the globally defined extensions correspond to the subgroup
+	% $\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)/H^1(Y,f_{Y,*} \HOM_{X_Y}(\mc{F}_Y,\mc{G}_Y)) \subseteq H^0(Y,\EXT^1_{f_Y}(\mc{F}_Y,\mc{G}_Y)$.
 \end{proposition}
-
-\begin{proposition}
-	Suppose that $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Then the $\mc{O}_S$-module $\EXT^1_f(\mc{F},\mc{G})\dual$ is locally free and the functor $E$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+\begin{proof}
+	See \cite[Prop. 2.3]{lange-universal-extensions}.
+\end{proof}
+\begin{proposition} \label{e-representable}
+	Suppose that $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Then the $\mc{O}_S$-module $\EXT^1_f(\mc{F},\mc{G})\dual$ is locally free and the functor $E$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
 \end{proposition}
-
+\begin{proof}
+	See \cite[Prop. 3.1]{lange-universal-extensions}.
+\end{proof}
 \begin{corollary}
-	Suppose that $S$ is reduced and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Restricted to the category of reduced Noetherian $S$-schemes, the functor $E'$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+	Suppose that $S$ is reduced and $\EXT^i_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. Restricted to the category of reduced Noetherian $S$-schemes, the functor $E'$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
 \end{corollary}
 
 \begin{corollary}
-	Suppose that $S$ is affine and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. The functor
-	\[
-		(\textup{Aff}/{S}) \to (\textup{Sets})
-		\colon
-		Y \mapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
-	\]
-	is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+	Suppose that for all Noetherian $S$-schemes $Y$ we have
+	$$H^i(Y,f_{Y,*} \HOM_{X_Y}(\mc{F}_Y,\mc{G}_Y)) = 0$$ for $i=1,2$. The functor $Y \mapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$ is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
 \end{corollary}
+
+\begin{proof}
+	Use the sequence \cref{es-rel-ext} and \Cref{e-representable}.
+\end{proof}
+
+% \begin{corollary}
+% 	Suppose that $S$ is affine and $\EXT^1_f(\mc{F},\mc{G})$ commutes with base change for $i=0,1$. The functor
+% 	\[
+% 		(\textup{Aff}/{S}) \to (\textup{Sets})
+% 		\colon
+% 		Y \mapsto \Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)
+% 	\]
+% 	is representable by the $S$-scheme $\VV(\EXT^1_f(\mc{F},\mc{G})\dual)$.
+% \end{corollary}
 
 \begin{remark}
 As a special case of the above, we recover \Cref{cor:universal-extension}.

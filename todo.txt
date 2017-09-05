@@ -26,3 +26,7 @@ To do.
 * Props. 1.4. und 1.5.: add reference, or cut. E.g. cut prop. 1.4.
 
 * Clarify scheme language, remove the rational points.
+
+-----THIRD DRAFT------
+
+

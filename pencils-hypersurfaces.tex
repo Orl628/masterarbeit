@@ -5,12 +5,13 @@
 
 Let $V_k$ be the $k$-th Verlinde bundle of the universal family of hypersurfaces of degree $d$ in $\PP^n$. The vector bundle $V_k$ is the cokernel of the map
 \[
-M \from \mc{O}_{\schemeofsurfaces}(-1) \otimes H^0(\mc{O}(k-d),\PP^n)
-	\to \mc{O}_{\schemeofsurfaces} \otimes H^0(\mc{O}(k),\PP^n)
+M \from \mc{O}_{\schemeofsurfaces}(-1)
+\otimes H^0(\PP^n,\mc{O}(k-d))
+	\to \mc{O}_{\schemeofsurfaces} \otimes H^0(\PP^n,\mc{O}(k))
 \]
 given by multiplication by
 $\sum_I \alpha_I \otimes x^I
-\in H^0(\mc{O}(1),\schemeofsurfaces) \otimes H^0(\mc{O}(d),\PP^n),$ where the $\alpha_I$ are the homogeneous coordinates on $\schemeofsurfaces$.
+\in H^0(\schemeofsurfaces,\mc{O}(1)) \otimes H^0(\PP^n,\mc{O}(d)),$ where the $\alpha_I$ are the homogeneous coordinates on $\schemeofsurfaces$. The vector bundle $V_k$ has rank $r^{(k)}\coloneqq h^0(\PP^n, \mc{O}(k))-h^0(\PP^n, \mc{O}(k-d))$ and determinant $\mc{O}(d^{(k)})$ with $d^{(k)}\coloneqq h^0(\PP^n,\mc{O}(k-d))$.
 We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 
 % \begin{proposition} \label{construct-splitting}
@@ -34,7 +35,7 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 
 %  	We construct $M_1 \from \mc{F}_1 \to \mc{G}_1$, the others can be defined similarly. The bundle $\mc{G}_0$ will then just be a direct complement of $\bigoplus_{i\geq 1}\mc{G}_i$. Note that for all $\theta \in H^0(\mc{O}(k-d), \PP^n),$ the morphism $M|_T$ maps $\mc{O}(-1) \otimes \gen{\theta}$ into $\mc{O} \otimes \gen{f_1 \theta , f_2\theta }$.
 
-%  	The bundle $\mc{F}_1$ shall have the form $\mc{O}(-1) \otimes U_1$, with $U_1$ a subspace of $H^0(\mc{O}(k-d),\PP^n)$, while $\mc{G}_1 = \mc{O} \otimes W_1$, with $W_1 \coloneqq f_1 U_1 + f_2 U_1$. We construct $U_1$ iteratively, beginning with $U_1^{0} \coloneqq \gen{\theta}$, where $\theta$ is any nonzero section. After $U_1^{\nu}$ is constructed, we define $W_1^{\nu} \coloneqq f_1 U_1^{\nu} + f_2 U_1^{\nu}$ and either stop or construct $U_1^{\nu + 1}$ as follows.
+%  	The bundle $\mc{F}_1$ shall have the form $\mc{O}(-1) \otimes U_1$, with $U_1$ a subspace of $H^0(\PP^n,\mc{O}(k-d))$, while $\mc{G}_1 = \mc{O} \otimes W_1$, with $W_1 \coloneqq f_1 U_1 + f_2 U_1$. We construct $U_1$ iteratively, beginning with $U_1^{0} \coloneqq \gen{\theta}$, where $\theta$ is any nonzero section. After $U_1^{\nu}$ is constructed, we define $W_1^{\nu} \coloneqq f_1 U_1^{\nu} + f_2 U_1^{\nu}$ and either stop or construct $U_1^{\nu + 1}$ as follows.
 
 %  	If the space $f_1 U_1^{\nu,\perp} + f_2 U_1^{\nu,\perp}$ does not intersect $W_1^\nu$, we stop and set $U_1 \coloneqq U_1^\nu$. In the other case, there exist $\theta'_1, \theta'_2 \in U_1^{\nu, \perp}$ with $f_1 \theta'_1 + f_2 \theta'_2 \in W_1^{\nu}.$ If $\theta'_2 \in U_1^{\nu,\perp}$, we set $U_1^{\nu+1} \coloneqq U_1 + \gen{\theta'_1}$. Otherwise, We set $U_1^{\nu+1} \coloneqq U_1^{\nu} + \gen{\theta'_1,\theta'_2}$.
 
@@ -59,13 +60,13 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 \end{lemma}
 
 \begin{proof}
-	Define $\mc{E}_1 \coloneqq \ker(\pr_2\circ\psi)$, which is a locally free sheaf on $\PP^1$ By comparing determinants in the short exact sequence $0 \to \mc{E}_1 \to \mc{E} \to \mc{O}$ we see that $\mc{E}_1$ is free, hence by an $\Ext^1$ computation, the sequence splits. The property $\im(\phi) \subseteq \mc{E}_1$ follows from the definition.
+	Define $\mc{E}_1 \coloneqq \ker(\pr_2\circ\psi)$, which is a locally free sheaf on $\PP^1$. By comparing determinants in the short exact sequence $0 \to \mc{E}_1 \to \mc{E} \to \mc{O} \to 0$ we see that $\mc{E}_1$ is free, hence by an $\Ext^1$ computation the sequence splits. The property $\im(\phi) \subseteq \mc{E}_1$ follows from the definition.
 \end{proof}
 
 \begin{proposition} \label{number-zeroes}
 	Let $f_1, f_2 \in \schemeofsurfaces$ span the line
-	$T \subseteq \schemeofsurfaces$, let $\coker(M|_{T}) \isom \mc{O}^{\lambda_0}
-	\oplus \bigoplus_{i=1}^s \mc{O}(\lambda_i)$. Define $U\coloneqq H^0(\mc{O}(k-d),\PP^n)$. We have $$\lambda_0 = \dim H^0(\mc{O}(k),\PP^n) - \dim ({f_1 U + f_2 U}),$$
+	$T \subseteq \schemeofsurfaces$ and $\coker(M|_{T}) \isom \mc{O}^{\lambda_0}
+	\oplus \bigoplus_{i=1}^s \mc{O}(d_i)$. Define $U\coloneqq H^0(\PP^n,\mc{O}(k-d))$. We have $$d_0 = \dim H^0(\PP^n,\mc{O}(k)) - \dim ({f_1 U + f_2 U}),$$
 	or, equivalently,
 	\[
 		s = \dim({f_1 U + f_2 U}) - d^{(k)}.
@@ -73,7 +74,7 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 \end{proposition}
 
 \begin{proof}
-	Note that the map $M|_T$ sends a local section $\xi \otimes \theta$ to $s\xi \otimes f_1 \theta + t\xi \otimes f_2 \theta$. In particular, the image of $\mc{O}(-1)\otimes U$ is contained in $\mc{O} \otimes (f_1 U + f_2 U)$. It follows that $\lambda_0 \geq \dim ({f_1 U + f_2 U})$.
+	Note that the map $M|_T$ sends a local section $\xi \otimes \theta$ to $s\xi \otimes f_1 \theta + t\xi \otimes f_2 \theta$. In particular, the image of $\mc{O}(-1)\otimes U$ is contained in $\mc{O} \otimes (f_1 U + f_2 U)$. It follows that $d_0 \geq \dim ({f_1 U + f_2 U})$.
 
   To prove the other inequality, consider the induced sequence
   \[
@@ -101,15 +102,15 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 	The general type candidate for $V_k$ takes the form
 	$(b^{(k)}+1,\dotsc,b^{(k)}+1,b^{(k)},\dotsc,b^{(k)})$,
 	where the number of entries is
-	$r^{(k)} \coloneqq \binom{n+k}{n} - \binom{n+k-d}{n}$
-	and their sum $d^{(k)} \coloneqq \binom{n+k-d}{n}$, while
+	$r^{(k)} = \binom{n+k}{n} - \binom{n+k-d}{n}$
+	and their sum $d^{(k)} = \binom{n+k-d}{n}$, while
 	$b^{(k)} = \lfloor d^{(k)}/r^{(k)}\rfloor$.
 	Note that the degrees of $d^{(k)}$ and $r^{(k)}$ as polynomials in $k$ are $n$ and $n-1$, respectively. Hence, $b^{(k)} \to \infty$ for $k \to \infty$.
 \end{remark}
 
 \begin{corollary} \label{no-more-than-ones}
-	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$. Let $(\theta_j)$ be a monomial basis of $H^0(\PP^n, \mc{O}(k-d))$. Let $k$ be such that $b^{(k)}=0$, \ie such that in the general type, only ones and zeroes appear. The bundle $V_{k,t}$ has general type if and only if
-	$(f_1\theta_j,f_2\theta_j)_j$ is a linearly independent set in $H^0(\mc{O}(k), \PP^n)$.
+	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$. Let $(\theta_j)$ be a monomial basis of $H^0(\PP^n, \mc{O}(k-d))$. Let $k$ be such that $b^{(k)}=0$, that is such that in the general type, only ones and zeroes appear. The bundle $V_{k,t}$ has general type if and only if
+	$(f_1\theta_j,f_2\theta_j)_j$ is a linearly independent set in $H^0(\PP^n,\mc{O}(k))$.
 \end{corollary}
 
 \begin{proof}
@@ -122,7 +123,7 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 \end{proposition}
 
 \begin{proof}
-	By \Cref{no-more-than-ones}, the bundle $V_{k,t}$ has non-general type if and only if there exist linearly independent $g_1,g_2\in H^0(\mc{O}(k-d),\PP^n)$ such that $g_1f_1+g_2f_2 = 0$. Let $h \coloneqq \gcd(f_1,f_2)$ and $d'\coloneqq \deg h$.
+	By \Cref{no-more-than-ones}, the bundle $V_{k,t}$ has non-general type if and only if there exist linearly independent $g_1,g_2\in H^0(\PP^n,\mc{O}(k-d))$ such that $g_1f_1+g_2f_2 = 0$. Let $h \coloneqq \gcd(f_1,f_2)$ and $d'\coloneqq \deg h$.
 
 	If $d' \geq 2d-k$ then $\deg (f_i/h) \leq k-d$ and we may take $g_1,g_2$ to be multiples of $f_1/h$ and $f_2/h$, respectively.
 
@@ -130,7 +131,7 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 \end{proof}
 
 \begin{example} \label{no-big-types}
-	For $n=2, d=2,$ and $k=3$, we have $d^{(k)}=3$ and $r^{(k)}=10$. We show that the only types of $V_k$ that occur are $(1_3, 0_7)$ and $(2_1,1_1,0_8)$. The first type occurs \eg for $f_1 = x_0^2, f_2=x_1^2$, and the second for $f_1=x_0^2, f_2=x_0x_1$. Assume that the type $(3_1,0_9)$ occurs for some $f_1,f_2 \in H^0(\mc{O}(2),\PP^2)$. By \Cref{number-zeroes} we then have $\dim\gen{f_1 x_j,f_2 x_j}_{j=0}^2 = 4$. Hence, we find $g_1,g_2,g'_1,g'_2\in H^0(\mc{O}(1),\PP^2)$ and two linearly independent equations
+	For $n=2, d=2,$ and $k=3$, we have $d^{(k)}=3$ and $r^{(k)}=10$. We show that the only types of $V_k$ that occur are $(1_3, 0_7)$ and $(2_1,1_1,0_8)$. The first type occurs \eg for $f_1 = x_0^2, f_2=x_1^2$, and the second for $f_1=x_0^2, f_2=x_0x_1$. Assume that the type $(3_1,0_9)$ occurs for some $f_1,f_2 \in H^0(\PP^2,\mc{O}(2))$. By \Cref{number-zeroes} we then have $\dim\gen{f_1 x_j,f_2 x_j}_{j=0}^2 = 4$. Hence, we find $g_1,g_2,g'_1,g'_2\in H^0(\PP^2,\mc{O}(1))$ and two linearly independent equations
 	\begin{align*}
 	g_1f_1 + g_2f_2 &= 0 \\
 	g'_1f_1 + g'_2f_2 &= 0,
@@ -150,5 +151,5 @@ We study the restriction of $V_k$ to lines $T\subseteq \schemeofsurfaces.$
 		g_1f_1 + g_2f_2 =& 0 \\
 		g'_1 f_1 + g'_2 f_2 =& 0,
 	\end{align*}
-	with $g_i,g'_i\in H^0(\mc{O}(1),\PP^n)$. We use the irreducibility of the $g_i$ to produce a contradiction just like in the cited example, the only difference being that the common factor $h$ of $f_1$ and $f_2$ need not be linear.
+	with $g_i,g'_i\in H^0(\PP^n,\mc{O}(1))$. We use the irreducibility of the $g_i$ to produce a contradiction just like in the cited example, the only difference being that the common factor $h$ of $f_1$ and $f_2$ need not be linear.
 \end{proof}
