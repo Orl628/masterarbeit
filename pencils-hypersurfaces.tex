@@ -3,7 +3,10 @@
 \newcommand{\schemeofsurfaces}[1][d]{\abs{\mc{O}(#1)}}
 \newcommand{\divides}{\mid}
 
-Let $V_k$ be the $k$-th Verlinde bundle of the universal family of hypersurfaces of degree $d$ in $\PP^n$. The vector bundle $V_k$ is the cokernel of the map
+\begin{definition}
+Let $\pi\from \mf X \to \abs{\mc{O}_{\PP^n}(d)}$ be the universal family of hypersurfaces of degree $d$ in $\PP^n$. Let $\mc{L}$ be the restriction of the bundle $\mc{O}(1)\boxtimes \mc{O}$ under the inclusion $\mf X \subseteq \PP^n \times \schemeofsurfaces$. The vector bundle $V_k \coloneqq \pushf \pi (\mc{L}^{\otimes k})$ is the $k$-th \emph{Verlinde Bundle} of the universal family $\pi$.
+\end{definition}
+The vector bundle $V_k$ is the cokernel of the map
 \[
 M \from \mc{O}_{\schemeofsurfaces}(-1)
 \otimes H^0(\PP^n,\mc{O}(k-d))
