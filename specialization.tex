@@ -11,6 +11,11 @@
 % Stack etc works out: see 2.24 in https://arxiv.org/pdf/math/9911199.pdf
 
 \begin{remark}
+	Specialization is transitive for $X=\PP^1$: if $\mc{V}$ specializes to $\mc{V'}$ and $\mc{V'}$ specializes to $\mc{V''}$, then $\mc{V}$ specializes to $\mc{V''}$, see e.g.\ \cite[Cor.\ 6.14]{ramamathan-deformations}.
+\end{remark}
+% TODO: try to generalize this to all X. To do this, go through the proof of transitivity in Ram83 and see if it can be generalized.
+
+\begin{remark}
 	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $\mc{V}$ and $\kappa(\eta) \boxtimes \mc{V}$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
 \end{remark}
 
@@ -40,11 +45,18 @@
 	\[ \ses{\mc{O}}{\mc{E}}{\mc{O}(2)}\]
 	up to equivalence. The zero element corresponds to the split extension $\mc{E} = \mc{O} \oplus \mc{O}(2)$.
 	Note that all such extensions must have $\mc{E}$ locally free.
-	Considering the formulae for ranks and determinants of the components of the sequence, we see that the nonsplit extensions must have $\mc{E}=\mc{O}(1)\oplus\mc{O}(1)$.
+	Considering the formulae for ranks and determinants of the components of the sequence, we see that the nonsplit extensions must have
+	$\mc{E}=\mc{O}(1)\oplus\mc{O}(1)$.
 	Furthermore, we have $\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k$.
-	By \Cref{cor:universal-extension}, there exists an extension of the form
-	\[\ses{\mc{O}\boxtimes \mc{O}_{\AA^1}}{\mc{E}_{\text{univ}}}{\mc{O}(2)\boxtimes \mc{O}_{\AA^1}}\]
-	such that for all nonzero rational points $\xi\in\AA^1 = \VV(\Ext^1(\mc{O}(2),\mc{O})\dual)$ we have the isomorphisms $\mc{E}_{\text{univ}}|_{\xi \times \AA^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$ and $\mc{E}_{\text{univ}}|_{0\times \AA^1} \simeq \mc{O} \oplus \mc{O}(2)$. Note that $\mc{E}_{\text{univ}}$ is locally free as the end terms of the sequence are.
+	By \Cref{cor:universal-extension} and using $\VV(\Ext^1(\mc{O}(2),\mc{O})\dual)\simeq \AA^1$, there exists an extension of the form
+	\[\ses{\mc{O}_{\AA^1} \boxtimes \mc{O}}{\mc{E}_{\text{univ}}}{\mc{O}_{\AA^1}\boxtimes \mc{O}(2)}\]
+	on $\AA^1\times \PP^1$
+	such that
+	$\mc{E}_{\text{univ}}|_{\xi \times \PP^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$
+	for generic $\xi\in\AA^1$
+	and 
+	$\mc{E}_{\text{univ}}|_{0\times \PP^1} \simeq \mc{O} \oplus \mc{O}(2)$.
+	Note that $\mc{E}_{\text{univ}}$ is locally free as the end terms of the sequence are.
 \end{example}
 
 \begin{remark} \label{rem:specialization-sum}
@@ -86,6 +98,19 @@
 	\cref{chosen-exact-sequence}. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then, the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
 \end{proof}
 
-\begin{remark}
+\begin{remark} \label{my-specialization}
 	By twisting the exact sequence \cref{chosen-exact-sequence} in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
 \end{remark}
+
+\begin{proposition}
+	Let $(b_i)_{i=1}^m$ and $(b'_i)_{i=1}^m$ be tuples of integers such that $\sum b_i = \sum b'_i$ and $(b_i)\leq (b'_i)$ in the sense of \Cref{def-compare-types}. Then $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b'_i)$.
+\end{proposition}
+
+\begin{proof}
+	The tuple $(b_i)$ can be transformed into the tuple $(b'_i)$ by a finite sequence of substitutions of the form
+	\begin{align*}
+		b_i \leftarrow b_i - 1, \quad
+		b_{j} \leftarrow b_{j} +1
+	\end{align*}
+	for appropriate $i$ and $j$. By \Cref{my-specialization}, $\mc{O}(b_i - 1) \oplus \mc{O}(b_j + 1)$ specializes to $\mc{O}(b_i) \oplus \mc{O}(b_j)$. Hence, each step $k$ gives an intermediate tuple $(b_i^{(k)})$ such that $\bigoplus \mc{O}(b_i^{(k-1)})$ specializes to $\bigoplus \mc{O}(b_i^{(k)})$. This proves the proposition since specialization is transitive.
+\end{proof}
