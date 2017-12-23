@@ -1,22 +1,29 @@
-\section{Specialization}
+%!TEX root = ./master.tex
+\section{Specialization of Vector Bundles on \texorpdfstring{$\PP^1$}{P1}}
+
+Let $V$ be a vector bundle on $\PP^1.$ The Birkhoff–Grothendieck theorem says that $V$ can be written as a direct sum $V=\bigoplus_i \mc{O}(b_i)$, with a unique tuple $(b_i)$ of integers. The tuple $(b_i)$ is also called the \emph{splitting type} of $V$. To study a vector bundle $W$ on a projective space $\PP^m$, one can examine the restriction of $W$ to lines $T\subset \PP^m$, and ask how the splitting type of $W|_T$ varies with $T$. Which splitting behavior should one expect for general $T$? To answer this question, we look at families of vector bundles over $\PP^1$ and ask about their general and special members. Which pairings of a general and a special splitting type are possible in a family? This section makes this question precise using the notion of specialization and provides an answer.
 
 \begin{definition}
-	Let $\mc{V}$ and $\mc{V'}$ be vector bundles on a projective $k$-scheme $X$. We say that $\mc{V}$ \emph{specializes} to $\mc{V'}$ if there exists an affine $k$-scheme $Y$, spectrum of a discrete valuation ring, with generic point $\eta$ and closed point $\eta_0$, and a vector bundle $\mc{W}$ on
+	Let $ V$ and $V'$ be vector bundles on a projective $k$-scheme $X$. We say that $ V$ \emph{specializes} to $V'$ if there exists an affine $k$-scheme $Y$, spectrum of a discrete valuation ring, with generic point $\eta$ and closed point $\eta_0$, and a vector bundle $W$ on
 	$Y\times X$
 	such that
-	$\mc{W}|_{\eta \times X} \simeq \kappa(\eta)\boxtimes\mc{V}$
+	$ W|_{\eta \times X} \simeq \kappa(\eta)\boxtimes V$
 	and
-	$\mc{W}|_{\eta_0 \times X} \simeq \kappa(\eta_0)\boxtimes\mc{V'}$. 
+	$ W|_{\eta_0 \times X} \simeq \kappa(\eta_0)\boxtimes V'$. 
 \end{definition}
 % Stack etc works out: see 2.24 in https://arxiv.org/pdf/math/9911199.pdf
 
+\begin{remark} \label{rem:specialization-sum}
+	If $ V$ specializes to $ V'$ and $ W$ specializes to $ W'$, then $ V\oplus W$ specializes to $ V'\oplus W'$.
+\end{remark}
+
 \begin{remark}
-	Specialization is transitive for $X=\PP^1$: if $\mc{V}$ specializes to $\mc{V'}$ and $\mc{V'}$ specializes to $\mc{V''}$, then $\mc{V}$ specializes to $\mc{V''}$, see e.g.\ \cite[Cor.\ 6.14]{ramamathan-deformations}.
+	Specialization is transitive for $X=\PP^1$: if $ V$ specializes to $V'$ and $V'$ specializes to $V''$, then $ V$ specializes to $V''$, see e.g.\ \cite[Cor.\ 6.14]{ramamathan-deformations}.
 \end{remark}
 % TODO: try to generalize this to all X. To do this, go through the proof of transitivity in Ram83 and see if it can be generalized.
 
 \begin{remark}
-	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $\mc{V}$ and $\kappa(\eta) \boxtimes \mc{V}$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
+	This definition reflects specialization of points in the moduli stack $\Vect_X$ of vector bundles over $X$, where e.g.\ the bundles $ V$ and $\kappa(\eta) \boxtimes  V$ define the same point. The stack is locally Noetherian, hence discrete valuation rings suffice. This notion generalizes the notion of specialization of points on a scheme, see e.g.\ \cite[Prop.\ 7.1.9]{egaii}.
 \end{remark}
 
 \begin{remark} \label{rem:scalars-on-ext} Let
@@ -56,12 +63,8 @@
 	for generic $\xi\in\AA^1$
 	and 
 	$\mc{E}_{\text{univ}}|_{0\times \PP^1} \simeq \mc{O} \oplus \mc{O}(2)$.
-	Note that $\mc{E}_{\text{univ}}$ is locally free as the end terms of the sequence are.
+	Since $\mc{E}_{\text{univ}}$ is locally free, $\mc{O}(1)\oplus \mc{O}(1) specializes to \mc{O}(2)\oplus \mc{O}$.
 \end{example}
-
-\begin{remark} \label{rem:specialization-sum}
-	If $\mc{V}$ specializes to $\mc{V}'$ and $\mc{W}$ specializes to $\mc{W}'$, then $\mc{V}\oplus\mc{W}$ specializes to $\mc{V}'\oplus\mc{W}'$.
-\end{remark}
 
 \begin{remark} \label{rem:exact-sequence-exists}
 	Let $b_1,\dotsc,b_m$ be non-negative integers, let $a\coloneqq \sum b_i$, and let $s,t$ denote the homogeneous coordinates on $\PP^1$. The sequence
@@ -102,6 +105,13 @@
 	By twisting the exact sequence \cref{chosen-exact-sequence} in the proof of \Cref{specialization-partitions} and using the same argument, we see that for every integer $n$ and with $b_i, \pi$, and $b_I$ as above, the vector bundle $\bigoplus_{i=1}^m \mc{O} (b_i+n)$ specializes to $\bigoplus_{I\in\pi} \mc{O}(b'_I+n) \oplus \mc{O}(n)^{\oplus m-\abs{\pi}}$.
 \end{remark}
 
+\begin{definition} \label{def-compare-types}
+	For tuples $(b_i)$ and $(b'_i)$ of the same size, we define the expression $(b'_i) \geq (b_i)$ to mean
+	\[
+		\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i \text{ for all $s=1,\dotsc, r^{(k)}$}.
+	\]
+\end{definition}
+
 \begin{proposition}
 	Let $(b_i)_{i=1}^m$ and $(b'_i)_{i=1}^m$ be tuples of integers such that $\sum b_i = \sum b'_i$ and $(b_i)\leq (b'_i)$ in the sense of \Cref{def-compare-types}. Then $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b'_i)$.
 \end{proposition}
@@ -114,3 +124,14 @@
 	\end{align*}
 	for appropriate $i$ and $j$. By \Cref{my-specialization}, $\mc{O}(b_i - 1) \oplus \mc{O}(b_j + 1)$ specializes to $\mc{O}(b_i) \oplus \mc{O}(b_j)$. Hence, each step $k$ gives an intermediate tuple $(b_i^{(k)})$ such that $\bigoplus \mc{O}(b_i^{(k-1)})$ specializes to $\bigoplus \mc{O}(b_i^{(k)})$. This proves the proposition since specialization is transitive.
 \end{proof}
+
+\newcommand{\HNP}{\operatorname{HNP}}
+
+\begin{remark}
+	In fact, if $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$, then $(b_i)\leq (b_i')$. The missing implication is proven \eg in \cite[Thm.\ 3]{schatz-degeneration-specialization}. There, the statement is expressed in terms of the Harder–Narasimhan polygon $\HNP$ of a vector bundle $E$. In our case, if $E\simeq \bigoplus \mc{O}(b_i)$ is a vector bundle on $\PP^1$, then $\HNP$ is the polygon underneath the graph of the function $\{0,\dotsc,\rank E\}\to \NN_{\geq 0}$ given by $s\mapsto \sum_{i=1}^s b_i$. Thus $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$ if and only if the HNP of the first bundle lies under the HNP of the second.
+
+	Thus, the most general splitting type among bundles of fixed rank $r$ and degree $c_1$ is the uniquely determined type 
+    of the form
+	$(b + 1,\dotsc,b + 1,b,\dotsc,b)$. The integer $b$ is determined by the equation
+	$c_1 = b r + a$, with $a < r$ becoming the number of occurences of $b +1$.
+\end{remark}

@@ -17,16 +17,30 @@ draft=false,
 
 \input{mystyle.tex}
 
+\newcommand{\schemeofsurfaces}{\abs{\mc{O}(d)}}
+\newcommand{\schemeofquartics}{\abs{\mc{O}(4)}}
+\newcommand{\schemeofsections}[1]{\abs{\mc{O}(#1)}}
+\newcommand{\divides}{\mid}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
 \title{\textsc{Verlinde Bundles of Families of Hypersurfaces}}
 \author{Orlando Marigliano}
 \begin{document}
 \maketitle
 \tableofcontents
 
+%Bisherige Kapitel
+\input{introduction}
 \input{universal-families-of-extensions.tex}
-\input{lefschetz-pencils.tex}
-\input{pencils-hypersurfaces}
+%\input{lefschetz-pencils.tex}
+%\input{pencils-hypersurfaces}
 \input{specialization.tex}
+\input{general-facts-verlinde.tex}
+\input{types-of-bundles}
+\input{loci-types}
+\input{global-properties}
+
 %\input{misc-notes.tex}
 
 %\bibliographystyle{alpha}
