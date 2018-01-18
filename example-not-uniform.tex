@@ -1,0 +1,23 @@
+%!TEX root = ./master.tex
+\begin{example}
+	A vector bundle $V$ on a projective space $\PP^m$ is called \emph{uniform} if the splitting type of $V|_T$ of $V$ does not depend on the choice of the line $T\subset \PP^m$. Although the Verlinde bundles $V_k$ are uniform for $k\leq d$, they are not uniform for $k>d$. For example, let $n=2,k=3,d=2$. Then $V_k = \coker(M)$ with
+	\[
+		M = \begin{pmatrix}
+			\alpha_{00} & & \\
+			\alpha_{01} & \alpha_{00} & \\
+			\alpha_{02} & & \alpha_{00} \\
+			\alpha_{11} & \alpha_{01} & \\
+			\alpha_{12} & \alpha_{02} & \alpha_{01} \\
+			\alpha_{22} & & \alpha_{02} \\
+			& \alpha_{11} & \\
+			& \alpha_{12} & \alpha_{11} \\
+			& \alpha_{22} & \alpha_{12} \\
+			& & \alpha_{22} \\ 
+		\end{pmatrix}, 
+	\]
+	where $\alpha_{ij}$ is the coordinate function corresponding to the quadric $x_i x_j$. If $T$ is a pencil of the form $(sf + tg)_{(s:t)\in\PP^1}$ with $f=\sum_I \lambda_I x^I$ and $g = \sum_I \mu_I x^I$, then $V_k|_T = \coker(M_T)$, where $M_T$ is obtained from $M$ by the substitution $\alpha_{ij} \leftarrow \lambda_{ij} s + \mu_{ij} t$. Using \Cref{rem:exact-sequence-exists}, we see that for $f = x_0^2$ and $g=x_1^2$ we have $\coker(M_T) = \mc{O}(3)^{\oplus 3}$, while for $f=x_0^2$ and $g=x_0 x_1$ we have $M|_T = \mc{O}(2) \oplus \mc{O}(1)$
+\end{example}
+
+\begin{example}
+	For $d=3, n=2, k=5$, writing down $M$ as above and trying out different monomials for $f$ and $g$, one finds that the tuples $(3,2,1,0_{12})$, $(2,1_{4},0_{10})$, and $(1_{6},0_{9})$ are possible splitting types of $V_k|_T$.
+\end{example}

@@ -1,0 +1,115 @@
+%!TEX root = ./master.tex
+\begin{lemma} \label{mini-splitting-lemma}
+	Let $\mc{E}$ be a free $\mc{O}_{\PP^1}$-module of finite rank, and let 
+	\[
+		0 \to \mc{E}' \xrightarrow{\phi} \mc{E} \xrightarrow{\psi} \mc{E}'' \to 0
+ 	\]
+ 	be a short exact sequence of $\mc{O}_{\PP^1}$-modules. Given a splitting $\mc{E}'' = \mc{E}''_1 \oplus \mc{O}$, we may construct a splitting $\mc{E} = \mc{E}_1 \oplus \mc{O}$ such that the image of $\phi$ is contained in $\mc{E}_1$.
+\end{lemma}
+
+\begin{proof}
+	Define $\mc{E}_1 \coloneqq \ker(\pr_2\circ\psi)$, which is a locally free sheaf on $\PP^1$. By comparing determinants in the short exact sequence $0 \to \mc{E}_1 \to \mc{E} \to \mc{O} \to 0$ we see that $\mc{E}_1$ is free, hence by an $\Ext^1$ computation the sequence splits. The property $\im(\phi) \subseteq \mc{E}_1$ follows from the definition.
+\end{proof}
+
+\begin{proposition} \label{number-zeroes}
+	Let $f_1, f_2 \in \schemeofsurfaces$ span the line
+	$T \subseteq \schemeofsurfaces$ and $\coker(M|_{T}) \isom \mc{O}^{\lambda_0}
+	\oplus \bigoplus_{i=1}^s \mc{O}(d_i)$. Define $U\coloneqq H^0(\PP^n,\mc{O}(k-d))$. We have
+	\[
+	\lambda_0 = \dim H^0(\PP^n,\mc{O}(k)) - \dim ({f_1 U + f_2 U}),
+	\]
+	or, equivalently,
+	\[
+		s = \dim({f_1 U + f_2 U}) - d^{(k)}.
+	\]
+\end{proposition}
+
+\begin{proof}
+	Note that the map $M|_T$ sends a local section $\xi \otimes \theta$ to $s\xi \otimes f_1 \theta + t\xi \otimes f_2 \theta$. In particular, the image of $\mc{O}(-1)\otimes U$ is contained in $\mc{O} \otimes (f_1 U + f_2 U)$. It follows that
+	$\lambda_0 \geq \dim H^0(\PP^n,\mc{O}(k)) - \dim ({f_1 U + f_2 U})$.
+
+  To prove the other inequality, consider the induced sequence
+  \[
+  	0 \to \mc{O}(-1)\otimes U \xrightarrow{M|_T} \mc{O}\otimes (f_1 U + f_2 U) \to \mc{E}'' \to 0
+  \]
+  and assume for a contradiction that $\mc{E}'' \isom \mc{E}_1''\oplus \mc{O}.$ By \Cref{mini-splitting-lemma}, we have a splitting $\mc{O}\otimes (f_1 U + f_2 U) \isom \mc{E}_1 \oplus \mc{O}$ such that $\im(M|_T) \subseteq \mc{E}_1$. 
+
+  Consider the map
+  $\wtilde M|_T \from (\mc{O} \otimes U) \oplus (\mc{O} \otimes U) \to \mc{O} \otimes (f_1 U + f_2 U)$
+  defined by $$\wtilde M|_T(a\otimes \theta_1,b \otimes \theta_2)=a\otimes f_1 \theta_1 + b \otimes f_2 \theta_2.$$
+  We obtain the matrix description of $\wtilde M|_T$ from the matrix description of $M|_T$ as follows. If $M|_T$ is represented by the matrix $A$ with coefficients $A_{i,j} = \lambda_{i,j} s + \mu_{i,j} t$, then $\wtilde M|_T$ is represented by a block matrix
+  \[
+  	B = \left(
+  		\begin{array}{c|c}
+  			A' & A'' \\
+  		\end{array}
+  	\right)
+  \]
+  with $A'_{i,j} = \lambda_{i,j}$ and $A''_{i,j} = \mu_{i,j}$.
+
+  The property $\im(M|_T)\subseteq \mc{E}_1$ implies that after some row operations, the matrix $A$ has a zero row. By the construction of $\wtilde M|_T$, the same row operations lead to the matrix $B$ having a zero row, but this is a contradiction, since the map $\wtilde M|_T$ is surjective.
+\end{proof}
+
+\begin{corollary} \label{no-more-than-ones}
+	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$. Let $k$ be such that $b^{(k)}=0$, that is such that in the generic splitting type, only ones and zeroes appear, \eg for $k\leq 2d$. Let $\theta$ range over a monomial basis of $H^0(\PP^n, \mc{O}(k-d))$. The bundle $V_{k,t}$ has general type if and only if
+	$\gen{f_1\theta,f_2\theta \mid \theta}$ is a linearly independent set in $H^0(\PP^n,\mc{O}(k))$.
+\end{corollary}
+
+\begin{proof}
+  Since $b^{(k)}=0$, the type of $V_{k,t}$ is the generic splitting type if and only if it has $d^{(k)}$ many nonzero entries.
+	By \Cref{number-zeroes}, this is the case if and only if
+	$\dim\gen{f_1\theta,f_2\theta \mid \theta} = 2 d^{(k)}$.
+\end{proof}
+
+\begin{corollary} \label{nongeneral-type-shared-sections}
+	Let $t\in \Gr(2,H^0(\PP^n, \mc{O}(d)))$ be a line spanned by the polynomials $f_1,f_2$, and let $k$ be such that $b^{(k)}=0$. The bundle $V_{k,t}$ has non-generic splitting type if and only if $\deg(\gcd(f_1,f_2)) \geq 2d-k$. In particular, if $b^{(k)}=0$ but $k>2d$ then the generic type never occurs.
+\end{corollary}
+
+\begin{proof}
+	By \Cref{no-more-than-ones}, the bundle $V_{k,t}$ has non-generic type if and only if there exist linearly independent $g_1,g_2\in H^0(\PP^n,\mc{O}(k-d))$ such that $g_1f_1+g_2f_2 = 0$. Let $h \coloneqq \gcd(f_1,f_2)$ and $d'\coloneqq \deg h$.
+
+	If $d' \geq 2d-k$ then $\deg (f_i/h) \leq k-d$ and we may take $g_1,g_2$ to be multiples of $f_1/h$ and $f_2/h$, respectively.
+
+	On the other hand, given such $g_1$ and $g_2$, we have $f_1\divides g_2 f_2$, which implies $f_1/h \divides g_2$, hence $d-d'\leq k-d$.
+\end{proof}
+
+% \begin{example} \label{no-big-types}
+% 	For $n=2, d=2,$ and $k=3$, we have $d^{(k)}=3$ and $r^{(k)}=10$. We show that the only types of $V_k$ that occur are $(1_3, 0_7)$ and $(2_1,1_1,0_8)$. The first type occurs \eg for $f_1 = x_0^2, f_2=x_1^2$, and the second for $f_1=x_0^2, f_2=x_0x_1$. Assume that the type $(3_1,0_9)$ occurs for some $f_1,f_2 \in H^0(\PP^2,\mc{O}(2))$. By \Cref{number-zeroes} we then have $\dim\gen{f_1 x_j,f_2 x_j}_{j=0}^2 = 4$. Hence, we find $g_1,g_2,g'_1,g'_2\in H^0(\PP^2,\mc{O}(1))$ and two linearly independent equations
+% 	\begin{align*}
+% 	g_1f_1 + g_2f_2 &= 0 \\
+% 	g'_1f_1 + g'_2f_2 &= 0,
+% 	\end{align*}
+% 	with both sets $(g_1,g_2), (g'_1,g'_2)$ linearly independent.
+% 	From the first equation it follows that $f_1 = g_2 h$ and $f_2 = -g_1 h$, for some common linear factor $h$. Applying this to the second equation, we find $g'_1 g_2 = g'_2 g_1$, hence $g'_1 = \alpha g_1$ and $g'_2 = \alpha g_2$ for some scalar $\alpha$, a contradiction.
+% \end{example}
+
+\begin{proposition} \label{no-big-types-general}
+	Let $k=d+1$. No types of $V_k$ other than
+	$(1,\dotsc,1,0,\dotsc,0)$ and $(2,1,\dotsc,1,0,\dotsc,0)$ occur. 
+\end{proposition}
+
+\begin{proof}
+	Assume that the type of $V_k$ at some line $(f_1,f_2)$ is other than the two above. Then the type has at least two more zero entries than the general type. By \Cref{number-zeroes}, we have $\dim \gen{f_1 \theta, f_2 \theta \mid \theta} \leq 2d^{(k)}-2$, so we find $g_1,g_2,g'_1,g'_2\in H^0(\PP^n,\mc{O}(1))$ and two linearly independent equations
+	\begin{align*}
+		g_1f_1 + g_2f_2 &= 0 \\
+		g'_1 f_1 + g'_2 f_2 &= 0,
+	\end{align*}
+	with both sets $(g_1,g_2), (g'_1,g'_2)$ linearly independent.
+	From the first equation it follows that $f_1 = g_2 h$ and $f_2 = -g_1 h$, for some common factor $h$. Applying this to the second equation, we find $g'_1 g_2 = g'_2 g_1$, hence $g'_1 = \alpha g_1$ and $g'_2 = \alpha g_2$ for some scalar $\alpha$, a contradiction.
+\end{proof}
+
+\begin{example}
+Let $n=3, d=4$. Of the five type candidates
+\[
+(1,1,1,1,0,\dotsc,0),\ (2,1,1,0,\dotsc,0),\ (2,2,0,\dotsc,0),\ (3,1,0,\dotsc,0),\ (4,0,\dotsc,0)
+\]
+for $V_5$, only the first two occur as types of some $V_{5,t}$.
+\end{example}
+
+\begin{proposition} \label{generic-splitting-type-2d}
+	Let $k=2d.$ The most generic (\ie smallest) splitting type of $V_{2d}$ that is attained at some line is $(2,1,\dotsc,1,0,\dotsc,0)$.
+\end{proposition}
+
+\begin{proof}
+	By \Cref{no-big-types-general}, the type $(1,\dotsc,1,0,\dotsc,0)$ does not occur. As all other types are larger than $\sigma\coloneqq (2,1,\dotsc,1,0,\dotsc,0)$, it suffices to prove that there exists a line where $V_{2d}$ has type $\sigma$. Consider the line $T$ spanned by $f_1\coloneqq x_0^d$ and $f_2\coloneqq x_1^d$. Letting $\theta$ range over the monomial basis of $H^0(\mc{O}(d))$, whe have $\dim \gen{f_1\theta,f_2\theta \mid \theta}=\dim H^0(\mc{O}(d))-1$ since the only nontrivial linear equation in the above set of vectors is $f_1 f_2 - f_2 f_1 = 0$. By \Cref{number-zeroes}, the type of $V_{2d}|_T$ has exactly one zero entry more than the non-occurring type $(1,\dotsc,1,0,\dotsc,0)$. But the only such type is $\sigma$.
+\end{proof}

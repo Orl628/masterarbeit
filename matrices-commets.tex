@@ -1,0 +1,77 @@
+% \newcommand{\mco}{\multicolumn{1}{c}}
+% A $K$-point $q$ of $\Gr(2,35)$ is given by a matrix of the form
+% \[
+% 	\begin{pmatrix}
+% 		\lambda_0 & \cdots & \lambda_{34} \\
+% 		\mu_0 & \cdots & \mu_{34}
+% 	\end{pmatrix},
+% \]
+% with $\lambda_i,\mu_i \in K,$ up to elementary row operations. Restricting the sequence from \Cref{verlinde-exact-sequence} to the quartic defined by $q$, we see that the bundle $V_{5,q}$ is the cokernel of the matrix $A \in \Mat(56\times 4, \Gamma(\PP^1, \mc{O}(1))$, given as follows. Let $s,t$ denote the homogeneous coordinates of $\PP^1$ and let $I_d$ range over the tuples of the form $(i_0,\dotsc,i_3)$ with $\sum i_j = d.$ The $(I_5,j)$-th entry of $A$ is
+% $s\lambda_{I_4} + t\mu_{I_4}$ if $x_jx^{I_4} = x^{I_5}$ and $0$ else.
+
+% Because of the invariance under elementary row operation, the point $q$ can be defined by a matrix of the form
+% \[
+% 	\left(
+% 		\begin{array}{c|cccccccc}
+% 			\multirow{2}{*}{0} & 1 & \lambda_1 & \cdots & \lambda_k & 0 & \lambda_{k+1} & \cdots & \lambda_{k+l} \\
+% 			& 0 & 0 & \cdots & 0 & 1 & \mu_1 & \cdots & \mu_l
+% 		\end{array}
+% 	\right).
+% \]
+% We hence start with the matrix $A$ having the form
+% \[
+% 	\left(
+% 		\begin{array}{c|ccc}
+% 			s & 0 & 0 & 0 \\
+% 			\cline{1-4}
+% 			\lambda_1 s & & & \\
+% 			\vdots & & \ast & \\
+% 			\lambda_k s & & & \\
+% 			t & & & \\
+% 			\cline{1-4}
+% 			\multicolumn{1}{c}{} & \ast & &
+% 		\end{array}
+% 	\right),
+% \]
+% with $\ast$ for now not specified, but not arbitrary. 
+
+% We may perform elementary row and column operations without changing $\coker(A).$ Using \Cref{rem:exact-sequence-exists}, the goal is to show that the matrix $A$ can be modified to take one of the following forms:
+
+% \[
+% 	\left(
+% 		\begin{array}{cccc}
+% 			s &   &   &   \\
+% 			t & s &   &   \\
+% 			  & t &   &   \\
+		
+% 			  &   & s &   \\
+% 			  &   & t &   \\
+			
+% 			  &   &   & s \\
+% 			  &   &   & t \\
+% 			\hline
+% 			 & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{} & 
+% 		\end{array}
+% 	\right), \quad
+% 	\left(
+% 		\begin{array}{cccc}
+% 			s &   &   &   \\
+% 			t &   &   &   \\
+% 			  & s &   &   \\
+% 			  & t &   &   \\
+% 			  &   & s &   \\
+% 			  &   & t &   \\
+% 			  &   &   & s \\
+% 			  &   &   & t \\
+% 			\hline
+% 			 & \multicolumn{1}{c}{0} & \multicolumn{1}{c}{} & 
+% 		\end{array}
+% 	\right).
+% \]
+
+% We see that this is possible in \Cref{types-for-v-five}.
+% \end{proof}
+
+% \begin{computation} \label{types-for-v-five}
+% 	[Vielleicht abstrakteres Argument hier]
+% \end{computation}

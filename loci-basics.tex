@@ -1,0 +1,148 @@
+%!TEX root = ./master.tex
+
+\begin{definition}
+Let $k \geq 1$ and $(b_i)$ be a splitting type for $V_k$. We define the set
+$Z_{(b_i)}$ of all points $t\in\GGr(1,\schemeofsurfaces)$ such that $V_{k,t}$ has splitting type $(b_i)$. For the set of points $t$ where $V_{k,t}$ has generic splitting type, we also write $Z_{\text{gen}}$, and define the \emph{set of jumping lines} $Z\coloneqq \GGr(1,\schemeofsurfaces) \setminus Z_{gen}$
+\end{definition}
+
+\begin{proposition}
+	The set $Z_{\text{gen}}$ is Zariski open. Its complement Z is the union
+	\[
+		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b^{(k)}-1)) \cup
+		\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b^{(k)})\dual)).
+	\]
+\end{proposition}
+\begin{proof}
+	We begin by characterizing the set $\generallocus$ via cohomology. Let $t\in \GGr(1,\schemeofsurfaces)$, write $V_{k,t}=\bigoplus_{i=1}^r \mc{O}(b_i)$ and $b\coloneqq b^{(k)}$. We have $t\in \generallocus$ if and only if $b\leq b_i \leq b+1$ for all $i$, which holds if and only if
+	$
+	H^1(P_t, V_{k,t}(-b-1))
+	=
+	H^1(P_t, V_{k,t}(-b)\dual)
+	=0.
+	$
+
+	Next, we want to apply the Cohomology and Base Change Theorem \cite[{}28.1.6]{vakil-algebraic-geometry} to the map 
+	$\phi \from P \to \GGr(1,\schemeofsurfaces)$, which is a $\PP^1$-bundle, proper and flat. The last property ensures that locally free sheaves on $P$ are flat over $\GGr(1,\schemeofsurfaces)$.
+
+	For all $t\in \GGr(1,\schemeofsurfaces)$ we have
+	$
+	h^2(P_t, \pullb{p}V_{k,t}(-b-1)) = 0
+	\text{ and }
+	h^2(P_t,\pullb{p}V_{k,t}(-b)\dual)=0.
+	$
+	Since the sheaves $\pullb{p}V_{k,t}(-b-1)$ and $\pullb{p}V_{k,t}(-b)\dual$ are locally free and coherent, we have 
+	\[(R^1 \pushf{\phi}\pullb{p} V_{k}(-b-1))_t = H^1(P_t,V_{k,t}(-b-1))\]
+	\text{ and }
+	\[
+	(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual))_t = H^1(P_t,V_{k,t}(-b)\dual).
+	\]
+
+	By the previous characterization, we have
+	\[
+		Z =
+		\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b-1)) \cup
+		\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)),
+	\]
+	which is a Zariski closed set.
+\end{proof}
+
+\begin{proposition} \label{supp-are-det-varieties}
+The sets
+$\Supp(R^1 \pushf{\phi}\pullb{p} V_{k}(-b^{(k)}-1))$ and
+$\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b^{(k)})\dual))$ 
+are determinantal varieties in the sense of \cite[Ch.~II, §4]{arbarello-geometry-algebraic-curves}
+\end{proposition}
+\begin{proof}
+To simplify notation, set
+$r_1 \coloneqq \dim H^0(\PP^n, \mc{O}(k)),
+r_2 \coloneqq \dim H^0(\PP^n, \mc{O}(k-d))$ and $b\coloneqq b^{(k)}$,
+and rewrite the exact sequence from \Cref{verlinde-exact-sequence} as
+\begin{align} \label{verlinde-simplified-exact-sequence}
+\ses{\mc{O}(-1)^{r_2}}{\mc{O}^{r_1}}{V_k}. %\tag{$\star$}
+\end{align}
+Twisting the sequence \cref{verlinde-simplified-exact-sequence} with $\mc{O}(-b-1)$ and pulling back to $P$ gives an exact sequence
+\[
+0
+\to  {\pullb{p}\mc{O}(-b-2)^{r_2}}
+\to  {\pullb{p}\mc{O}(-b-1)^{r_1}}
+\to  {\pullb{p}V_k(-b-1)}
+\to  0.
+\]
+For all $t\in \GGr(1,\schemeofsurfaces)$ we have
+$h^2(P_t, \mc{O}(-b-2)^{r_2}) = 0$,
+hence
+$R^2\pushf{\phi}\pullb{p}\mc{O}(-b-2)^{r_2} = 0$
+and applying $\pushf{\phi}$ to the above sequence gives an exact sequence
+\[
+R^1\pushf{\phi}\pullb{p}\mc{O}(-b-2)^{r_2}
+\xto{\alpha}
+R^1\pushf{\phi}\pullb{p}\mc{O}(-b-1)^{r_1} 
+\to
+R^1\pushf{\phi}\pullb{p} V_k(-b-1)
+\to 0.
+\]
+Note that since the numbers
+$
+h^{1}_{2}\coloneqq h^1(P_t, \mc{O}(-b-2)^{r_2})
+\text{ and }
+h_{1}^{1}\coloneqq h^1(P_t, \mc{O}(-b-1)^{r_1})
+$
+do not depend on the point $t$, Grauert's Theorem applies, and the first two terms of the above sequence are locally free and coherent of rank $h_1^2$ and $h_1^1$, respectively. Since taking the fiber is right-exact, we see that for all $t$ we have
+$(R^1\pushf{\phi}\pullb{p} V_k(-b-1))_t \neq 0$ if and only if $\coker(\alpha_t) \neq 0$. Concluding, we have
+\[
+\Supp(R^1\pushf{\phi}(\pullb{p} V_k(-b-1)))
+= \{t : \rank (\alpha_t)\leq h^{1}_1 - 1\}.
+\]
+As a final remark, note that $h^1_1 = b r_1 = b \binom{k+n}{n}.$
+
+The proof for the second assertion is similar. We start with the sequence \cref{verlinde-simplified-exact-sequence}, twist with $\mc{O}(-b)$, take duals, pull back to $P$, and apply $\pushf{\phi}$. Since for all $t\in \GGr(1,\schemeofsurfaces)$ we have $h^1(P_t, \mc{O}(b)^{r_1})=0$, we obtain an exact sequence
+\[
+	{\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+\xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+\to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+\to 0.
+\]
+Since the numbers
+$
+h^0_1 \coloneqq h^0(P_t,\mc{O}(b)^{r_1}) \text{ and }
+h^0_2 \coloneqq h^0(P_t, \mc{O}(b+1)^{r_2})
+$
+do not depend on the point $t$, again by Grauert's Theorem the first two terms of the sequence are locally free of rank $h^0_1$ and $h^0_2$, respectively. As before, we obtain the characterization
+\[
+	\Supp(R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual))
+	= \{t : \rank (\beta_t)\leq h^{0}_2 - 1\}.
+\]
+Here, we have $h_2^0 = (b+2)r_2 = (b+2)\binom{k+n-d}{n}.$
+% Gilt Serre-dualität auch für Familien?
+\end{proof}
+
+\begin{proposition}
+	Let $(b_i)$ be a type candidate for $V_k$. The set $\widehat Z_{(b_i)} \coloneqq \bigcup_{(b'_i)\geq(b_i)} Z_{(b'_i)}$ is Zariski-closed. In particular, the set $Z_{(b_i)}$ is locally closed.
+\end{proposition}
+
+\begin{proof}
+Let $t\in \GGr(1,\schemeofsurfaces)$ and $V_{k,t} = \bigoplus_{i=1}^{r^{(k)}} \mc{O}(b'_i)$. We have
+\[
+\bigwedge^s V_{k,t} = \bigoplus_{I} \mc{O}(b_I'),
+\]
+where $I$ runs over the subsets of $\{1,\dotsc, r^{(k)}\}$ of size $s$ and $b'_I\coloneqq \sum_{i\in I} b'_i$.
+For every type candidate $(b'_i)$, the sum $\sum_{i=1}^s b'_i$ is the largest sum of $s$ entries of $(b'_i)$. Since $b'_i \geq 0$, the condition $\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i$ is equivalent to the condition $h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0$. Thus, we have
+\[
+	\widehat Z_{(b_i)} = \bigcap_{s=1}^{r^{(k)}} \{t : h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0\}.
+\]
+With Serre duality and the Cohomology and Base Change theorem we write the sets of the intersection as 
+\[
+	\Supp(R^1 \pushf \phi (\pullb p (\textstyle{\bigwedge}^{s} V_k\dual )(\textstyle{\sum}^s b_i - 2))),
+\]
+which is Zariski-closed.
+% \[
+% {\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+% \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+% \to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+% \to 0.
+% \]
+\end{proof}
+
+\begin{corollary}
+	Let $(b_i)$ and $(b'_i)$ be type candidates. If $Z_{(b_i)} \subseteq Z_{(b_i')}$ then $(b_i) \geq (b'_i)$.
+\end{corollary}

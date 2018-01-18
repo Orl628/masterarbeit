@@ -1,0 +1,27 @@
+%!TEX root = ./master.tex
+\begin{definition} \label{helping-varieties}
+	Let $d\leq k<2d$ and  $i=0,\dotsc,k-d-1$. We define the subvariety $Q_i \subset \schemeofsurfaces$ as the image of the map
+	\[
+		f_i\from \schemeofsections{k-d-i} \times \schemeofsections{2d-k+i} \to \schemeofsections{d}
+	\]
+	defined by $f_i(g,h)=gh$, and the map
+	\[
+		\phi_i
+		\from \GGr(1,\schemeofsections{k-d-i})
+		\times \schemeofsections{2d-k+i}
+		\to \GGr(1,\schemeofsections{d})
+	\]
+	given by $\phi_i((s g_1 + t g_2)_{(s:t)},h) = (sg_1 h + tg_2 h)_{(s:t)}$.
+\end{definition}
+
+\begin{proposition} \label{description-jumping-lines-as-reduction}
+	Let $d\leq k<2d$. The set of jumping lines $Z$ is the union
+	\[
+		Z = \bigcup_{i=0}^{k-d-1} \im{\phi_i}.
+	\]
+	The subvarieties $\im{\phi_i}$ have dimension $2(\binom{k-d+n-i}{n}-2) + \binom{2d-k+n+i}{n}$. In particular for $k=1$ the subvariety $Z$ has codimension $2n+\binom{d+n-1}{n}+3$.
+\end{proposition}
+
+\begin{proof}
+	The first statement follows from \Cref{nongeneral-type-shared-sections}. For the statement about the dimension, note that the maps $f_i$ are finite: the number of preimages of a point $q\in \schemeofsurfaces$ is the number of ways to decompose $q$ into a product $gh$, with $\deg(g)=k-d-i$ and $\deg(h)=2d-k+1$, up to scalars. It is in any case finite. By a similar argument we see that the maps $\phi_i$ are also finite, from which the statement about the dimensions follows.
+\end{proof}

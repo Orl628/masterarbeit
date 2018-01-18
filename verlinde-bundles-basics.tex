@@ -1,0 +1,184 @@
+%!TEX root = ./master.tex
+
+%\begin{definition} A \emph{line} is an embedding $l\colon \mathbb{P}^1 \to X$ into a projective scheme $X$ such that $l^*\mathcal{O}(1) = \mathcal{O}(1)$.
+%\end{definition}
+\begin{definition}
+Let $\pi\from \mf X \to \abs{\mc{O}_{\PP^n}(d)}$ be the universal family of hypersurfaces of degree $d$ in $\PP^n$. Let $\mc{L}$ be the restriction to $\mathfrak X$ of the bundle $\mc{O}(1)\boxtimes \mc{O}$ under the inclusion $\mf X \subseteq \PP^n \times \schemeofsurfaces$.
+\end{definition}
+
+% which can be seen as follows. Let the index $I$ range over the tuples of the 
+% form $(i_0,i_1,i_2,i_3)$ with $i_j \geq 0$ and $\sum i_j = 4$, and let $x_I$ 
+% denote the $I$-th projective coordinate of $\schemeofsurfaces$. For $j=0,\dotsc
+% ,3$, let $x_j$ denote the $j$-th coordinate of $\PP^n$. Then the family $\mf{X}
+% $ is cut out by the section $\sum_{I} x_{I} x^{I}$ of the line bundle $\mc{O}(4
+% ) \boxtimes \mc{O}(1)$ on $\PP^n \times \schemeofsurfaces$.
+
+\begin{proposition} \label{verlinde-base-change}
+	Let $k\geq 1$. The following statements hold:
+
+	\begin{enumerate}
+	\huyitem If $q\in \schemeofsurfaces$ then
+	$h^0 ( \mf{X}_q, \mc{L}^{\otimes k}|_q) = \binom{k+n}{n} - \binom{k+n-d}{n}$.
+	In particular, this number is independent of the point $q$.
+
+	\huyitem The sheaf
+	$\pushf{\pi}\mc{L}^{\otimes k}$
+	is locally free of rank
+	$\binom{k+n}{n} - \binom{k+n-d}{n}$.
+
+	\huyitem For all cartesian diagrams of the form 
+	\[
+	\cartesiansquare{\mf{X}_{Z}}{}{\mf{X}}{\pi_Z}{\pi}{Z}{\rho}{\schemeofsurfaces}
+	\]
+	we have
+	$\pullb{\rho}\pushf{\pi}\mc{L}^{\otimes k}
+	\simeq
+	\pushf{(\pi_Z)}\mc{L}^{\otimes k}_Z$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	The proof for the first statement is found in
+	\cite[Proposition 4.1]{hemminghaus-verlinde-bundles}
+	and reproduced below. The others follow from Grauert's Theorem
+	\cite[{}28.1.5]{vakil-algebraic-geometry}.
+
+	Let $X\coloneqq \mathfrak X_q$ be the hypersurface of degree $d$ corresponding to the point $q$. We have $\mc{L}^{\otimes k}|_q = \mc{O}_{\PP^n}(k)|_{X}$. Twisting the structure sequence
+	\[\ses{\mc{O}(-d)}{\mc{O}}{\mc{O}_{X}}\]
+	on $\PP^n$
+	with $\mc{O}(k)$ yields the short exact sequence
+	\[\ses{\mc{O}(k-d)}{\mc{O}(k)}{\mc{L}^{\otimes k}|_q}.\]
+	The statement follows by taking global sections and using $H^1(\mc{O}(k-d),\PP^n)=0$ for $n>1$.
+	% Todo: replace with own short proof
+	% of the sections of the sheaf $\mc{L}$ at the fiber of a point $q\in \schemeofsurfaces$ does not depend on $q$. Indeed, the fiber $\mc{X}_q$ is a hypersurface of degree $4$ embedded in the projective space $\PP^{3}_{\kappa(q)}$. Its structure sequence on $\PP^{3}_{\kappa(q)}$ is
+	% \[\ses{\mc{O}(-d)}{\mc{O}}{\mc{O}_{X_q}}.\]
+	% Twisting with $\mc{O}(k)$ yields
+	% \[\ses{\mc{O}(k-d)}{}{}\]
+\end{proof}
+
+\begin{definition}Let $k\geq 1$. The $k$-th \emph{Verlinde bundle} of the family $\pi$ is the vector bundle
+$V_k \coloneqq \pushf{\pi}\mc{L}^{\otimes k}$.
+\end{definition}
+
+
+
+
+
+\begin{proposition} \label{verlinde-exact-sequence}
+	There exists a short exact sequence of vector bundles on $\schemeofsurfaces$ 
+	\begin{equation} \label{master-verlinde-sequence}
+	0\to  \mc{O}(-1) \otimes H^0(\PP^n, \mc{O}(k-d)) 
+	\xto{M}  \mc{O} \otimes {H^0(\PP^n, \mc{O}(k))   }
+	\to{V_k}
+	\to 0.
+	\end{equation}
+	The map $M$ is given by multiplication by
+	$\sum_I \alpha_I \otimes x^I \in
+	H^0(\schemeofsurfaces,\mc{O}(1)) \otimes H^0(\PP^n,\mc{O}(d)).$
+	\end{proposition}
+
+\begin{proof}
+	The proof, found in \cite[Proposition 4.2]{hemminghaus-verlinde-bundles}, is reproduced below.
+
+	The structure sequence of $\mathfrak X$ on $\PP^n \times \schemeofsurfaces$ is
+	\[
+		\ses{\mc{O}_{\PP^n}(-d)\boxtimes \mc{O}_{\schemeofsurfaces}(-1)}
+		{\mc{O}_{\PP^n}\boxtimes \mc{O}_{\schemeofsurfaces}}
+		{\mc{O}_{\mathfrak X}},
+	\]
+	the first map given by multiplication with $\sum_I \alpha_I \otimes x^I$.
+	Twisting with $\mc{L}^{\otimes k}=\mc{O}(k)\boxtimes \mc{O}$, we get the exact sequence
+	\[
+		\ses{\mc{O}(k-d)\boxtimes \mc{O}(-1)}
+		{\mc{O}(k)\boxtimes \mc{O}}
+		{\mc{L}^{\otimes k}|_X}.
+	\]
+	Applying the pushforward 
+	$\pi_*$
+	we get the sequence \cref{master-verlinde-sequence}, 
+	which is exact as
+	\[
+		R^1 \pi_* (\mc{O}(k-d)\boxtimes \mc{O}(-1)) = 0.
+	\]
+	The description of the map $M$ follows by the definition of the pushforward.
+\end{proof}
+
+\begin{remark}
+	For $k<d$, the sequence \cref{master-verlinde-sequence} shows that $V_k$ is trivial. For $k=d,$ the sequence \cref{master-verlinde-sequence} is the Euler sequence and $V_k=\mc{O}(-1)$.
+\end{remark}
+
+
+% \item A \emph{type candidate} for $V_k$ is a tuple \footnotemark{}
+% $(d_1,\dotsc,d_{r(k)})$
+% of non-negative integers
+% with $r(k)=\binom{k+n}{n}-\binom{k+n-d}{n}$ and
+% $\sum b_i = \binom{k+n-d}{n}$.
+
+% \footnotetext{i.e.\ an equivalence class of tuples up to reordering of the entries}
+
+% \item Of the type candidates for $V_k$, there exists a unique one of the form
+% $(d_k,\dotsc,d_k,d_{k+1},\dotsc,d_{k+1})$, namely with $d_k=$
+% The \emph{general type candidate} for $V_k$ is the unique\footnotemark{} type candidate for $V_k$ of the form
+% $(d,\dotsc,d,d+1,\dotsc, d+1)$.
+% %maybe mention relationship with specialization on ext^1.
+% \footnotetext{For fixed $r,s>0$, the equation $dr + b = s$ has only one non-negative solution $(d,b)$ with $b<r$.}
+
+
+% The points of $\Gr(2,35)$ correspond to the pencils of quartics $T \subseteq \schemeofsurfaces$ in the following way. Let $P$ the universal $\PP^1$-bundle over $\Gr(2,35)$. It comes equipped with a projection map $P \to \schemeofsurfaces$ such that for all pencils of quartics $T$ there exists a unique point $t\in \Gr(2,35)$
+% such that the image of the fiber $P_t$ in $\schemeofsurfaces$ is $T$.
+% \[
+% \begin{tikzcd} [ampersand replacement = \&]
+% P_t \arrow{r} \arrow{d} \MySymb{\times}{dr} \& P \arrow{r}{p} \arrow{d}{\phi}\&
+% \schemeofsurfaces \\
+% \Spec(\kappa(t))\arrow{r} \& \Gr(2,35) \& \ 
+% \end{tikzcd}
+% \]
+% For $t\in\Gr(2,35)$ corresponding to the pencil $T$, we write $V_{k,t}\coloneqq V_{k,T}$.
+
+
+
+% \begin{proposition}	
+% The set $Z_{\text{gen}}$, and its complement, are not empty.
+% \end{proposition}
+
+% \begin{proposition}
+% The set $Z_{\text{gen}}$ is Zariski-open. Its complement is a determinantal variety of codimension at least ()().
+% \end{proposition}
+
+% \begin{proof}
+% After dualizing and pulling back the exact sequence from
+% \Cref{verlinde-exact-sequence},
+
+
+
+% The map $\phi$ is flat and proper, the scheme $\Gr(2,35)$ is reduced and locally Noetherian.
+% \end{proof}
+
+%%TODO	[-> Harder-Narasimhan-Polynome]
+% \begin{proposition}
+% 	Let $(b_i)$ be a type candidate for $V_k$. The set $\widehat Z_{(b_i)} \coloneqq \bigcup_{(b'_i)\geq(b_i)} Z_{(b'_i)}$ is the intersection of (at most) $r^{(k)}$ determinantal varieties. In particular, the set $Z_{(b_i)}$ is locally closed.
+% \end{proposition}
+
+% \begin{proof}
+% Let $t\in \GGr(1,\schemeofsurfaces)$ and $V_{k,t} = \bigoplus_{i=1}^{r^{(k)}} \mc{O}(b'_i)$. We have
+% \[
+% \bigwedge^s V_{k,t} = \bigoplus_{I} \mc{O}(d_I'),
+% \]
+% where $I$ runs over the subsets of $\{1,\dotsc, r^{(k)}\}$ of size $s$ and $d'_I\coloneqq \sum_{i\in I} b'_i$.
+% For every type candidate $(b'_i)$, the sum $\sum_{i=1}^s b'_i$ is the largest sum of $s$ entries of $(b'_i)$. Since $b'_i \geq 0$, the condition $\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i$ is equivalent to the condition $h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0$.
+% \[
+% 	\widehat Z_{(b_i)} = \bigcap_{s=1}^{r^{(k)}} \{t : h^0((\textstyle{\bigwedge}^{s} V_{t,k})(-\textstyle{\sum}^s b_i)) > 0\}.
+% \]
+% With Serre duality and the Cohomology and Base Change theorem we write the sets of the intersection as 
+% \[
+% 	\Supp(R^1 \pushf \phi (\pullb p (\textstyle{\bigwedge}^{s} V_k\dual )(\textstyle{\sum}^s b_i - 2))),
+% \]
+% which is a determinantal variety by an argument similar to the second part of the proof of \Cref{supp-are-det-varieties}: start with the sequence \cref{verlinde-simplified-exact-sequence},  One just has to note that $h^1(\PP^1,\mc{O}(\sum^s b_i - 2)) = 0$ for all $s$, since at least one $b_i$ is nonzero. This gives the exact sequence
+% % \[
+% % {\pushf{\phi}\pullb{p}\mc{O}(b)^{r_1} }
+% % \xto{\beta}	{\pushf{\phi}\pullb{p}\mc{O}(b+1)^{r_2}}
+% % \to	{R^1 \pushf{\phi}(\pullb{p} V_{k}(-b)\dual)}
+% % \to 0.
+% % \]
+% \end{proof}
+

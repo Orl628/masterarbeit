@@ -1,0 +1,776 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"total",
+				"total_cents"
+			],
+			[
+				"know",
+				"know_number"
+			],
+			[
+				"frien",
+				"friend_sex"
+			],
+			[
+				"monomial",
+				"monomial_factor"
+			],
+			[
+				"monomials_",
+				"monomials_codomain"
+			],
+			[
+				"dimen",
+				"dimension_codomain"
+			],
+			[
+				"di",
+				"dimension_domain"
+			],
+			[
+				"dime",
+				"dimension_codomain"
+			],
+			[
+				"get_splitt",
+				"get_splitting_columns"
+			],
+			[
+				"var",
+				"var2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/orlando/Documents/Tex/meier/mystyle.tex",
+			"settings":
+			{
+				"buffer_size": 1156,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "Packages/User/latex-light.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex-light.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/latex-light.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/C++11.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex-light.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex-light.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/latex-light.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex-light.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/latex-light.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex-light.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/okular.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/User/latex.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "packagere",
+		"selected_items":
+		[
+			[
+				"packagere",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: pack",
+				"Package Control: Discover Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"okular",
+				"Build With: okular"
+			],
+			[
+				"cahe",
+				"LaTeXTools: Update document analysis cache"
+			],
+			[
+				"comm",
+				"Toggle Comment"
+			],
+			[
+				"build",
+				"Build: New Build System"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/orlando/Documents/Tex/meier/master.tex",
+		"/home/orlando/Documents/Tex/meier/mycommands.sty",
+		"/home/orlando/Documents/Tex/masterarbeit/universal-families-of-extensions.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/specialization.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/masterarbeit-bib.bib",
+		"/home/orlando/.config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/orlando/Documents/Tex/masterarbeit/master.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/mystyle.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/pencils-hypersurfaces.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/lefschetz-pencils.tex",
+		"/home/orlando/Documents/Tex/meier/mystyle.tex",
+		"/home/orlando/Documents/Tex/nightfall.tex/master.tex",
+		"/home/orlando/Documents/Tex/nightfall.tex/master.pdf",
+		"/home/orlando/Documents/Tex/orlando-template (copy)/orlando-document.tex",
+		"/home/orlando/Documents/Tex/orlando-template (copy)/orlando-text-style.sty",
+		"/home/orlando/Documents/Tex/orlando-template/orlando-document.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/temp.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/lange-extensions.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/extensions-of-sheaves.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/todo.txt",
+		"/home/orlando/Documents/Tex/Hartshorne Condensed/mystyle.tex",
+		"/home/orlando/Documents/Tex/flugblatt/flugblatt.tex",
+		"/home/orlando/Documents/Tex/vertrag/master.tex",
+		"/home/orlando/Desktop/Federico_Mail.txt",
+		"/home/orlando/Desktop/eric.txt",
+		"/home/orlando/Documents/Tex/masterarbeit/misc-notes.tex",
+		"/home/orlando/Documents/Tex/Hartshorne Condensed/master.tex",
+		"/home/orlando/Documents/Tex/alggeo/alggeo.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/mycommands.sty",
+		"/home/orlando/Documents/Tex/masterarbeit/lefschetz-pencils.log",
+		"/home/orlando/Documents/Tex/AG-Aufgaben/master.tex",
+		"/home/orlando/Documents/Tex/AG-Aufgaben/orlando-math-style.sty",
+		"/home/orlando/Documents/Tex/AG-Aufgaben/ag-aufgaben.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/master.run.xml",
+		"/home/orlando/Desktop/lihua.txt",
+		"/home/orlando/Projects/Programming Sandbox/tennis.txt",
+		"/home/orlando/Projects/Programming Sandbox/sandbox.cpp",
+		"/home/orlando/Projects/Programming Sandbox/hello_world.cpp",
+		"/home/orlando/Projects/SDL/01_hello_SDL/01_hello_SDL.cpp",
+		"/home/orlando/.config/sublime-text-3/Packages/C++/C++ Single File.sublime-build",
+		"/home/orlando/.config/sublime-text-3/Packages/User/C++11.sublime-build",
+		"/home/orlando/Desktop/master.tex",
+		"/home/orlando/Desktop/algebraic_geometry_III.tex",
+		"/home/orlando/Documents/Tex/orlando-text-style/orlando-text-style.sty",
+		"/home/orlando/Documents/Tex/moduli-spaces-cf/commands.sty",
+		"/home/orlando/Documents/Tex/moduli-spaces-cf/packages.sty",
+		"/home/orlando/Documents/Tex/moduli-spaces-cf/moduli-functors.tex",
+		"/home/orlando/Documents/Tex/moduli-spaces-cf/master.tex",
+		"/home/orlando/Downloads/dcernst-IBL-IntroToProof-8d02a40/FancyMathematicalTerms.tex",
+		"/home/orlando/Downloads/dcernst-IBL-AbstractAlgebra-5f9bd10/FancyMathematicalTerms.tex",
+		"/home/orlando/Documents/Tex/manuale/manuale.tex",
+		"/home/orlando/Documents/Tex/masterarbeit/master.toc",
+		"/home/orlando/Documents/Tex/master-notizen-cf/huybr-1/master.tex",
+		"/home/orlando/Documents/Tex/master-notizen-cf/master.tex",
+		"/home/orlando/Documents/Tex/poster/master.tex",
+		"/home/orlando/Documents/Tex/meme seminar/mystyle.tex",
+		"/home/orlando/Documents/Tex/meme seminar/master.tex",
+		"/home/orlando/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/orlando/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/orlando/Documents/Tex/bachelor-thesis-test/mystyle.sty",
+		"/home/orlando/Documents/Tex/master-notizen-cf/huybr-1/packages.sty",
+		"/home/orlando/Documents/Tex/master-notizen-cf/huybr-1/commands.sty",
+		"/home/orlando/.config/sublime-text-3/Packages/User/latex.sublime-build",
+		"/home/orlando/Documents/Tex/bachelor-thesis-test/master.tex",
+		"/home/orlando/.config/sublime-text-3/Packages/LaTeXTools/LaTeXTools (Advanced).sublime-settings",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/8c97de1800c2ffdfd637efe063db748e.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/983d855847c7e9dd7d0d2cbeda97285d.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/a05e3494a95f447b2c3c1455abf3291d.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/069464c43962763ba1a3641f9aa74307.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/0a0f578e1c3a34074972bc4f6f62793c.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/91ca86ba2acdf5bf8ddc5a8ee7e17881.png.err",
+		"/home/orlando/.config/sublime-text-3/Cache/LaTeXTools/preview_math/f299f30f51af90abfc7ec170ba605398.png.err",
+		"/home/orlando/.config/sublime-text-3/Packages/User/okular.sublime-build",
+		"/home/orlando/Documents/Tex/bachelor-thesis-test/half-integers.tex",
+		"/home/orlando/Documents/Tex/orlando-template/orlando-style-mathematics.tex",
+		"/home/orlando/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/orlando/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+			"<current file>",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"%.*",
+			"dark",
+			"dark\t",
+			"commut",
+			"mycomm",
+			"enumerate",
+			"enumerate\t",
+			"bib",
+			"definit",
+			"Gr(2,35)",
+			"Gr",
+			"§",
+			"$",
+			"vakil",
+			"\\ref",
+			"dot",
+			"equ",
+			"align",
+			"candidate",
+			"enum",
+			"enumerate",
+			"master",
+			"file",
+			"im",
+			"image",
+			"lefschetz",
+			"generic",
+			"W_1",
+			"W",
+			"W_1",
+			"W",
+			"\\theta_i",
+			"r^(k)",
+			"d^(k)",
+			"b^(k)",
+			"gcd(f_1,f_2)",
+			"mathrm",
+			"mroman",
+			"mathroman",
+			"defeq",
+			"yen",
+			"total_dollars",
+			"pennies",
+			"\\mc",
+			"pr",
+			"\\mco",
+			"\\mc",
+			"matrix",
+			"\\comm",
+			"d",
+			"b_k",
+			"_k",
+			"d",
+			"enumerate",
+			"\\myitem",
+			"\\textbf",
+			"textbf",
+			"enumitem",
+			"Mor",
+			"pr",
+			"pro",
+			"proj",
+			"proje",
+			"projec",
+			"project",
+			"projecti",
+			"projective",
+			"spec",
+			"\\identityentity",
+			"\\Hom",
+			"\\hom",
+			"\\id",
+			"representability",
+			"Criterion",
+			"a criterion",
+			"Since the numb",
+			"since the num",
+			"xcolor",
+			"rightarrow",
+			"longrightarrow",
+			"rightarrow",
+			"longrightarrow",
+			"rightarrow",
+			"longrightarrow",
+			"rightarrow",
+			"xrightarrow",
+			"ses",
+			"Sym",
+			"\\$",
+			"ellipsis",
+			"tikzcd",
+			"subset",
+			"textbf",
+			"which",
+			"V",
+			"t",
+			"biblate",
+			"\\ell",
+			"$S$",
+			"S",
+			"mathcal",
+			"item",
+			"pagestyle",
+			"trigger",
+			"bib",
+			"pr",
+			"_s",
+			"P",
+			"\\mathcal{G}'",
+			"\\mathcal{G}''",
+			"auto",
+			"ses",
+			"file",
+			"preview",
+			"\\clearpage",
+			"underline",
+			"\\grassmannfunctor",
+			"\\structuresheaf",
+			"( |$)(.?)\\(.+\\)",
+			"( |$)(.+)\\(.+\\)",
+			"( |$).\\(.*\\)",
+			"( |$).\\(.\\)"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"GGr(1,\\schemeofquartics)",
+			"\\mco",
+			"b",
+			"b^{(k)}",
+			"^{(k)}",
+			"Mor_{k}",
+			"\\grassfunctor",
+			"\\oh"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/orlando/Documents/Tex/meier/mystyle.tex",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								22,
+								22
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 29.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 30.0
+	},
+	"pinned_build_system": "",
+	"project": "masterarbeit.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": false,
+	"template_settings":
+	{
+	}
+}

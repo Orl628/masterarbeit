@@ -1,0 +1,212 @@
+%!TEX root = ./master.tex
+
+\newcommand{\sm}{\text{sm}}
+\newcommand{\PGL}{\operatorname {PGL}}
+\newcommand{\ch}{\operatorname {ch}}
+\newcommand{\CH}{\operatorname{CH}}
+
+\section{Global Properties of the Verlinde Bundles}
+
+In this final section, we study global properties of $V_k$. We would like for example to know if $V_k$ is stable. A vector bundle $V$ on projective space is \emph{stable} if $\mu(V')<\mu(V)$ for every subbundle $V'\subsetneq V$. Here,
+$\mu(V)\coloneqq \frac{\deg(V)}{\rank{V}}$ is the \emph{slope} of $V$. Even though the question of stability remains open, we point to some evidence that $V_k$ is stable. We conclude by showing that for $d=4$, the bundle $V_5$ is \emph{irreducible}, \ie not decomposable as a nontrivial direct sum of vector bundles.
+
+\subsection{Subbundles with prescribed splitting type}
+
+\begin{proposition} \label{no-generic-splitting}
+	There exists no subbundle $\mc{O}(1)\subset V_k$.
+\end{proposition}
+
+\begin{proof}
+	By twisting the sequence \cref{master-verlinde-sequence} with $\mc{O}(-1)$ and taking cohomology we obtain $H^0(V_k(-1))=0$, hence there are no subbundles $\mc{O}\subset V_k(-1)$.
+\end{proof}
+
+\begin{corollary}
+	There exists no subbundle $W \subset V_k$ such that the splitting type of $W|_T$ is $\mc{O}(1)^{\oplus \rank W}$ for all
+	$W$.
+\end{corollary}
+
+\begin{proof}
+	By \cite[Thm.\ 3.2.1]{okonek-schneider-spindler}, a vector bundle of trivial splitting type for all lines through a point is trivial, hence $W|_T$ would be trivial, in contradiction to \Cref{no-generic-splitting}.
+\end{proof}
+
+\subsection{Projective flatness}
+
+To consider questions about projective flatness, let $k=\CC$. A vector bundle $V$ of rank $r$ on a complex manifold $X$ is \emph{projectively flat} if its projectivization $\PP(V)$ is isomorphic as a principal $\PGL(r,\CC)$-bundle to the bundle $P_{\rho}$ associated to a representation $\rho\from\pi_1{(X)}\to \PGL(r,\CC)$. The bundle $P_{\rho}$ is defined as $P_{\rho}\coloneqq \wtilde X \times_{\pi_1(X)} \PGL(r,\CC)$, where $\wtilde X$ denotes the universal covering space of $X$.
+
+% \begin{proposition}
+% 	Let $n=3, d=4$ and $d\leq k\leq 2d$. The restriction $V_{k,\mathrm{ss}}$ of $V_k$ to the semistable locus $\schemeofsurfaces_{\mathrm{ss}}$ is not projectively flat.
+% \end{proposition}
+
+\begin{proposition}
+	Let $V$ be a vector bundle on $\schemeofsurfaces$. If the restriction $V|_{\mathrm{sm}}$ of $V$ to the smooth locus $\schemeofsurfaces_{\mathrm{sm}}$ is projectively flat, then it is trivial.
+\end{proposition}
+
+% \begin{proof}
+% 	By the characterization of semistable points in \cite[Cor.\ 2.3]{shah-degenerations-k3}, quartics with at most one ordinary double point are semistable. In particular, a general pencil of quartics $T$ is contained in the semistable locus. Pick a line
+% 	$T\subset \schemeofsurfaces_{\mathrm{ss}}$. If $V_{k,\mathrm{ss}}$ were projectively flat, then also $V_{k}|_T$. But by \Cref{nongeneral-type-shared-sections}, \Cref{generic-splitting-type-2d}, and \Cref{zeroes-appear-in-generic-type}, we know that $V_{k}|_T$ is not the twist of a line bundle, a contradiction.
+% \end{proof}
+
+\begin{proof}
+	Let $r\coloneqq \rank V$, let $T$ be a general line in $\schemeofsurfaces$, and let $T_{\mathrm{sm}}\coloneqq T \cap \schemeofsurfaces_{\text{sm}}$. Assuming $V_\sm$ is projectively flat, its projectivisation is given by a representation
+	$$\rho\from \pi_1(\schemeofsurfaces_\sm)\to \PGL(r,\CC).$$
+	Then $V_\sm|_{T_\sm}$ is also projectively flat, its projectivisation given by a representation $\rho'\from \pi_1(T|_\sm) \to \PGL(r,\CC)$ fitting into a commutative diagram
+	\[
+	\begin{tikzcd}
+		\pi_1(\schemeofsurfaces_\sm) \arrow{r}{\rho} & \PGL(r,\CC) \\
+		\pi_1(T_{\sm}) \arrow{u}{\alpha} \arrow{r}{\rho'} & \PGL(r,\CC), \arrow[u,equal]
+	\end{tikzcd}
+	\]
+	where the map $\alpha$ is induced by the inclusion. From the non-singular, quasi-projective version of the Lefschetz hyperplane theorem proven in \cite{lefschetz-theorem-quasiprojective}, it follows that the map $\alpha$ is surjective. Since $V_{\sm}|_{T_{\sm}}$ is the pullback of a vector bundle over
+	$\CC$, it is trivial, so $\rho'$ is trivial. Hence $\rho$ is trivial. 
+\end{proof}		
+
+\begin{corollary}
+	The restriction $V_{k,\mathrm{sm}}$ of $V_k$ to the locus of smooth hypersurfaces is not projectively flat. Furthermore, the restriction of $V_k$ to the locus of semistable hypersurfaces is not projectively flat.
+\end{corollary}
+
+\begin{proof}
+	The second statements follows from the first, since otherwise $V_{k,\text{sm}}$ would be projectively flat.
+\end{proof}
+
+\subsection{Stability}
+
+\begin{conjecture}
+	The Verlinde bundles $V_k$ are stable for all $n,k,d$.
+\end{conjecture}
+
+We will now try to see ways in which this conjecture is not trivially false. For example, the next statement is necessary for stable bundles.
+
+\begin{proposition}
+	Let $H$ be the class of a hyperplane in $\CH^1(\schemeofsurfaces)$, let $N=\dim \schemeofsurfaces$. We have
+	\[
+	\int \ch_2(\End(V_k)) H^{N-2}<0.
+	\]
+\end{proposition}
+\begin{proof}
+	With the sequence \cref{master-verlinde-sequence}, one computes $\ch_1(V_k)=d^{(k)}H$ and $\ch_2(V_k)=-\frac{1}{2}d^{(k)}H^2$. With these equalities and $\ch_i(V_k)=(-1)^{i}\ch_i(V\dual_k)$, we get
+	\begin{align*}
+	\ch_2(\End(V_k)) &= \ch_0(V_k)\ch_2(V\dual_k) + \ch_1(V_k)\ch_1(V\dual_k) + \ch_0(V\dual_k)\ch_2(V_k) \\
+	&= -(r^{(k)}d^{(k)}+(d^{(k)})^2) H^2,
+	\end{align*}
+	hence $\ch_2(\End(V_k)) H^{N-2}$ has negative degree.
+\end{proof}
+
+For $k'< k$, there are inclusions $\mc{O}\boxtimes \mc{O}(k')\hookrightarrow \mc{O} \boxtimes \mc{O}(k)$ on $\schemeofsurfaces \times \PP^n$ inducing inclusions $V_{k'}\subset V_{k}$. The next proposition show that these are not destabilizing.
+
+\begin{proposition}
+	Let $k'<k$. We have $\mu(V_{k'}) < \mu(V_{k})$.
+\end{proposition}
+
+\begin{proof}
+	It suffices to prove the statement for $k'=k-1$. We compute
+	\begin{align*}
+		(\mu(V_{k'})^{-1}+1)(\mu(V_{k})^{-1}+1)^{-1}
+		&= \frac{\binom{n+k'}{n}\binom{n+k-d}{n}}
+		{\binom{n+k'-d}{n}\binom{n+k}{n}}
+		%\\ &= \frac{(n+k')\dotsm(1+k') \cdot (n+k-d)\dotsm(1+k-d)}
+		%{(n+k'-d)\dotsm (1+k'-d) \cdot (n+k)\dotsm (1+k)}
+		\\ &= \frac{k(n+k-d)}{(k+n)(k-d)}
+		\\ &= \left(1+\frac{n}{k}\right)^{-1}
+		\left(1+\frac{n}{k-d}\right)
+		\\ &> 1,
+	\end{align*}
+	wich shows that $\mu(V_{k-1}) < \mu(V_{k})$.
+\end{proof}
+
+Stable bundles $V$ are simple, \ie they have $H^0(\End{V})=\CC$. In the case $\rank V > 1$, this would not be the case if
+$H^0(V),H^0(V\dual) \neq 0$. The following proposition rules this out for $V_k$.
+
+\begin{proposition}
+	We have $H^{0}(V\dual_k) = 0$.
+\end{proposition}
+\begin{proof}
+	Let $M\dual$ be the dual of $M$ in the sequence $\cref{master-verlinde-sequence}$. The map on global sections
+	\[
+		H^0(M\dual)\from
+		H^0(\mc{O}(k))
+		\to
+		H^0(\mc{O}(d))\otimes H^0(\mc{O}(k-d))
+	\]
+	sends a section $\sum_{I_k} \lambda_{I_k} x^{I_k}$ to
+	$\sum_{I_k} \sum_{I_d < I_k} \lambda_{I_k} x_{I_d} \otimes \frac{x^{I_k}}{x^{I_d}}$. The coefficient of $x_{I_{k-d}}$ in this expression is
+	$\sum_{I_d} x_{I_d}\lambda_{(I_d+I_{k+d})}$, so we see that
+	$H^0(M\dual)$ is injective.
+\end{proof}
+
+\subsection{Irreducibility}
+
+A reducible bundle is not stable, so it could be helpful, while interesting in its own right, to ask whether $V_k$ is irreducible. We give an affirmative answer for $d=4, n=3, k=5$.
+
+\begin{lemma} \label{splitting-propagates}
+	Let $V$ be a vector bundle on a scheme $X$ with a decomposition $V=V_1\oplus V_2$. Assume $V$ fits into an exact sequence of vector bundles
+	\begin{equation} \label{exact-sequence-generic}
+		0\to{K}\to {H^0(V)\otimes \mc{O}}\xto{\phi}{V}\to 0,
+	\end{equation}
+	where $\phi$ is the canonical evaluation map.
+	Then there are exact sequences
+	\begin{align*}
+		\ses{K_1}{H^0(V_1)\otimes \mc{O}}{V_1}& \\
+		\ses{K_2}{H^0(V_2)\otimes \mc{O}}{V_2}&,
+	\end{align*}
+	whose direct sum is the sequence
+	\cref{exact-sequence-generic}.
+\end{lemma}
+
+\begin{proof}
+	The canonical map $H^0(V_1)\otimes \mc{O} \to V$ coming from the inclusion $V_1\subset V$ has image contained in $V_1$ and is surjective, the same holds for $V_2$. One also verifies that $K_1\oplus K_2 = K$.
+\end{proof}
+
+\begin{remark}
+	Taking cohomology of the sequence
+	\cref{master-verlinde-sequence} shows that \[H^0(V_k)\simeq H^0(\PP^n, \mc{O}(k))\] and that the composition $H^0(V_k)\otimes \mc{O}\to H^0(\PP^n, \mc{O}(k))\otimes \mc{O}\to V$ is just the canonical evaluation map. 
+\end{remark}
+
+\begin{construction} \label{matrix-tilde}
+	To the map $M\from \mc{O}(-1)\otimes H^0(\mc{O}(k-d)) \to \mc{O}\otimes H^0(\mc{O}(k))$ from the sequence
+	\cref{master-verlinde-sequence}
+	we associate the map $\widetilde M\from H^0(\mc{O}(d))\otimes H^0(\mc{O}(k-d))\to H^0(\mc{O}(k))$ given by multiplication. Let $M$ be given by the entries $(\sum_{I_d} \lambda_{I_d,i,j} x^{I_d})_{ij}$. The matrix
+	$\wtilde M$ then looks as follows:
+	\[
+		\wtilde M = \left(
+  		\begin{array}{c|c|c|c}
+  			A_{I_d^{(1)}} & A_{I_d^{(2)}} & \cdots & A_{I_d^{(N)}} \\
+  		\end{array}
+  	\right)
+	\]
+	where for every index $I_d$, the matrix $A_{I_d}$ is a matrix of the size of $M$ with $(A_{I_d})_{i,j} = \lambda_{I_d,i,j}$. We note the following properties:
+	\begin{enumerate}
+		\huyitem If $M$ is a block matrix of the form
+		$\left( \begin{smallmatrix}* & 0 \\ 0 & *\end{smallmatrix} \right)$, then all the $A_{I_d}$ also are, and thus the matrix $\widetilde M$ can be brought in the same block form after suitably permuting its columns. 
+		\huyitem Row operations on $M$ correspond to row operations on $\widetilde M$. One column operation on $M$ corresponds to column operations on $\widetilde M$ performed on each of the $A_{I_d}$.
+		\huyitem The map $\wtilde M$ is surjective.
+	\end{enumerate}
+\end{construction}
+
+\begin{proposition} \label{no-splitting-sections}
+	There exists no section $\mc{O}\hookrightarrow V_k$ that splits as a direct summand.
+\end{proposition}
+
+\begin{proof}
+	Such a splitting would imply that one can perform row operations on the matrix $M$ until it has a zero row. Hence the matrix $\wtilde M$ would also have a zero row. But this is impossible since $\widetilde M$ is surjective.
+\end{proof}
+
+\begin{proposition}
+	There exists no direct summand $V'$ of $V_k$ with $c_1(V')\leq 1$.
+\end{proposition}
+
+\begin{proof}
+	Note that every direct summand $V'\subset V_k$ is globally generated. If $c_1(V')=0,$ then $V'$ is trivial by \cite[Thm.\ 3.2.1]{okonek-schneider-spindler}. If $c_1(V')=1$, then $V'$ is uniform of splitting type $(1,0,\dotsc,0)$. By \cite[IV – 2.2.: Prop]{ellia-fibres-uniformes}, $V'$ is either isomorphic to $\mc{O}(1)\oplus \mc{O}^{\rank V' - 1}$ or to $T(-1)\oplus \mc{O}^{\rank V' - N - 1}$. Both cases contradict
+	\Cref{no-splitting-sections}.
+\end{proof}
+
+\begin{proposition}
+	Let $n=3,d=4$. The vector bundle $V_5$ is indecomposable.
+\end{proposition}
+
+\begin{proof}
+	Since $c_1(V_5)=4$, it suffices to prove that there exists no direct summand $V'\subset V_k$ with $c_1(V')=2$. Let $V'$ be such a direct summand, $V''$ its direct complement. By \Cref{splitting-propagates}, the matrix $M$ splits into a direct sum $M=M_1\oplus M_2$ with $M_i\from \mc{O}(-1)^{\oplus 2} \to H^0(V_i)\otimes \mc{O}$. Consider the corresponding splitting $\wtilde M= \wtilde M_1 \oplus \wtilde M_2$. We have
+	$\wtilde M_i \from H^0(\mc{O}(5))\otimes \gen{f_i,g_i} \to H^0(V_i)$ for some $f_i,g_i \in H^0(\mc{O}(5-4))$. Since the $\wtilde M_i$ are given by multiplication, we have $\rank \wtilde M_i \geq N+1 = 35$. But then
+	\[
+	70 = \rank M_1 + \rank M_2 \leq \dim H^0(\mc{O}(5))=56,
+	\] a contradiction.
+\end{proof}

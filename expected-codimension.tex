@@ -1,0 +1,17 @@
+%!TEX root = ./master.tex
+Let $k=d+1$. The general type of $V_k$ is
+$(1_{d^{(k)}},0_{r^{(k)}-d^{(k)}})$, and the nongeneric locus $Z\subseteq \GGr(1,\schemeofsurfaces)$ is the determinantal variety $\Supp(R^1\phi_* p^* V_k\dual)$, the locus of singularity of the map
+\[
+	\pushf \phi \pullb p \mc{O}^{\oplus d^{(k)}+r^{(k)}}
+	\to
+	\pushf \phi \pullb p \mc{O}(1)^{\oplus d^{(k)}}
+\]
+The ranks of the above bundles are $d^{(k)}+r^{(k)}$ and $2d^{(k)}$ respectively, so the expected codimension of $Z_{\text{gen}}$ as a determinantal variety is $r^{(k)}-d^{(k)}+1$ in this case. However, this is not the actual codimension, for example for $n=3$ and $d=4$ we have
+\[ 
+\codim Z = 66 - (19 + 4) = 43 \neq 49 = r^{(4)} - d^{(4)} + 1.
+\]
+Hence we cannot use the theorems about determinantal varieties of the expected codimension.
+
+%TODO IDEA: can surely explain specialization relations partially, using the number of zeroes heuristic. This should come to specialization of loci of reduicble hypersurfaces.
+
+A similar problem arises when trying to consider the map $\GGr(1,\schemeofsurfaces)\to \Vect_{\PP^1}$ given by restricting $V_{d+1}$ to lines. The codimension of the analogously defined locus $\{\underline b \in \Vect_{\PP^1} : \underline b \geq (2,1,\dotsc,1,0,\dotsc,0)\}$ can be computed via the formula in \cite[§5]{laumon-fascieaux-automorphes}. For $n=3$ and $d=4$ this still gives a codimension of $49$, so it seems for example that we do not have  an immediate description of the cohomology class of $Z$ as the pullback of some class in $\Vect_{\PP^1}$. 

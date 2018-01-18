@@ -1,0 +1,22 @@
+%!TEX root = ./master.tex
+\section{Introduction}
+
+Let $\pi\from X\to S$ be a flat proper morphism of schemes, $\mc{L}$ an ample line bundle on $X$. The line bundle $\mc{L}$ and its powers $\mc{L}^{\otimes k}$ give information about how to embed the members $X_s$ of the family $\pi$ into the projective space, and how these embeddings vary along $S$. To better understand the family $\pi$, one can study the pushforwards
+$V_k\coloneqq \pi_*(\mc{L}^{\otimes k})$, for $k\geq 1$. In good situations, $V_k$ is a vector bundle on $S$ and we have $V_k|_s = H^0(X_s, \mc{L}^{\otimes k})$ for $s\in S$. The $V_k$ are then called the \emph{Verlinde bundles} of the family $\pi$.
+
+This thesis examines the situation where $\pi$ is the universal family of hypersurfaces of degree $d$ in $\PP^n$, where $n>1$. The Verlinde bundles are then defined on $\schemeofsurfaces$, which is a projective space of dimension $\binom{d+n}{n} - 1$.
+
+We focus on the restriction $V_k|_T$ of the Verlinde bundles to lines $T\subset \schemeofsurfaces$, asking which isomorphism types of bundles on $\PP^1$ can occur as some such restriction, and how these types depend on $T$. For this, we study the associated subsets of the Grassmannian on lines in $\schemeofsurfaces$ consisting of lines $T$ such that $V_k|_T$ has a fixed isomorphism type. Lastly, we investigate some global statements about $V_k$, sometimes using its restriction to lines.
+
+\subsection{Notation and conventions}
+Throughout, $k$ will denote an algebraically closed field, but we omit it from most notation. The letter $k$ will also denote a natural number.
+
+For natural numbers $d$ and $n$, we write $I_d$ for a tuple of non-negative integers of the form $(i_0,\dotsc,i_n)$ with
+$\sum i_j = d$. Thus for example a tuple ranging over the $I_d$ will have $\binom{n+d}{n}$ entries.
+
+We fix names for the homogeneous coordinates of various projective spaces: for the coordinates of $\PP^1$ we write $s$ and $t$, for $\PP^n$ we write $x_i$, and for the coordinates of $\schemeofsurfaces$ we take $\alpha_{I_d}$, where we think of $\alpha_{I_d}$ as corresponding to $x^{I_d}\coloneqq \prod_{i} x_i^{(I_d)_i}$.
+
+For a fiber product $X \xleftarrow{p} X\times Y\xrightarrow{q} Y$ and sheaves $\mc{F}$ and $\mc{G}$ on $X$ resp.\ $Y$, we write $\mc{F}\boxtimes \mc{G}\coloneqq \pullb{p} \mc{F} \otimes \pullb{q} \mc{G}$.
+
+\subsection{Aknowledgements}
+I would like to take the opportunity to thank my advisor Daniel Huybrechts for his assistance, guidance, and mentorship during the writing of this thesis. I also thank my family for their financial and moral support throughout my studies, and my colleagues and friends at the Student Lounge for having made me look forward to every day of thesis work.

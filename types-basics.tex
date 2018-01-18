@@ -1,0 +1,85 @@
+%!TEX root = ./master.tex
+\begin{definition}
+	Let $T \subseteq \schemeofsurfaces$ be a line, \ie the closed subscheme defined as the image of a linear embedding
+$\PP^1_K\to \schemeofsurfaces$, with $K$ an extension field of $k$.
+We call $T$ a \emph{pencil} of hypersurfaces. Its universal family is the scheme
+$\mf{X}_{\PP^1_K}$, which comes with the polarization
+$\mc{L}_{\PP^1_K}$. The situation is summarized in the picture below:
+\[
+\cartesiansquare{\mf{X}_{\PP^1_K}}{}{\mf{X}}
+				  {}  {\pi}
+				  {\PP^1_K}{}{\schemeofsurfaces}
+\]	
+\end{definition}
+
+\begin{definition} On $\PP^1$, we define the vector bundle
+$V_{k,T} \coloneqq \pushf{(\pi_{\PP^1})}{\mc{L}_{\PP^1}^{\otimes k}}$. 
+It is related to $V_k$ by
+$V_{k}|_T = V_{k,T}$
+using \Cref{verlinde-base-change}.
+\end{definition}
+
+
+\begin{remark}
+	Let $T$ be a pencil of hypersurfaces.
+
+	\begin{enumerate}
+	\item The sequence (\ref{master-verlinde-sequence}) restricts to a sequence
+	\begin{equation} \label{verlinde-exact-sequence-p1}
+	\ses{\mc{O}(-1) \otimes H^0(\PP^n, \mc{O}(k-d))}
+	    {\mc{O} \otimes H^0(\PP^n, \mc{O}(k))}
+	    {V_{k,T}}
+	\end{equation}
+	over $\PP^1$.
+
+	\item By \Cref{verlinde-base-change} and \Cref{verlinde-exact-sequence}, the vector bundle $V_{k,T}$ has degree $\binom{k+n-d}{n}$ and rank $\binom{k+n}{n} - \binom{k+n-d}{n}$.
+
+	\item Let $V_{k,T} \simeq \bigoplus_i \mc{O}(b_i)$ be a splitting of $V_{k,T}$ over $\PP^1$. By the sequence \cref{verlinde-exact-sequence-p1}, we have $b_i \geq 0$.
+	\end{enumerate}
+\end{remark}
+
+\begin{definition}
+Let $k\geq 1$.
+
+\begin{enumerate}
+\item A \emph{splitting type} for $V_k$ is a non-increasing tuple $(b_1,\dotsc,b_{r^{(k)}})$ of non-negative integers with
+$r^{(k)}\coloneqq\binom{k+n}{n}-\binom{k+n-d}{n}$ and $d^{(k)}\coloneqq\sum b_i = \binom{k+n-d}{n}$.
+
+\item The \emph{generic splitting type} for $V_k$ is the unique splitting type for $V_k$ of the form
+$(b^{(k)} + 1,\dotsc,b^{(k)} + 1,b^{(k)},\dotsc,b^{(k)})$.
+
+\item Let $E$ be a locally free sheaf on $\PP^1$. The \emph{splitting type} of $E$ is the unique non-increasing tuple $(b_1,\dotsc,b_{r^{(k)}})$ such that $E \simeq \bigoplus_i \mc{O}(b_i)$.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	Note that the degrees of $d^{(k)}$ and $r^{(k)}$ as polynomials in $k$ are $n$ and $n-1$, respectively. Hence, $b^{(k)} \to \infty$ for $k \to \infty$.
+\end{remark}
+
+\begin{proposition} \label{zeroes-appear-in-generic-type}
+	For $n\geq 2$, if $k\leq 2d$ then $b^{(k)}=0$.
+\end{proposition}
+\begin{proof} 
+	We compute
+	\begin{align*}
+		\frac{d^{(k)}+r^{(k)}}{d^{(k)}} &=
+		\frac{(k+1)\dotsm(k+n)}{(k-d+1)\dotsm(k-d+n)} \\ &=
+		\frac{(k-d+n+1)\dotsm(k+n)}{(k-d+1)\dotsm(k)} \\ &=
+		(1+\frac{n}{k-d+1})(1+\frac{n}{k-d+2})\dotsm(1+\frac{n}{k})
+		\\ &\geq (1+\frac{2}{k-d+1})\dotsm(1+\frac{2}{k})
+		\\ &> 1+d\frac{2}{k} 
+		\\ &\geq 2.
+	\end{align*}
+	Hence, $d^{(k)}<r^{(k)}$.
+\end{proof}
+
+\begin{definition}
+Let $P$ denote the universal $\PP^1$-bundle over the Grassmannian of lines $\Gr(2,H^0(\mc{O}(d))) = \GGr(1,\schemeofsurfaces)$, let $\phi\from P\to \GGr(1,\schemeofsurfaces)$ be the universal map and $p\from P\to \schemeofsurfaces$ the canonical projection.
+\[
+\begin{tikzcd} [ampersand replacement = \&]
+P \arrow{r}{p} \arrow{d}{\phi}\& \schemeofsurfaces \\
+\GGr(1,\schemeofsurfaces) \& 
+\end{tikzcd}
+\]
+The mapping $t\mapsto P_t$ gives a canonical bijection between the points of $\GGr(1,\schemeofsurfaces)$ and the pencils of hypersurfaces in $\schemeofsurfaces$. For such $t$, we write $V_{k,t} \coloneqq V_{k,p(P_t)}$.
+\end{definition}
