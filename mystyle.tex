@@ -1,3 +1,4 @@
+%!TEX root = ./master.tex
 %%% PACKAGES
 
 % XeLaTeX
@@ -82,7 +83,7 @@
 \usepackage{mycommands} 
 
 % Bibliography
-\usepackage[backend=biber, style=alphabetic, isbn=false, url=false, doi=false]{biblatex}
+\usepackage[backend=biber, style=alphabetic, isbn=false, url=true, doi=false, maxbibnames=99]{biblatex}
 \renewbibmacro{in:}{}
 \DefineBibliographyStrings{english}{% no p. or pp. before pages
   page             = {},
@@ -134,8 +135,8 @@
 %%% PAST GOOD IDEAS
 
 % Abbreviations
-\newcommand{\ie}{i.\,e.\ }
-\newcommand{\eg}{e.\,g.\ }
+\newcommand{\ie}{i.e.\ }
+\newcommand{\eg}{e.g.\ }
 \newcommand{\cf}{cf.\ }
 
 \newcommand{\isom}{\simeq}

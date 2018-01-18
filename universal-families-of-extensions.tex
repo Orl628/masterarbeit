@@ -1,6 +1,7 @@
+%!TEX root = ./master.tex
 \section{Universal Families of Extensions}
 
-Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, and let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_X$.
+Let $X$ and $S$ be Noetherian schemes over a field $k$. Let $f \from X \to S$ be a flat, projective morphism, and let $\mc{F}$ and $\mc{G}$ be coherent $\mc{O}_X$-modules, flat over $\mc{O}_S$.
 
 Recall that an element $\xi \in \Ext^1_{X}(\mc{F},\mc{G})$ corresponds to an equivalence class of short exact sequences, or \emph{extensions}, of the form
 \[
@@ -11,11 +12,12 @@ where two such sequences are equivalent if there exists an isomorphism between t
 Explicitely, the sum of two elements of $\Ext^1$ corresponds to the Baer sum of the associated extensions, while the multiplication of an extension
 as above by a scalar $a\in H^0(S,\mc{O}_S)$ is given by the pullback sequence along the map $\mc{F}\xto{a}\mc{F}$.
 
-In this section, we ask when it is possible to construct an $S$-scheme $V$ and a universal extension on $X\times_S V$. This is quickly found to be true for $\mc{F},\mc{G}$ locally free and $S=\Spec(k)$. For the more general situation, the article \cite{lange-universal-extensions} turns to the moduli problem of classifying relative extensions of sheaves and applies it to the global situation.
+In this section, we ask when it is possible to construct an $S$-scheme $V$ and a universal extension on $X\times_S V$. This is found to be true for $\mc{F},\mc{G}$ locally free and $S=\Spec(k)$. For the more general situation, the article \cite{lange-universal-extensions} turns to the moduli problem of classifying relative extensions of sheaves and applies it to the global situation.
 %The next proposition shows there exists a $k$-scheme $V$ that parametrizes the points of $\Ext^{1}_X(\mc{F},\mc{G})$.
-\begin{remark}
+
+\begin{remark} \label{small-spectral-sequence}
 Let $\phi \from X_1 \to X_2$ be a morphism of schemes, let $\mc{F}_1$ and $\mc{F}_2$ be $\mc{O}_{X_1}$-modules. The Grothendieck spectral sequence \cite[Theorem~23.3.5]{vakil-algebraic-geometry} specializes to the Leray spectral sequence
-$E_2^{p,q}=H^q(X_2,R^p \phi_*\mc{F}_1) \Rightarrow H^{p+q}(X_1,\mc{F}_1)$
+$E_2^{p,q}=H^p(X_2,R^q \phi_*\mc{F}_1) \Rightarrow H^{p+q}(X_1,\mc{F}_1)$
 %\cite[Theorem~23.4.5]{vakil-algebraic-geometry}
 and the local-to-global $\Ext$ spectral sequence
 $E_2^{p,q}=H^p(X_1,\EXT^q(\mc{F}_1,\mc{F}_2)) \Rightarrow \Ext^{p+q}(\mc{F}_1,\mc{F}_2)$.
@@ -45,10 +47,14 @@ such that for all Noetherian $k$-schemes $Y$, the map
 $$\Mor_{k}(Y,V)\to\Ext^1_{X_Y}(\mc{F}_Y,\mc{G}_Y)$$ defined by
 $\alpha \mapsto \pullb{(\id_X\times \alpha)} \xi_{\mathrm{univ}}$
 is a bijection, functorial in $Y$.
-In particular, pulling back $\xi_{\text{univ}}$ gives a bijection $\Mor_{k}(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
+In particular, pulling back $\xi_{\mathrm{univ}}$ gives a bijection $\Mor_{k}(\Spec(k),V)\xto{\sim} \Ext^1_{X}(\mc{F},\mc{G})$.
 \end{proposition}
 
 \begin{proof}
+We denote the maps in the cartesian square $Y\times X$ as follows:
+\[
+	\cartesiansquare{Y\times X}{\pr_1}{Y} {\pr_2}{s_2} {X}{s_1}{k}
+\]
 We find functorial isomorphisms
 \begin{align}
 \Mor_{k}(Y,V)
@@ -184,6 +190,7 @@ The isomorphism \cref{isom-univprop} comes from the universal property of $\VV(\
 		 \xto{\mu} H^0(S,\EXT^1_f(\mc{F},\mc{G})) \\
 		 \xto{d_2} & H^2(S,\pushf{f}\HOM(\mc{F},\mc{G})). \label{es-rel-ext} \addtocounter{equation}{1}\tag{\theequation}
 	\end{align*}
+	The special case $f=\id$ gives \Cref{small-spectral-sequence}.
 \end{remark}
 
 \begin{proposition}
@@ -228,7 +235,7 @@ As a special case of the above, we recover \Cref{cor:universal-extension}.
 \end{remark}
 
 \begin{remark}
-	The article \cite{lange-universal-extensions} continues on to define a (projectivized) version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
+	The article \cite{lange-universal-extensions} continues to define a (projectivized) version of the problem, so that over $\Spec(k)$, the scheme $\PP(\Ext^1_X(\mc{F},\mc{G})\dual)$ parametrizes the equivalence classes of nonsplit extensions of $\mc{F}$ by $\mc{G}$, modulo the action of $k^{\times}$. See also \cite[Example 2.1.12]{huybrechts-lehn-sheaves}.
 \end{remark}
 
 % \begin{proposition}

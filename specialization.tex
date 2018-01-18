@@ -54,16 +54,15 @@ Let $V$ be a vector bundle on $\PP^1.$ The Birkhoff–Grothendieck theorem says 
 	Note that all such extensions must have $\mc{E}$ locally free.
 	Considering the formulae for ranks and determinants of the components of the sequence, we see that the nonsplit extensions must have
 	$\mc{E}=\mc{O}(1)\oplus\mc{O}(1)$.
-	Furthermore, we have $\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k$.
+	Furthermore, we have \[\Ext^1(\mc{O}(2),\mc{O}) = \Ext^1(\mc{O},\mc{O}(-2))=H^1(\mc{O}(-2))=k.\]
 	By \Cref{cor:universal-extension} and using $\VV(\Ext^1(\mc{O}(2),\mc{O})\dual)\simeq \AA^1$, there exists an extension of the form
 	\[\ses{\mc{O}_{\AA^1} \boxtimes \mc{O}}{\mc{E}_{\text{univ}}}{\mc{O}_{\AA^1}\boxtimes \mc{O}(2)}\]
 	on $\AA^1\times \PP^1$
-	such that
+	such that for $\xi\in\AA^1$ generic we have
 	$\mc{E}_{\text{univ}}|_{\xi \times \PP^1} \simeq \mc{O}(1)\oplus\mc{O}(1)$
-	for generic $\xi\in\AA^1$
-	and 
+	and for $\xi=0$ we have 
 	$\mc{E}_{\text{univ}}|_{0\times \PP^1} \simeq \mc{O} \oplus \mc{O}(2)$.
-	Since $\mc{E}_{\text{univ}}$ is locally free, $\mc{O}(1)\oplus \mc{O}(1) specializes to \mc{O}(2)\oplus \mc{O}$.
+	Since $\mc{E}_{\text{univ}}$ is locally free, $\mc{O}(1)\oplus \mc{O}(1)$ specializes to $\mc{O}(2)\oplus \mc{O}$.
 \end{example}
 
 \begin{remark} \label{rem:exact-sequence-exists}
@@ -93,12 +92,12 @@ Let $V$ be a vector bundle on $\PP^1.$ The Birkhoff–Grothendieck theorem says 
 \end{proposition}
 
 \begin{proof}
-	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(n)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ of an exact sequence of the form
+	By \Cref{rem:specialization-sum} it suffices to prove the special case $\pi = \{\{1,\dotsc,m\}\}$. In other words, we prove that if $a = \sum b_i$, then $\bigoplus\mc{O}(b_i)$ specializes to $\mc{O}(a)\oplus \mc{O}^{m-1}$. By \Cref{rem:exact-sequence-exists}, there exists a representative $\xi \in \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ of an exact sequence of the form
 	\begin{align} \label{chosen-exact-sequence}
 		\sesarrows{\mc{O}^{m-1}}{}{\mc{O}(b_1)\oplus \dotsb \oplus \mc{O}(b_m)}{}{\mc{O}(a)}. %\tag{$\star$}
 	\end{align}
 	By \Cref{rem:scalars-on-ext}, scalar multiplication by $\lambda \neq 0$ does not change the isomorphism class of the middle term of the sequence, hence there exists a one-dimensional subspace $k \injectto \Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})$ such that each nonzero element corresponds to an exact sequence of the form
-	\cref{chosen-exact-sequence}. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then, the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
+	\cref{chosen-exact-sequence}. Consider the associated closed embedding $\alpha \from \AA^1 \to \VV(\Ext^1(\mc{O}(a),\mc{O}^{\oplus m-1})\dual)$ and let $\mc{E}$ be the universal extension from \Cref{cor:universal-extension}. Then the vector bundle $\pullb{(\id_{\PP^1}\times\alpha)}\mc{E}$ on $\PP^1\times\AA^1$ realizes the required specialization. 
 \end{proof}
 
 \begin{remark} \label{my-specialization}
@@ -106,29 +105,29 @@ Let $V$ be a vector bundle on $\PP^1.$ The Birkhoff–Grothendieck theorem says 
 \end{remark}
 
 \begin{definition} \label{def-compare-types}
-	For tuples $(b_i)$ and $(b'_i)$ of the same size, we define the expression $(b'_i) \geq (b_i)$ to mean
+	For tuples $(b_i)$ and $(b'_i)$ of the same size $r$, we define the expression $(b'_i) \geq (b_i)$ to mean
 	\[
-		\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i \text{ for all $s=1,\dotsc, r^{(k)}$}.
+		\sum_{i=1}^s b'_i \geq \sum_{i=1}^s b_i \text{ for all $s=1,\dotsc, r$}.
 	\]
 \end{definition}
 
 \begin{proposition}
-	Let $(b_i)_{i=1}^m$ and $(b'_i)_{i=1}^m$ be tuples of integers such that $\sum b_i = \sum b'_i$ and $(b_i)\leq (b'_i)$ in the sense of \Cref{def-compare-types}. Then $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b'_i)$.
+	Let $b=(b_i)_{i=1}^m$ and $b'=(b'_i)_{i=1}^m$ be tuples of integers such that $\sum b_i = \sum b'_i$ and $b\leq b'$ in the sense of \Cref{def-compare-types}. Then $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b'_i)$.
 \end{proposition}
 
 \begin{proof}
-	The tuple $(b_i)$ can be transformed into the tuple $(b'_i)$ by a finite sequence of substitutions of the form
-	\begin{align*}
-		b_i \leftarrow b_i - 1, \quad
-		b_{j} \leftarrow b_{j} +1
-	\end{align*}
-	for appropriate $i$ and $j$. By \Cref{my-specialization}, $\mc{O}(b_i - 1) \oplus \mc{O}(b_j + 1)$ specializes to $\mc{O}(b_i) \oplus \mc{O}(b_j)$. Hence, each step $k$ gives an intermediate tuple $(b_i^{(k)})$ such that $\bigoplus \mc{O}(b_i^{(k-1)})$ specializes to $\bigoplus \mc{O}(b_i^{(k)})$. This proves the proposition since specialization is transitive.
+	Since $b\leq b'$, there exists a sequence of tuples $b=b^{(0)},b^{(1)},\dotsc,b^{(n)}=b'$ such that for all $k=1,\dotsc,n$, the tuple $b^{(k)}$ differs from $b^{(k-1)}$ only by two entries
+	\[
+		b^{(k)}_i = b^{(k-1)}_i - 1, \quad
+		b^{(k)}_j = b^{(k-1)}_j + 1.
+	\]
+	By \Cref{my-specialization}, $\mc{O}(b^{(k)}_i) \oplus \mc{O}(b^{(k)}_j)$ specializes to $\mc{O}(b^{(k-1)}_i) \oplus \mc{O}(b^{(k-1)}_j)$, hence $b^{(k-1)}$ specializes to $b^{(k)}$. By transitivity of specialization, $b$ specializes to $b'.$
 \end{proof}
 
 \newcommand{\HNP}{\operatorname{HNP}}
 
 \begin{remark}
-	In fact, if $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$, then $(b_i)\leq (b_i')$. The missing implication is proven \eg in \cite[Thm.\ 3]{schatz-degeneration-specialization}. There, the statement is expressed in terms of the Harder–Narasimhan polygon $\HNP$ of a vector bundle $E$. In our case, if $E\simeq \bigoplus \mc{O}(b_i)$ is a vector bundle on $\PP^1$, then $\HNP$ is the polygon underneath the graph of the function $\{0,\dotsc,\rank E\}\to \NN_{\geq 0}$ given by $s\mapsto \sum_{i=1}^s b_i$. Thus $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$ if and only if the HNP of the first bundle lies under the HNP of the second.
+	In fact, if $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$, then $(b_i)\leq (b_i')$. The missing implication is proven \eg in \cite[Thm.\ 3]{schatz-degeneration-specialization}. There, the statement is expressed in terms of the Harder–Narasimhan polygon $\HNP$ of a vector bundle $E$. In our case, if $E\simeq \bigoplus \mc{O}(b_i)$ is a vector bundle on $\PP^1$, then $\HNP$ is the polygon under the graph of the function $\{0,\dotsc,\rank E\}\to \NN_{\geq 0}$ given by $s\mapsto \sum_{i=1}^s b_i$. Thus, $\bigoplus \mc{O}(b_i)$ specializes to $\bigoplus \mc{O}(b_i')$ if and only if the HNP of the first bundle lies below the HNP of the second.
 
 	Thus, the most general splitting type among bundles of fixed rank $r$ and degree $c_1$ is the uniquely determined type 
     of the form
